@@ -1,0 +1,13 @@
+deleteTopicEnable: true
+persistence:
+  enabled: true
+  size: 512Gi
+replication:
+replicaCount: 3
+resources:
+  limits:
+    cpu: 4
+    memory: 16Gi
+  requests:
+    cpu: 200m
+    memory: 1Gi
