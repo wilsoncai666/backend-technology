@@ -1,3 +1,7 @@
+## PG官方文档
+
+1. [《PostgreSQL中文文档》](www.postgres.cn/docs)
+   
 ## PG表分区
 
 1. 创建主表
