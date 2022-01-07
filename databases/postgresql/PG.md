@@ -1,6 +1,7 @@
 ## PG官方文档
 
 1. [《PostgreSQL中文文档》](www.postgres.cn/docs)
+2. [《PostgreSQL英文文档》](www.postgres.org/docs)
    
 ## PG表分区
 
