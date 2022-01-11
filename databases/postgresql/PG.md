@@ -111,3 +111,23 @@ ORDER BY  rowCounts desc;
 7. 查看用户自定义类型上授予的USAGE权限
 
 `select * from information_schema.udt_privileges where grantee='postgres';`
+
+8. 新建存储过程自动建表
+
+```sql
+create or replace function addId() returns 
+boolean AS
+$BODY$
+declare ii integer;
+  begin
+  ii := 1;
+  FOR ii IN 1..1000000 LOOP
+  INSERT INTO test01 (id) VALUES (ii);
+  end LOOP;
+  return true;
+  end;
+$BODY$
+LANGUAGE plpgsql;
+
+select * from addId();
+```
