@@ -82,6 +82,14 @@ ORDER BY  rowCounts desc;
   
 `ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT select ON TABLES TO usera;`
 
+* 删除用户权限
+  
+`revoke all on database databasename from usera;`
+
+* 删除用户
+  
+`Drop user usera;`
+
 ### 查看用户系统权限和对象权限
 
 1. 查看某用户的系统权限
