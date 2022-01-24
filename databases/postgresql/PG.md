@@ -82,9 +82,15 @@ ORDER BY  rowCounts desc;
   
 `ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT select ON TABLES TO usera;`
 
-* 删除用户权限
+* 删除所有的用户权限
   
 `revoke all on database databasename from usera;`
+
+`revoke all on schema public from usera;`
+
+`revoke all on all tables in schema public from "psrreader@psrstreamdata";`
+
+`ALTER DEFAULT PRIVILEGES IN SCHEMA public REVOKE ALL ON TABLES FROM "psrreader@psrstreamdata";`
 
 * 删除用户
   
