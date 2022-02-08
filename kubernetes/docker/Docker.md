@@ -1,3 +1,44 @@
+### Docker常用命令
+
+1. build时可以直接tag到远程目录省去tag这一步
+
+   `docker build -t my-app:1.0 .`
+
+2. 打tag到指定目录,wilsoncai666是dockerhub中的一个repository,其余地址私人仓库按实际情况填写
+
+   `docker tag my-app:1.0 wilsoncai666/my-app:1.0`
+
+3. push到dockerhub中的个人仓库中,push刚刚tag之后的名称,同理可以推送到任意指定repository,其余非官方仓库需要进行登录才可以进行pull
+
+   `docker push wilsoncai666/my-app:1.0`
+
+4. 删除容器,如果容器正在运行,删除之前记得进行stop
+
+   `docker rm <container-name/id>`
+
+5. 删除镜像文件
+
+   `docker rmi <image-name/id>`
+
+6. 查看日志
+
+   `docker logs <container-id>`
+
+7. 进入容器内部,就可以看到我们构建的的镜像是不是按照Dockerfile规定把文件复制到相应的目录
+
+   `docker exec -it  <container-id>  /bin/sh(或者是bash)`
+
+8. 组合上线或下线
+
+   `docker-compose -f xxx.yaml up`
+
+   `docker-compose -f xxx.yaml down`
+ 9. docker路由地址查询方法
+
+    `docker inspect container_name`
+
+---
+
 ## Docker安装mysql,并配置忽略大小写
 
 ` docker run --name mysql8 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d --network my-net -v /c/Users/WilsonCai/WilsonPrivate/docker-mysql/:/var/lib/mysql mysql --lower_case_table_names=1`
@@ -16,6 +57,8 @@ mysql修改权限密码方式
 `ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123456';`
 
 `flush privileges;`
+
+---
 
 ## Docker 安装kafka
 kafka是docker-compose的组合并需要持久化
@@ -98,8 +141,13 @@ services:
 ```
 
 `docker-compose up -d` 此命令可以将上述组合上线
+
+---
+
 ## Docker 安装redis
 ` docker run -v /c/Users/WilsonCai/WilsonPrivate/docker-redis:/usr/local/etc/redis --name myredis -p 6379:6379 -d --network my-net redis`
+
+---
 
 ## Docker 安装kowl
 ` docker run --name mykowl -p 8888:8080  -e KAFKA_BROKERS=host.docker.internal:9092 -d quay.io/cloudhut/kowl:master`
@@ -107,50 +155,12 @@ services:
 *注:前提是本机安装了kafka,可以通过host.docker.internal进行访问*
 
 ----
-### Docker常用命令
 
-1. build时可以直接tag到远程目录省去tag这一步
-
-   `docker build -t my-app:1.0 .`
-
-2. 打tag到指定目录,wilsoncai666是dockerhub中的一个repository,其余地址私人仓库按实际情况填写
-
-   `docker tag my-app:1.0 wilsoncai666/my-app:1.0`
-
-3. push到dockerhub中的个人仓库中,push刚刚tag之后的名称,同理可以推送到任意指定repository,其余非官方仓库需要进行登录才可以进行pull
-
-   `docker push wilsoncai666/my-app:1.0`
-
-4. 删除容器,如果容器正在运行,删除之前记得进行stop
-
-   `docker rm <container-name/id>`
-
-5. 删除镜像文件
-
-   `docker rmi <image-name/id>`
-
-6. 查看日志
-
-   `docker logs <container-id>`
-
-7. 进入容器内部,就可以看到我们构建的的镜像是不是按照Dockerfile规定把文件复制到相应的目录
-
-   `docker exec -it  <container-id>  /bin/sh(或者是bash)`
-
-8. 组合上线或下线
-
-   `docker-compose -f xxx.yaml up`
-
-   `docker-compose -f xxx.yaml down`
- 9. docker路由地址查询方法
-
-    `docker inspect container_name`
-
-
-### Docker安装postgresql
+### Docker安装PostgreSQL
 `docker run -d --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=123456 -e PGDATA=/var/lib/postgresql/data/pgdata -e POSTGRES_DB=psrapi -v /c/Users/WilsonCai/WilsonPrivate/dockerData/pgdata:/var/lib/postgresql/data postgres`
 
-### Docker Compose安装
+#### Docker Compose安装PostgreSQL
+
 ```
 version: '3'
 services:
@@ -176,5 +186,8 @@ services:
 volumes:
   pgdata:
   ```
+---
+
 ### Docker 安装wordpress
+
 `docker run -d --name mywp -p 1080:80 -e WORDPRESS_DB_HOST=host.docker.internal -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_PASSWORD=123456 -e WORDPRESS_DB_NAME=wordpress wordpress`
