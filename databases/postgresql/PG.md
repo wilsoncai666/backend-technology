@@ -145,3 +145,33 @@ LANGUAGE plpgsql;
 
 select * from addId();
 ```
+
+### PG 求交并差集
+
+INTERSECT用于求交集，UNION/UNION ALL用于求并集，EXCEPT用于求差集。
+
+用法如下：
+
+query1 INTERSECT query2
+
+query1 UNION query2 
+
+query1 EXCEPT query2
+
+ 其中query1和query2的SELECT子句中字段个数必须相同，且对应的数据类型必须相同（如果int和bigint结果取bigint,varchar(5)和varchar(10)结果取varchar(10)），字段名可以不同，但是最终结果会以第一个SELECT子句中字段名称返回。
+
+1. INTERSECT
+两个查询使用INTERSECT求交集的结果使用图片表示如下：
+![图片](../../pics/intersect.png)
+
+2. UNION / UNION ALL
+两个查询使用UNION的结果使用图片表示如下：
+![union](../../pics/union.png)
+
+注意： UNION默认会去重，即重复数据只会返回一行，
+
+UNION ALL会保留重复数据，返回所有行。
+
+3. EXCEPT
+两个查询使用EXCEPT(A EXCEPT B)求差集的结果：
+![except](../../pics/except.png)
