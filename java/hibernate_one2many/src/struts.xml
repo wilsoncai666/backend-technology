@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="etoak" extends="json-default">
+		<action name="*_cc" class="com.etoak.action.CCAction"
+		method="{1}">
+		<result name="queryAllCus_success" type="json">
+				<param name="root">cs</param>
+			</result>
+				<result name="queryOrdersByCusId_success" type="json">
+				<param name="root">os</param>
+			</result>
+			<result name="update_success" type="redirect">
+				liststu.jsp
+			</result>
+			<result name="updateorder_success" type="redirect">
+				liststu.jsp
+			</result>
+			<result name="addorder_success" type="redirect">
+				liststu.jsp
+			</result>
+		</action>
+	</package>
+</struts>
