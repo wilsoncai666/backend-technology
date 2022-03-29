@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+<mapping>
+	<class name="com.etoak.po.Student" table="stu1">
+		<id name="id">
+			<column name="sid"/>
+		</id>
+		<property name="username">
+			<column name="uname"/>
+		</property>
+		<property name="password">
+			<column name="pwd"/>
+		</property>
+	</class>
+	<class name="com.etoak.po.Person" table="stu">
+		<id name="id">
+			<column name="sid"/>
+		</id>
+		<property name="username">
+			<column name="uname"/>
+		</property>
+		<property name="password">
+			<column name="pwd"/>
+		</property>
+	</class>
+</mapping>

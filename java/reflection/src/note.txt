@@ -1,0 +1,82 @@
+请用JDBC以及反射现在如下功能:
+	1.表以及字段均遵守驼峰命名规则？
+		1.1 表名: 用户表(字段:id、用户名、密码)
+	2.利用mysql-connector-java包链接db,查询表数据并利用反射
+	实现BEAN的动态赋值，打印结果
+	
+	 	2.1 DB链接
+	 		db.ip=adfasdfasdfasdfasdf.baidu.com
+	 		db.port=3306
+	 		db.user=examine
+	 		db.pass=100qu_net
+	 	2.2 不能new，或者出现setUsername类的方法
+
+
+Reflection:反射
+pre:四大类型: class  interface  enum annotation
+
+第一、反射是JAVA语言提供的一套在运行期动态获得类中信息的API。
+
+第二、
+	编译期：.java--->.class文件
+	运行期: .class--->内存 逐句执行
+	
+第三、通过反射，我们可以在运行期动态获得类中属性和方法;
+	  通过反射，我们可以在运行期动态的执行类中的方法
+	  通过反射，我们可以在运行期动态的构造类的对象
+	 通过反射，我可以在运行期动态的判断对象类型
+	 
+第四、反射的入口类（平台类）---》java.lang.Class
+
+	01)同学---》Student  员工----》Emp
+	   苹果---->Apple   类-----》Class
+	  Class是描述类的类。一个Class对象代表一个具体的类。
+	  
+	02)当JVM加载完一个类之后，创建该类的任何对象之前，会首先
+	在内存的队区创建一个Class类的对象，使用该对象存放
+	JVM加载的类的信息。	 【JVM在运行期是与一堆的Class对象交互】
+	
+	03）Class类没有公共的构造方法，Class类的对象是在运行期有JVM自动构造的。
+		不能new
+	04）一个类可以有很多个对象，但是只有一个Class对象
+		
+	05)基本数据类型和关键字void都有对应的Class对象
+	06)基本数据类型和包装类不是同一个Class对象
+	
+	07)所有具有相同元素类型和维数的数组都共享同一个Class对象
+	
+	
+第五、因为类的信息都在Class对象中,并且Class类的对象不能new ,
+	  如何获得Class对象？
+	  01)类名字.class 固定形式 Student.class
+	  
+	  02)对象 stu.getClass() emp.getClass()
+	  
+	  03)Class.forName("java.lang.String")
+	  
+第六、通过Class对象获得类中信息
+	属性 \方法。。。
+	
+================================
+枚举 enum  class interface  annotation
+枚举是JAVA5.0之后，提出的新的类型。表示一些固定值，如一周七天
+交通灯颜色  Book动作 登陆 查询 修改  
+
+第一、定义枚举使用关键字 enum
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

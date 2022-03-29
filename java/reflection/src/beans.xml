@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans>
+	<bean id="stu" class="com.etoak.po.Student">
+		<property name="username" value="etoak"/>
+		<property name="password" value="123" />
+	</bean>
+	<bean id="per" class="com.etoak.po.Person"></bean>
+</beans>
