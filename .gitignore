@@ -111,3 +111,4 @@ yarn.lock
 *.log
 *.DS_Store
 classes
+database.js

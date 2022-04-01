@@ -5,10 +5,10 @@
 	实现BEAN的动态赋值，打印结果
 	
 	 	2.1 DB链接
-	 		db.ip=adfasdfasdfasdfasdf.baidu.com
+	 		db.ip=127.0.0.1
 	 		db.port=3306
-	 		db.user=examine
-	 		db.pass=100qu_net
+	 		db.user=
+	 		db.pass=
 	 	2.2 不能new，或者出现setUsername类的方法
 
 
