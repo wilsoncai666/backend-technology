@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+	
+	<!-- 
+		1.创建数据源
+	 -->
+	 <bean id="dataSource"
+	 	   class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	 	  <!-- 驱动 -->
+	 	  <property name="driverClassName" value="${jdbc.driverClassName}"></property> 
+	 	  <!-- 连接 -->
+	 	  <property name="url" value="${jdbc.url}"></property>
+	 	  <!-- 用户名 -->
+	 	  <property name="username" value="${jdbc.username}"></property>
+	 	  <!-- 密码 -->
+	 	  <property name="password" value="${jdbc.password}"></property>
+	 </bean>
+	
+	<!-- 
+		2.持久层 mybatis 
+	-->
+	<bean id="sqlSessionFactoryBean"
+		  class="org.mybatis.spring.SqlSessionFactoryBean">
+		 <!-- 注入数据源 -->
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 加载mybatis配置文件 解析sql -->
+		<property name="configLocation" 
+		value="classpath:mybatis/mybatis-cfg.xml"></property>
+	</bean>
+	
+	<!-- 
+		3.扫描接口并实例化
+	 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 
+			扫描接口 
+			注意事项：basePackage值扫描包结构精确到*Mapper.java文件
+			否则扫描@controller等注解  导致id重复
+		-->
+		<property name="basePackage" value="org.etoak.modules.**.mapper"></property>
+		<!-- 设置sqlSessionFactoryBean -->
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"></property>
+	</bean>
+	
+	<!-- 
+		4.配置事务管理器
+	 -->
+	<bean id="tx"
+		  class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<!-- 
+			注入dataSource 加入事务
+		 -->
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<!-- 
+		5.使用注解事务
+	 -->
+	<tx:annotation-driven transaction-manager="tx"/>
+
+</beans>

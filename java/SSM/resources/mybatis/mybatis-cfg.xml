@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 扫描javabean 起别名类名首字母小写 -->
+	<typeAliases>
+		<package name="org.etoak.modules"/>
+	</typeAliases>
+	
+	<!-- 配置mybatis分页插件 -->
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageHelper">
+			<property name="dialect" value="mysql"/>
+		</plugin>
+	</plugins>
+	
+	<!-- 
+		扫描mybatis sql配置文件（*Mapper.xml）
+		这种配置方式 要求
+			接口名称和sql.xml文件名称必须一致 
+			包结构一致
+	 -->
+	<mappers>
+		<package name="org.etoak.modules.**.mapper"/>
+	</mappers>
+</configuration>

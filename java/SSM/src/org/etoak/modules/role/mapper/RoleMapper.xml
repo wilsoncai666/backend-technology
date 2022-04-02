@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.etoak.modules.role.mapper.RoleMapper">
+
+	<sql id="role_columns">
+		id,name,status,remark
+	</sql>
+	
+	<select id="findRolesByUserId"
+			parameterType="java.lang.String"
+			resultType="role">
+		select 
+			b.id,b.name,b.status,b.remark
+		from
+			user_role a
+		left join
+			et_role b
+		on 
+			a.role_id = b.id
+		where 
+			a.user_id = #{userId} and b.status = 1
+	</select>
+	
+	<select id="getAdmin"
+			parameterType="map"
+			resultType="role">
+		select
+	 		b.id,b.name,b.status,b.remark
+		from 
+	  		user_role a
+		left join
+	  		et_role b
+		on 
+			a.role_id = b.id
+		where 
+			b.status = 1 
+			and b.name = #{name}
+	  		and a.user_id = #{userId}
+	</select>
+
+</mapper>

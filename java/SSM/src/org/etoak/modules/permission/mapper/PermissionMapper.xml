@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.etoak.modules.permission.mapper.PermissionMapper">
+
+	<!-- <resultMap type="permission" id="perMap">
+		<id column="id" property="id" />
+		<result column="pid" property="pid" />
+		<result column="name" property="name" />
+		<result column="" property="" />
+		<result column="" property="" />
+		<result column="" property="" />
+	</resultMap> -->
+
+	<sql id="per_column">
+		id,pid,name,url,status,remark
+	</sql>
+
+	<select id="findPerInfoByPid" 
+		parameterType="java.lang.String"
+		resultType="org.etoak.modules.permission.bean.Permission">
+	
+		select 
+			<include refid="per_column" />
+		from 
+			et_permission
+		where pid = #{pid}
+		
+	</select>
+	
+	<select id="getAll" 
+		resultType="org.etoak.modules.permission.bean.Permission">
+		
+		select 
+			<include refid="per_column" />
+		from
+		   et_permission
+		
+	</select>
+	
+	<select id="findPerInfoByRolesId" 
+			parameterType="map"
+			resultType="permission">
+		select
+			b.id,b.pid,b.name,b.url,b.status,b.remark
+		from
+  			role_permission a
+		left join
+  			et_permission  b
+		on 
+  			a.per_id = b.id
+		where 
+			b.status = 1
+		and b.pid = #{pid} 
+  		and a.role_id in
+  		 <foreach collection="list" item="roles" 
+  		 			open="(" close=")" separator=",">
+  		 	#{roles.id} 
+  		 </foreach>
+	</select>
+	
+
+</mapper>

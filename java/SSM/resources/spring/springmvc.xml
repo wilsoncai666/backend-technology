@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+	<!-- 
+		springmvc扫描注解，扫描@controller注解找到服务端
+		也会扫描其他注解例如@service等注解
+	 -->
+	 <context:component-scan base-package="org.etoak">
+	 	<!-- 不扫描@service注解 -->
+	 	<context:exclude-filter 
+	 		type="annotation" 
+	 		expression="org.springframework.stereotype.Service"/>
+	 </context:component-scan>
+	 
+	 <!-- 映射器、适配器 、处理json、转换请求参数-->
+	 <mvc:annotation-driven></mvc:annotation-driven>
+	
+	 <!-- 
+	 	 设置默认视图 发送/请求触发mvc:view-controller
+	 	 跳转页面/pages/modules/system/login.jsp
+	  -->
+	 <mvc:view-controller path="/" view-name="system/login"/>
+	 
+	 <!-- 
+	 	使用/请求 
+	 	使用springmvc的restfull风格，
+	 	不加载资源文件 例如js、css、img（图片）
+	 	需要配置mvc:resources
+	  -->
+	 <mvc:resources location="/skin/" mapping="/skin/**"/>
+	 
+	 <!-- 视图解析器 -->
+	 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	 	<!-- jsp页面支持jstl标签 -->
+	 	<property name="viewClass" 
+	 		value="org.springframework.web.servlet.view.JstlView"></property>
+	 	<!-- 页面前缀 -->
+	 	<property name="prefix" 
+	 		value="/pages/modules/"></property>
+	 	<!-- 页面后缀 -->
+	 	<property name="suffix" 
+	 		value=".jsp"></property>
+	 </bean>
+	 
+	 <!-- 上传解析器 -->
+	 <bean id="multipartResolver"
+	 	   class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	 	<property name="defaultEncoding" value="UTF-8"></property>
+	 </bean>
+
+</beans>
