@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="etoak" extends="json-default">
+	<!-- *:表示任意字符串 *_student匹配list_student add_student query_student
+		{1}:表示与第一个*保持一致
+		通配符映射
+	 -->
+		<action name="*_student" 
+		class="com.etoak.action.StudentAction"
+		method="{1}">
+			<result name="login_success" type="redirect">index.jsp</result>
+			<result name="login_fail" type="redirect">login.jsp</result>
+			<result name="list_success">liststu.jsp</result>
+			<result name="queryStuById_success">update.jsp</result>
+			<result name="update_success" type="redirectAction">list_student?currentPage=1</result>
+			<result name="querySome_success" type="json">
+				<param name="root">page</param>
+			</result>
+		</action>
+		
+		
+		<!-- <action name="login_student" 
+		class="com.etoak.action.StudentAction" 
+		method="login">
+			<result name="login_success" type="redirect">index.jsp</result>
+			<result name="login_fail" type="redirect">login.jsp</result>
+		</action>
+		<action name="list_student" 
+		class="com.etoak.action.StudentAction"
+		method="list">
+			<result name="list_success">liststu.jsp</result>
+		</action>
+		<action name="queryStuById_student"
+		class="com.etoak.action.StudentAction"
+		method="queryStuById">
+			<result name="queryStuById_success">update.jsp</result>
+		</action> -->
+	
+	</package>
+</struts>

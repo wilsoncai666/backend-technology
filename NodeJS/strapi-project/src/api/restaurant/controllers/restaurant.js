@@ -27,7 +27,7 @@ module.exports = createCoreController('api::restaurant.restaurant', ({
   async findOne(ctx) {
     // some logic here
     const response = await super.findOne(ctx);
-    console.log("----",ctx)
+    // console.log("----",ctx);
     // some more logic
 
     return response;
