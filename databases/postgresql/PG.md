@@ -174,4 +174,26 @@ UNION ALL会保留重复数据，返回所有行。
 
 3. EXCEPT
 两个查询使用EXCEPT(A EXCEPT B)求差集的结果：
+
 ![except](../../pics/except.png)
+
+
+### PG无法删除某个数据库
+
+删除数据库时报错：
+`ERROR: database "psrPg" is being accessed by other users DETAIL: There are 2 other sessions using the database.`
+解决方式：
+断开连接到这个数据库上的所有链接，再删除数据库。怎么断开呢？在PostgreSQL 9.2 及以上版本，执行下面的语句：
+```
+SELECT pg_terminate_backend(pg_stat_activity.pid)
+FROM pg_stat_activity
+WHERE datname='mydb' AND pid<>pg_backend_pid();
+
+drop DATABASE mydb;
+```
+
+语句说明：
+
+pg_terminate_backend：用来终止与数据库的连接的进程id的函数。
+pg_stat_activity：是一个系统表，用于存储服务进程的属性和状态。
+pg_backend_pid()：是一个系统函数，获取附加到当前会话的服务器进程的ID。
