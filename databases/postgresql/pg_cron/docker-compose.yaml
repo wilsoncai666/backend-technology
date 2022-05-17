@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+    postgres:
+      restart: always
+      privileged: true
+      image: postgres-cron:11.5
+      network_mode: bridge
+      container_name: postgres
+      environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=123456
+        - POSTGRES_DB=postgres
+      ports:
+        - 5432:5432
+      volumes:
+        - ./data/postgres/data:/var/lib/postgresql/data
