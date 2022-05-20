@@ -1,0 +1,65 @@
+## @section Global parameters
+## Global Docker image parameters
+## Please, note that this will override the image parameters, including dependencies, configured to use the global value
+## Current available global Docker image parameters: imageRegistry, imagePullSecrets and storageClass
+
+## @param global.imageRegistry Global Docker image registry
+## @param global.imagePullSecrets Global Docker registry secret names as an array
+## @param global.storageClass Global StorageClass for Persistent Volume(s)
+##
+global:
+  ## @param global.postgresql.postgresqlDatabase PostgreSQL database (overrides `postgresqlDatabase`)
+  ## @param global.postgresql.postgresqlUsername PostgreSQL username (overrides `postgresqlUsername`)
+  ## @param global.postgresql.existingSecret Name of existing secret to use for PostgreSQL passwords (overrides `existingSecret`)
+  ## @param global.postgresql.postgresqlPassword PostgreSQL admin password (overrides `postgresqlPassword`)
+  ## @param global.postgresql.servicePort PostgreSQL port (overrides `service.port`
+  ## @param global.postgresql.replicationPassword Replication user password (overrides `replication.password`)
+  ##
+  postgresql:
+    postgresqlDatabase: "psrPg"
+    postgresqlUsername: "psrPgAdmin"
+    existingSecret: ""
+    postgresqlPassword: "G5v924#C4u900"
+    servicePort: ""
+    replicationPassword: "#N6f949"
+
+replication:
+  enabled: true
+  user: "psrPg"
+  readReplicas: 1
+
+## @param postgresqlMaxConnections Maximum total connections
+##
+postgresqlMaxConnections: 120
+## @param postgresqlPostgresConnectionLimit Maximum connections for the postgres user
+##
+#postgresqlPostgresConnectionLimit: 20
+## @param postgresqlDbUserConnectionLimit Maximum connections for the non-admin user
+##
+
+persistence:
+  ## @param persistence.enabled Enable persistence using PVC
+  ##
+  enabled: true
+  ## @param persistence.storageClass PVC Storage Class for PostgreSQL volume
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  storageClass: managed-premium
+  ## @param persistence.size PVC Storage Request for PostgreSQL volume
+  ##
+  size: 5Gi
+## Configure resource requests and limits
+## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+## @param resources.requests [object] The requested resources for the container
+##
+resources:
+  limits:
+    memory: 1Gi
+    cpu: 1000m
+  requests:
+    memory: 1Gi
+    cpu: 500m

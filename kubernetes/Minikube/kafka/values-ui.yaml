@@ -1,0 +1,18 @@
+resources:
+  limits:
+    cpu: 500m
+    memory: 256Mi
+  requests:
+    cpu: 10m
+    memory: 64Mi
+
+kowl:
+  config:
+    kafka:
+      brokers:
+        - kafka-service-0.kafka-service-headless:9092
+        - kafka-service-1.kafka-service-headless:9092
+        - kafka-service-2.kafka-service-headless:9092
+      tls:
+        enabled: false
+        insecureSkipTlsVerify: true

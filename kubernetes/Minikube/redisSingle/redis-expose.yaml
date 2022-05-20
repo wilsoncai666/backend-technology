@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-expose
+spec:
+  selector:
+    app.kubernetes.io/instance: redis-service
+    app.kubernetes.io/name: redis-cluster
+  type: LoadBalancer
+  ports:
+  - port: 6379
+    protocol: TCP
+    targetPort: 6379

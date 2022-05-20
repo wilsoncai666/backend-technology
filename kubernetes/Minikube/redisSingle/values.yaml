@@ -1,0 +1,11 @@
+global:
+  storageClass: managed-premium
+
+master:
+  resources:
+    limits:
+      cpu: "1000m"
+      memory: "2Gi"
+    requests:
+      cpu: "200m"
+      memory: "500Mi"
