@@ -62,7 +62,40 @@ spec:
       port: 2181
       targetPort: 2181
 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: exposing-kowl
+spec:
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/instance: kafka-ui
+    app.kubernetes.io/name: kowl
+    pod-template-hash: 86d6c8755c
+  ports:
+    - protocol: TCP
+      port: 8089
+      targetPort: 8080
 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-service
+  labels:
+    name: kafka
+    app.kubernetes.io/component: kafka
+    app.kubernetes.io/instance: kafka-service
+    app.kubernetes.io/name: kafka
+spec:
+  ports:
+  - port: 9092
+    name: kafka-port
+    protocol: TCP
+  selector:
+    app: kafka
+  type: NodePort
 
 
 

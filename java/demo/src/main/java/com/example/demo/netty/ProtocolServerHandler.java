@@ -1,4 +1,4 @@
-package com.lixue.netty;
+package com.example.demo.netty;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -14,6 +14,7 @@ import com.lixue.data.Container;
 import com.lixue.data.DataExplain;
 import com.lixue.model.Module;
 import com.lixue.util.VolvoCodeTools;
+import org.apache.logging.log4j.Logger;
 
 
 /**
