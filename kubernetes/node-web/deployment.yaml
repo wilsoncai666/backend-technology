@@ -5,7 +5,7 @@ metadata:
   labels:
     app: node-app
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: node-app
@@ -15,7 +15,43 @@ spec:
         app: node-app 
     spec:
       containers:
-      - name: node-app
-        image: wilsoncai666/demo:1.4
-        ports:
-        - containerPort: 8081
+        - name: node-app
+          image: wilsoncai666/demo:2.3
+          ports:
+          - containerPort: 8081
+          env:
+            - name: HOST
+              valueFrom:
+                secretKeyRef:
+                  name: mysecret
+                  key: host
+                  optional: false # 此值为默认值；意味着 "mysecret"
+                                  # 必须存在且包含名为 "host" 的主键
+            - name: USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysecret
+                  key: username
+                  optional: false # 此值为默认值；意味着 "mysecret"
+                                  # 必须存在且包含名为 "username" 的主键
+            - name: PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysecret
+                  key: password
+                  optional: false # 此值为默认值；意味着 "mysecret"
+                                  # 必须存在且包含名为 "password" 的主键
+            - name: DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: mysecret
+                  key: database
+                  optional: false # 此值为默认值；意味着 "mysecret"
+                                  # 必须存在且包含名为 "database" 的主键
+          resources:
+            requests:
+              memory: "100Mi"
+              cpu: "100m"
+            limits:
+              memory: "500Mi"
+              cpu: "500m"

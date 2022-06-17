@@ -1,19 +1,25 @@
 'use strict'
+require('dotenv').config();
+
 var express = require('express');
 var app = express();
  
-const redis = require('./util/redisClient');
-const lruCache = require('./util/lruCache');
-const localCache=new Map();
-const myCache=require('./util/nodeCache');
+// const redis = require('./util/redisClient');
+// const lruCache = require('./util/lruCache');
+// const localCache=new Map();
+// const myCache=require('./util/nodeCache');
 
 const knex = require('knex')({
   client: 'mysql',
   connection: {
-    host: "127.0.0.1",
+    /* host: "127.0.0.1",
     user: "root",
     password: "123456",
-    database: "mysql"
+    database: "mysql" */
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
   },
   debug: false,
   pool: {
@@ -76,7 +82,7 @@ app.get('/list_stream', function(req, response) {
   // console.log(req.query.spcKey);
   // console.log(req.query.size);
 
-  const cycCans = redis.keys('*'+req.query.spcKey);
+  /* const cycCans = redis.keys('*'+req.query.spcKey);
   cycCans.then((resultKeys) => {
       // console.log(resultKeys);
       const ps = [];
@@ -101,7 +107,7 @@ app.get('/list_stream', function(req, response) {
               // console.timeEnd("计时器1");
               response.send(typeBodays);
           });
-  })
+  }) */
 })
 app.get('/list_cache',function(req, res) {   
   // console.log("/list_cache获取cache记录");
@@ -128,5 +134,6 @@ var server = app.listen(8081, function () {
  var port = server.address().port
 
  console.log("应用实例，访问地址为 http://%s:%s", host, port)
+ console.log(process.env);
 
 })
