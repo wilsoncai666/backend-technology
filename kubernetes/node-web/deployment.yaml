@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: wilsoncai666/demo:2.3
+          image: wilsoncai666/demo:2.4
           ports:
           - containerPort: 8081
           env:

@@ -1,8 +1,4 @@
-
-
-require('dotenv').config({
-  path: '../.env'
-});
+'use strict'
 
 const knex = require('knex')({
   client: 'mysql',

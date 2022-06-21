@@ -5,4 +5,8 @@ Dockerfile
 .gitignore
 .DS_Store
 node_modules
-
+*.md
+.env
+*.lock
+*.yaml
+*.sql
