@@ -145,7 +145,7 @@ services:
 ---
 
 ## Docker 安装redis
-` docker run -v /c/Users/WilsonCai/WilsonPrivate/docker-redis:/usr/local/etc/redis --name myredis -p 6379:6379 -d --network my-net redis`
+` docker run -v /c/Users/WilsonCai/WilsonPrivate/docker-redis:/usr/local/etc/redis --name myredis -p 6379:6379 -d redis`
 
 ---
 

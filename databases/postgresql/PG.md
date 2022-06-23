@@ -126,7 +126,24 @@ ORDER BY  rowCounts desc;
 
 `select * from information_schema.udt_privileges where grantee='postgres';`
 
-8. 新建存储过程自动建表
+8. 批量修改所有者owner
+```
+select
+	'alter table ' || nsp.nspname || '.' || cls.relname || ' owner to usera;' || chr (13)
+from
+	pg_catalog.pg_class cls,
+	pg_catalog.pg_namespace nsp
+where
+	nsp.nspname in ('public')
+	and cls.relnamespace = nsp.oid
+	and cls.relkind = 'r'
+order by
+	nsp.nspname,
+	cls.relname;
+
+```
+
+1.  新建存储过程自动建表
 
 ```sql
 create or replace function addId() returns 
