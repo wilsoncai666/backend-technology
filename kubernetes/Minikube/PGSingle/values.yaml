@@ -12,11 +12,11 @@ global:
       password: "123456"
       database: "psrPg"
       existingSecret: ""
-primary:
-  resources:
-    limits:
-      memory: 1Gi
-      cpu: 500m
-    requests:
-      memory: 128Mi
-      cpu: 100m
+
+resources:
+  limits:
+    memory: 1Gi
+    cpu: 500m
+  requests:
+    memory: 100Mi
+    cpu: 50m

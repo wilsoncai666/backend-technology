@@ -19,7 +19,7 @@ $$ helm repo add bitnami https://charts.bitnami.com/bitnami
 $$ helm repo update
 
 $$ helm delete --namespace=kafka kafka-service
-$ helm install --namespace=kafka -f values-kafka.yaml kafka-service bitnami/kafka --version 13.0.0
+$ helm install --namespace=kafka -f values-kafka.yaml kafka-service bitnami/kafka --version 18.0.0
 
 ### Install Kafka command-client
 $ kubectl apply -f kafka-cli.yaml --namespace=kafka

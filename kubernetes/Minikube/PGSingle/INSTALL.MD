@@ -10,7 +10,7 @@ $ helm delete --namespace=postgresql postgresql-db
 
 $ helm repo update
 $ helm install --namespace=postgresql -f values.yaml postgresql-db bitnami/postgresql --version 10.13.4
-$ helm upgrade --namespace=postgresql -f values.yaml postgresql-db bitnami/postgresql --version 10.13.5
+$ helm upgrade --namespace=postgresql -f values.yaml postgresql-db bitnami/postgresql --version 10.14.3
 
 ### Add Expose
 

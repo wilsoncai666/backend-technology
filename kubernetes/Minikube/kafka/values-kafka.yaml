@@ -1,12 +1,12 @@
 deleteTopicEnable: true
 persistence:
   enabled: true
-  size: 5Gi
+  size: 1Gi
 replicaCount: 3
 resources:
   limits:
     cpu: 1000m
     memory: 1Gi
   requests:
-    cpu: 200m
-    memory: 200Mi
+    cpu: 20m
+    memory: 50Mi
