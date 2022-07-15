@@ -6,9 +6,12 @@ const {
 const kafka = new Kafka({
     clientId: 'my-app',
     brokers: [
-        'host.docker.internal:9092', 
+        /* 'host.docker.internal:9092', 
         'host.docker.internal:9093',
-        'host.docker.internal:9094'
+        'host.docker.internal:9094' */
+        '10.104.165.61:9092',
+        '10.99.224.18:9092',
+        '10.105.10.229:9092'
     ],
     retry: {
         retries: 8
