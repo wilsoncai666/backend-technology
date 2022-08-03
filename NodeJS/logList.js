@@ -3298,17 +3298,36 @@ const logList = {
   '': {
     id: '',
     demo: null,
-    logID: 'LogID434',
-    x: '',
-    y: '',
+    logID: 'LogID1557',
+    x: 'SoC(%)',
+    y: 'Vector of time distribution(s)',
     xKeyArr: [
-      { key: 'bt0n0p2' },
+      { key: 'bt0n5' },
+      { key: 'bt5n10' },
+      { key: 'bt10n15' },
+      { key: 'bt15n20' },
+      { key: 'bt20n25' },
+      { key: 'bt25n30' },
+      { key: 'bt30n35' },
+      { key: 'bt35n40' },
+      { key: 'bt40n45' },
+      { key: 'bt45n50' },
+      { key: 'bt50n55' },
+      { key: 'bt55n60' },
+      { key: 'bt60n65' },
+      { key: 'bt65n70' },
+      { key: 'bt70n75' },
+      { key: 'bt75n80' },
+      { key: 'bt80n85' },
+      { key: 'bt85n90' },
+      { key: 'bt90n95' },
+      { key: 'bt95n100' },
     ],
-    yKeyArr: [
-      { key: 'Kab', ratio: 1, unit: "s" },
-    ],
-    Purpose: 'Register the distribution of engine speed.',
-    Informant: 'Fredrik Grop, TUM',
+    yKeyArr: [{ key: 'soc', ratio: 1, unit: "s" }],
+    Purpose: 'The purpose of this log is to collect the time distribution of SoC of the tracƟ on baƩ ery on its full range (from 0% to 100%) of an EMOB Machine.\n' +
+        'These logged datas will allow a better knowledge of the distribute on of the level of charge of traction battery. This allow us to understand the behavior and the habits of the\n' +
+        'user of an EMOB machine. This is also crucial information on for lifetime simulation on of battery.',
+    Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
     InputSignal: 'Diesel engine speed' +
@@ -3316,10 +3335,10 @@ const logList = {
       'Date and time' +
       'Machine hours',
     Filtering: 'None',
-    ActionsAtInputSignalError: 'No logging shall be performed if any signal is erroneous',
-    SamplingRate: '1 HZ',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1 HZ',
     Hz: 1,
-    BitResolution: 'Cell 1-23: 1 bit = 1s',
+    BitResolution: 'Cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
@@ -3329,6 +3348,961 @@ const logList = {
     'In cell no. 1 the duration of the log should be stored.'+
     'The total time with an engine speed within the defined intervals is stored in cell 2-23.'
   },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1544',
+    x: 'Charging power(% of Power Reference)',
+    y: 'Time Distribution(s)',
+    xKeyArr: [
+      { key: 'bt0n0p5' },
+      { key: 'bt0p5n1' },
+      { key: 'bt1n2' },
+      { key: 'bt2n3' },
+      { key: 'bt3n4' },
+      { key: 'bt4n5' },
+      { key: 'bt5n6' },
+      { key: 'bt6n7' },
+      { key: 'bt7n8' },
+      { key: 'bt8n9' },
+      { key: 'bt9n10' },
+      { key: 'bt10n11' },
+      { key: 'bt11n12' },
+      { key: 'bt12n13' },
+      { key: 'bt13n14' },
+      { key: 'bt14n15' },
+      { key: 'bt15n17p5' },
+      { key: 'bt17p5n20' },
+      { key: 'bt20n22p5' },
+      { key: 'bt22p5n25' },
+      { key: 'bt25n27p5' },
+      { key: 'bt27p5n30' },
+      { key: 'bt30n32p5' },
+      { key: 'bt32p5n35' },
+      { key: 'bt35n37p5' },
+      { key: 'bt37p5n40' },
+      { key: 'bt40n42p5' },
+      { key: 'bt42p5n45' },
+      { key: 'bt45n47p5' },
+      { key: 'bt47p5n50' },
+      { key: 'bt50n55' },
+      { key: 'bt55n60' },
+      { key: 'bt60n65' },
+      { key: 'bt65n70' },
+      { key: 'bt70n75' },
+      { key: 'bt75n80' },
+      { key: 'bt80n85' },
+      { key: 'bt85n90' },
+      { key: 'bt90n95' },
+      { key: 'bt95n100' },
+      { key: 'gt100' },
+    ],
+    yKeyArr: [
+      { key: 'chgPwr', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'Collect the distribution of electrical power in charge direction exchanged with the tracƟ on baƩ ery of an EMOB Machine',
+    Informant: 'These logged datas will allow a beƩ er knowledge on how the machine is used and how much power is charged in the ESS',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Duration',
+    InputSignal: '',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'Reference power cell shall be 32 bits and store an unsigned integer representing power (1 bit = 1 W).',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: '',
+    OutputDataFormat: 'Cell 1 stores the total log duration on (1 bit = 1 s).\n' +
+        'Cell 2 stores a constant, the power reference, expressed in W, used for charging power range definition (1 bit = 1 W).\n' +
+        'Cell 3 to 43 is a vector storing the time distribution on of the charging power exchanged with ESS, with the time elapsed for each power range (1 bit = 1 s).'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1556',
+    x: 'Temperature Ranges defined as: %x(Reference - Offset)+Offset',
+    y: 'Vector of time distribute(s)',
+    xKeyArr: [
+      { key: 'lt0' },
+      { key: 'bt0n5' },
+      { key: 'bt5n10' },
+      { key: 'bt10n15' },
+      { key: 'bt15n20' },
+      { key: 'bt20n25' },
+      { key: 'bt25n30' },
+      { key: 'bt30n35' },
+      { key: 'bt35n40' },
+      { key: 'bt40n45' },
+      { key: 'bt45n50' },
+      { key: 'bt50n55' },
+      { key: 'bt55n60' },
+      { key: 'bt60n65' },
+      { key: 'bt65n70' },
+      { key: 'bt70n75' },
+      { key: 'bt75n80' },
+      { key: 'bt80n85' },
+      { key: 'bt85n90' },
+      { key: 'bt90n95' },
+      { key: 'bt95n100' },
+      { key: 'gt100' },
+    ],
+    yKeyArr: [
+      { key: 'TempRng', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'The purpose of this log is to collect the distribution of temperature of the electrical motor of an EMOB Machine, on the full range of temperature.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Duration',
+    InputSignal: '',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1HZ',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ' +
+        '‐ Reference temperature value, as an unsigned integer coded over 16 bits, representing temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, representing temperature (1 bit = 0.1°C)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'Machine is in WORKING State or STANDBY State',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
+        'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C)' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with motor temperature included within each temperature range, covering with medium resolution the full rang\n' +
+        'of temperature (from 0% to 100% of reference temperature) (1 bit = 1 s).\n' +
+        'Cell 2 is splitted in two, to store both reference temperature value, and offset temperature value in the same cell, as follow :'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1542',
+    x: '',
+    y: '',
+    xKeyArr: [
+      { key: 'num' },
+    ],
+    yKeyArr: [
+      { key: 'PCC', ratio: 1, unit: "s" },
+      { key: 'PCF', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'The purpose of this log is to collect information about precharge phase, at tracƟ on battery connection. The log is intended to count how many precharge have failed, and\n' +
+        'how many precharge have completed successfully.\n' +
+        'These logged datas could help to diagnose a faultly precharge circuit, or current leakage on DC link leading to a significant number of precharge failed occurences.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Duration',
+    InputSignal: '',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '10Hz',
+    Hz: 1,
+    BitResolution: 'Log duration cell shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec)\n' +
+        'Cells accumulating number of occurences shall be 32 bits and store an unsigned integer representing the total number of occurences of an event (1 bit = 1 occurence).',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'Logging shall only occur when : ‐ Machine status is INIT\n' +
+        'OR\n' +
+        '‐ Machine status was INIT at previous execution of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 sec).\n' +
+        'Cell 2 stores the total number of occurences of event “precharge completed” (1 bit = 1 occurence).\n' +
+        'Cell 3 stores the total number of occurences of event “precharge failed” (1 bit = 1 occurence)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1479',
+    x: '',
+    y: '',
+    xKeyArr: [
+      { key: 'time' },
+    ],
+    yKeyArr: [
+      { key: 'work', ratio: 1, unit: "s" },
+      { key: 'idle', ratio: 1, unit: "s" },
+      { key: 'excessiveIdle', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'store machine utilization data only use a single log for all machine platforms instead of piecing this together in various logs plus offboard calculations as was previously done',
+    Informant: 'The time spent either working, idle or excessive idling shall be updated. See Definitions for general guidance on what the different modes are',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: 'It is up to the platform to decide and document what signals that are necessary to determine when the machine is in working, waiƟ ng idle or excessive idle',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '1 Hz',
+    Hz: 1,
+    BitResolution: 'Each cell shall have a resolution of 32 bits and be of unsigned integer type.',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'Logging shall occur when vehicle mode is Running',
+    OutputDataFormat: 'What parameter properties that are defined in SEWS2 (if applicable).'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1579',
+    x: 'Working Mode',
+    y: 'Total Time',
+    xKeyArr: [
+      { key: 'ecoNotForced' },
+      { key: 'ecoForced' },
+      { key: 'normal' },
+      { key: 'boost' },
+    ],
+    yKeyArr: [
+      { key: 'time', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect the distribution of selected working mode when the motor is running, meaning how many time the machine is operated with each working mode.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Duration',
+    InputSignal: 'Working mode selection (ECO / NORMAL / BOOST)\n' +
+        'ECO mode forced status (FORCED_ECO / NOT_FORCED_ECO)\n' +
+        'Motor running status (RUNNING / NOT_RUNNING)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '1 Hz',
+    Hz: 1,
+    BitResolution: 'Cell shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: '',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 sec).\n' +
+        'Cell 2 stores the total time elapsed with “eco” working mode forced by machine SW (1 bit = 1 sec).\n' +
+        'Cell 3 stores the total time elapsed with “eco” working mode selected by operator (1 bit = 1 sec).\n' +
+        'Cell 4 stores the total time elapsed with “normal” working mode selected by operator (1 bit = 1 sec).\n' +
+        'Cell 5 stores the total time elapsed with “boost” working mode selected by operator (1 bit = 1 sec)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1545',
+    x: 'Discharging power(% of Power reference)',
+    y: 'time',
+    xKeyArr: [
+      { key: 'bt0n0p5' },
+      { key: 'bt0p5n1' },
+      { key: 'bt1n2' },
+      { key: 'bt2n3' },
+      { key: 'bt3n4' },
+      { key: 'bt4n5' },
+      { key: 'bt5n6' },
+      { key: 'bt6n7' },
+      { key: 'bt7n8' },
+      { key: 'bt8n9' },
+      { key: 'bt9n10' },
+      { key: 'bt10n11' },
+      { key: 'bt11n12' },
+      { key: 'bt12n13' },
+      { key: 'bt13n14' },
+      { key: 'bt14n15' },
+      { key: 'bt15n17p5' },
+      { key: 'bt17p5n20' },
+      { key: 'bt20n22p5' },
+      { key: 'bt22p5n25' },
+      { key: 'bt25n27p5' },
+      { key: 'bt27p5n30' },
+      { key: 'bt30n32p5' },
+      { key: 'bt32p5n35' },
+      { key: 'bt35n37p5' },
+      { key: 'bt37p5n40' },
+      { key: 'bt40n42p5' },
+      { key: 'bt42p5n45' },
+      { key: 'bt45n47p5' },
+      { key: 'bt47p5n50' },
+      { key: 'bt50n55' },
+      { key: 'bt55n60' },
+      { key: 'bt60n65' },
+      { key: 'bt65n70' },
+      { key: 'bt70n75' },
+      { key: 'bt75n80' },
+      { key: 'bt80n85' },
+      { key: 'bt85n90' },
+      { key: 'bt90n95' },
+      { key: 'bt95n100' },
+      { key: 'gt100' },
+    ],
+    yKeyArr: [
+      { key: 'discPower', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'The purpose of this log is to collect the distribuƟ on of electrical power in discharge direcƟ on exchanged with the tracƟ on baƩ ery of an EMOB Machine.\n' +
+        'These logged datas will allow a beƩ er knowledge on how the machine is used and how much power is supplied by the ESS.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: ' ESS instantaneous discharging power (W)\n' +
+        ' Reference power (W)\n' +
+        ' ESS connecƟ on status (CONNECTED / NOT_CONNECTED)\n' +
+        'Reference power is a constant, used for the definiƟ on of the discharging power range of this log.\n' +
+        'Discharging power ranges of this log are defined using a percentage range, percentage that is applied to reference value to determine physical range.\n' +
+        'This allows the same log definiƟ on to cover several discharging power range distribuƟ on only by changing this constant value.',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'Reference power cell shall be 32 bits and store an unsigned integer represenƟ ng power (1 bit = 1 W)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'Logging shall only occur when : ‐ ESS connecƟ on status is CONNECTED\n' +
+        '‐ ESS is being discharged, meaning ESS instantaneous discharging power (W) > 0\n' +
+        'The method of measurement is Ɵme in class.',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
+        'Cell 2 stores a constant, the power reference, expressed in W, used for discharging power range definition (1 bit = 1 W).\n' +
+        'Cell 3 to 43 is a vector storing the time distribution of the discharging power exchanged with ESS, with the time elapsed for each power range (1 bit = 1 s).'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1552',
+    x: 'Temperature Ranges defined as:% x(Reference-Offset)+Offset',
+    y: 'Vector of time distribution(s)',
+    xKeyArr: [
+      { key: 'lt0' },
+      { key: 'bt0n5' },
+      { key: 'bt5n10' },
+      { key: 'bt10n15' },
+      { key: 'bt15n20' },
+      { key: 'bt20n25' },
+      { key: 'bt25n30' },
+      { key: 'bt30n35' },
+      { key: 'bt35n40' },
+      { key: 'bt40n45' },
+      { key: 'bt45n50' },
+      { key: 'bt50n55' },
+      { key: 'bt55n60' },
+      { key: 'bt60n65' },
+      { key: 'bt65n70' },
+      { key: 'bt70n75' },
+      { key: 'bt75n80' },
+      { key: 'bt80n85' },
+      { key: 'bt85n90' },
+      { key: 'bt90n95' },
+      { key: 'bt95n100' },
+      { key: 'gt100' },
+    ],
+    yKeyArr: [
+      { key: 'tempRagDef', ratio: 1, unit: "℃" },
+    ],
+    Purpose: 'The purpose of this log is to collect the distribuƟ on of temperature of the inverter of an EMOB machine, on the full range of temperature.\n' +
+        'These logged datas will allow a beƩ er knowledge of the level of temperature reached by the inverter. This would allow aŌ erwards an adjustment of the expected lifeƟ me of the\n' +
+        'inverter depending on its usage and the temperature it reaches.\n' +
+        'For future machine design, reusing same component, these temperature informaƟ on could be usefull to choose the locaƟ on of the mechanical integraƟ on, towards thermal behavi\n' +
+        'of the components.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: ' Inverter temperature (°C)\n' +
+        ' Machine status (WORKING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)\n' +
+        'Reference and offset temperature are constant values, used for the definiƟ on of the temperature ranges of this log. Temperature ranges are defined using a percentage range,\n' +
+        'percentage that is applied to reference and offset value to determine physical range.\n' +
+        'This allows the same log definiƟ on to cover several temperature range distribuƟ on only by changing these constant values.',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: '',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'Machine status is in WORKING State or STANDBY State',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1s).\n' +
+        'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C)' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with inverter temperature included within each temperature range, covering with medium resoluƟ on the full ran\n' +
+        'of temperature (from 0% to 100% of reference temperature) (1 bit = 1 s).\n' +
+        'Cell 2 is spliƩ ed in two, to store both reference temperature value, and offset temperature value in the same cell'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1541',
+    x: '',
+    y: '',
+    xKeyArr: [
+      { key: 'ocr' },
+    ],
+    yKeyArr: [
+      { key: 'NbMotorStop', ratio: 1, unit: "s" },
+      { key: 'NbMotorStart', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'The purpose of this log is to collect informaƟ on about motor start and motor stop event. The log is intended to count how many Ɵmes the motor is started successfully,\n' +
+        'and how many Ɵmes the motor is stopped.\n' +
+        'In case of EMOB machine, we expect to have much more occurences of motor stop and motor stop. The datas from this log would allow to verify this assumpƟ on by\n' +
+        'comparing it with log datas from convenƟ onal machines.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: 'Motor running status (RUNNING / NOT_RUNNING)\n' +
+        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)\n' +
+        'Machine status signal allow to know when machine is in working condiƟ ons or not. Working condiƟ ons are defined as a state where motor is started, or motor is stopped\n' +
+        'but ready to be started by operator. When outside of working condiƟ ons (eg : CHARGING), this log could be disabled.',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '1Hz',
+    Hz: 1,
+    BitResolution: 'Log duraƟ on cell shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'Cells accumulaƟ ng number of occurences shall be 32 bits and store an unsigned integer represenƟ ng the total number of occurences of an event (1 bit = 1 occurence)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'Machine status is WORKING_CONDITIONS\n' +
+        'OR\n' +
+        '‐ Machine status was WORKING_CONDITIONS at previous execuƟ on of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
+        'Cell 2 stores the total number of occurences of event “motor started” (1 bit = 1 occurence).\n' +
+        'Cell 3 stores the total number of occurences of event “motor stopped” (1 bit = 1 occurence).'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1526',
+    x: 'Working Mode',
+    y: '',
+    xKeyArr: [
+      { key: 'eco' },
+      { key: 'normal' },
+      { key: 'boost' },
+    ],
+    yKeyArr: [
+      { key: 'timeElapsed', ratio: 1, unit: "s" },
+      { key: 'energyConsumed', ratio: 1, unit: "Wh" },
+    ],
+    Purpose: 'collect the total energy that have been consumed by the inverter, over the life of an EMOB machine. Energy consumpƟ on datas will be sorted\n' +
+        'into differents buckets depending on the selected working mode (ECO, NORMAL, BOOST), since this energy consumpƟ on may vary significantly with working mode.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Duration',
+    InputSignal: 'Selected working mode (ECO / BOOST / NORMAL)\n' +
+        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)\n' +
+        ' Counter of the total Ɵme elapsed while energy consumed by the inverter (s)\n' +
+        ' Counter of the total energy consumed by the inverter (Wh)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: 'No logging should be performed if any input signal is erroneous',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Energy cells shall be 32 bits and store an unsigned integer represenƟ ng energy (1 bit = 1 Wh)\n' +
+        'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'TracƟ on baƩ ery connecƟ on status is CONNECTED\n' +
+        'OR\n' +
+        '‐  TracƟ on baƩ ery connecƟ on status was CONNECTED at previous execuƟ on of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cells 2, 3 and 4 store the total Ɵme elapsed where energy is consumed by the inverter, towards the different working condiƟ ons, one cell for each working mode (1 bit = 1 sec).\n' +
+        'Cells 5, 6 and 7 store the total energy consumed by the inverter depending on the working condiƟ ons, one cell for each working mode (1 bit = 1 Wh)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1551',
+    x: 'Power consumption(% of Power Reference)',
+    y: 'Time Distribution',
+    xKeyArr: [
+      { key: 'bt0n4' },
+      { key: 'bt4n8' },
+      { key: 'bt8n12' },
+      { key: 'bt12n16' },
+      { key: 'bt16n20' },
+      { key: 'bt20n24' },
+      { key: 'bt24n28' },
+      { key: 'bt28n32' },
+      { key: 'bt32n36' },
+      { key: 'bt36n40' },
+      { key: 'bt40n44' },
+      { key: 'bt44n48' },
+      { key: 'bt48n52' },
+      { key: 'bt52n56' },
+      { key: 'bt56n60' },
+      { key: 'bt60n64' },
+      { key: 'bt64n68' },
+      { key: 'bt68n72' },
+      { key: 'bt72n76' },
+      { key: 'bt76n80' },
+      { key: 'bt80n84' },
+      { key: 'bt84n88' },
+      { key: 'bt88n92' },
+      { key: 'bt92n96' },
+      { key: 'bt96n100' },
+      { key: 'gt100' },
+    ],
+    yKeyArr: [
+      { key: 'time', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect the distribuƟ on of inverter power consumpƟ on of an EMOB machine',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: 'Inverter power consumpƟ on (W)\n' +
+        ' Reference power (W)\n' +
+        ' Inverter conversion status (CONVERTING / NOT_CONVERTING)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: 'No logging should be performed if any input signal is erroneous',
+    SamplingRate: '1Hz',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'Reference power cell shall be 32 bits and store an unsigned integer represenƟ ng power (1 bit = 1 W)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: '‐ Machine conversion status is CONVERTING\n' +
+        '‐ Inverter is consuming power, meaning inverter power consumpƟ on (W) > 0',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cell 2 stores a constant, the power reference, expressed in W, used for power consumpƟ on range definiƟ on (1 bit = 1 W).\n' +
+        'Cell 3 to 28 is a vector storing the Ɵme distribuƟ on of inverter power consumed for each power consumpƟ on range (1 bit = 1 s)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1553',
+    x: 'Total time',
+    y: 'Machine Status',
+    xKeyArr: [
+      { key: 'time' },
+    ],
+    yKeyArr: [
+      { key: 'stopped', ratio: 1, unit: "s" },
+      { key: 'runIdle', ratio: 1, unit: "s" },
+      { key: 'runWork', ratio: 1, unit: "s" },
+      { key: 'runTravel', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect informaƟ on about machine usage.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: 'Motor running status (RUNNING / NOT_RUNNING)\n' +
+        ' LS pressure status (LOW / NOT_LOW)\n' +
+        ' Travel pressure status (TRAVELLING / NOT_TRAVELLING)\n' +
+        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '1Hz',
+    Hz: 1,
+    BitResolution: 'Time cell shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'Machine status is WORKING_CONDITIONS',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
+        'Cell 2 stores the total Ɵme elapsed with motor stopped (1 bit = 1 sec).\n' +
+        'Cell 3 stores the total Ɵme elapsed with motor running and idling, meaning LS pressure is low (1 bit = 1 sec).\n' +
+        'Cell 4 stores the total Ɵme elapsed with motor running and working, meaning LS pressure is not low and travel pressure indicates that machine is not travelling (1 bit = 1\n' +
+        'sec).\n' +
+        'Cell 5 stores the total Ɵme elapsed with motor running and travelling, meaning LS pressure is not low and travel pressure indicates that machine is travelling (1 bit = 1\n' +
+        'sec)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1563',
+    x: 'Temperature Ranges defined as :% x(Reference-Offset)+Offset',
+    y: 'Vector of time distribution(s)',
+    xKeyArr: [
+      { key: 'lt80' },
+      { key: 'bt80n81' },
+      { key: 'bt81n82' },
+      { key: 'bt82n83' },
+      { key: 'bt83n84' },
+      { key: 'bt84n85' },
+      { key: 'bt85n86' },
+      { key: 'bt86n87' },
+      { key: 'bt87n88' },
+      { key: 'bt88n89' },
+      { key: 'bt89n90' },
+      { key: 'bt90n91' },
+      { key: 'bt91n92' },
+      { key: 'bt92n93' },
+      { key: 'bt93n94' },
+      { key: 'bt94n95' },
+      { key: 'bt95n96' },
+      { key: 'bt96n97' },
+      { key: 'bt97n98' },
+      { key: 'bt98n99' },
+      { key: 'bt99n100' },
+      { key: 'gt100' },
+    ],
+    yKeyArr: [
+      { key: 'tempRange', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect the distribuƟ on of temperature of the inverter of an EMOB machine, on the high range of temperature.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: 'Inverter temperature (°C)\n' +
+        ' Machine status (WORKING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'Machine status is in WORKING State or STANDBY State',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1s).\n' +
+        'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with inverter temperature included within each temperature range, covering with high resoluƟ on the high\n' +
+        'range of temperature (from 80% to 100% of reference temperature) (1 bit = 1 s).'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1564',
+    x: '',
+    y: '',
+    xKeyArr: [
+      { key: 'lt0' },
+      { key: 'bt0n1' },
+      { key: 'bt1n2' },
+      { key: 'bt2n3' },
+      { key: 'bt3n4' },
+      { key: 'bt4n5' },
+      { key: 'bt5n6' },
+      { key: 'bt6n7' },
+      { key: 'bt7n8' },
+      { key: 'bt8n9' },
+      { key: 'bt9n10' },
+      { key: 'bt10n11' },
+      { key: 'bt11n12' },
+      { key: 'bt12n13' },
+      { key: 'bt13n14' },
+      { key: 'bt14n15' },
+      { key: 'bt15n16' },
+      { key: 'bt16n17' },
+      { key: 'bt17n18' },
+      { key: 'bt18n19' },
+      { key: 'bt19n20' },
+      { key: 'gt20' },
+    ],
+    yKeyArr: [
+      { key: 'tempRange', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect the distribuƟ on of temperature of the inverter of an EMOB machine, on the low range of temperature',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: 'Inverter temperature (°C)\n' +
+        ' Machine status (WORKING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'Machine status is in WORKING State or STANDBY State',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1s).\n' +
+        'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with inverter temperature included within each temperature range, covering with high resoluƟ on the low range\n' +
+        'of temperature (from 0% to 20% of reference temperature) (1 bit = 1 s)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1565',
+    x: '',
+    y: '',
+    xKeyArr: [
+      { key: 'mps' },
+      { key: 'ips' },
+      { key: 'tbps' },
+      { key: 'ots' },
+      { key: 'DCDCps' },
+      { key: 'osrh' },
+    ],
+    yKeyArr: [
+      { key: 'num', ratio: 1, unit: "occurence" },
+    ],
+    Purpose: 'collect informaƟ on about motor start request event.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Duration',
+    InputSignal: 'TracƟ on baƩ ery protecƟ on status (INHIBIT_START / HEALTHY)\n' +
+        ' Motor protecƟ on status (INHIBIT_START / HEALTHY)\n' +
+        ' Inverter protecƟ on status INHIBIT_START / HEALTHY)\n' +
+        ' DCDC protecƟ on status (INHIBIT_START / HEALTHY)\n' +
+        ' Hydraulic oil temperature status (INHIBIT_START / HEALTHY)\n' +
+        ' Operator hydraulic request status (REQUESTED / NOT_REQUESTED)\n' +
+        ' Motor start request operator (REQUESTED / NOT_REQUESTED)\n' +
+        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '10Hz',
+    Hz: 1,
+    BitResolution: 'Log duraƟ on cell shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)\n' +
+        'Cells accumulaƟ ng number of occurences shall be 32 bits and store an unsigned integer represenƟ ng the total number of occurences of an event (1 bit = 1 occurence)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'Machine status is WORKING_CONDITIONS',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
+        'Cell 2 stores the total number of occurences of event “motor start request from operator” (1 bit = 1 occurence).\n' +
+        'Cell 3 stores the total number of occurences of event “motor start inhibited due to motor protecƟ on status” (1 bit = 1 occurence).\n' +
+        'Cell 4 stores the total number of occurences of event “motor start inhibited due to inverter protecƟ on status” (1 bit = 1 occurence).\n' +
+        'Cell 5 stores the total number of occurences of event “motor start inhibited due to tracƟ on baƩ ery protecƟ on status” (1 bit = 1 occurence).\n' +
+        'Cell 6 stores the total number of occurences of event “motor start inhibited due to oil temperature status” (1 bit = 1 occurence).\n' +
+        'Cell 7 stores the total number of occurences of event “motor start inhibited due to DCDC protecƟ on status” (1 bit = 1 occurence).\n' +
+        'Cell 8 stores the total number of occurences of event “motor start inhibited due to operator sƟ ll requesƟ ng hydraulic” (1 bit = 1 occurence)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1566',
+    x: '',
+    y: '',
+    xKeyArr: [
+      { key: 'mps' },
+      { key: 'ips' },
+      { key: 'tbps' },
+      { key: 'ots' },
+      { key: 'af' },
+      { key: 'iko' },
+      { key: 'ar' },
+    ],
+    yKeyArr: [
+      { key: 'num', ratio: 1, unit: "occurence" },
+    ],
+    Purpose: 'collect informaƟ on about motor stop event.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Duration',
+    InputSignal: ' TracƟ on baƩ ery protecƟ on status (STOP_MOTOR / HEALTHY)\n' +
+        ' Motor protecƟ on status (STOP_MOTOR / HEALTHY)\n' +
+        ' Inverter protecƟ on status (STOP_MOTOR / HEALTHY)\n' +
+        ' Hydraulic oil temperature status (STOP_MOTOR / HEALTHY)\n' +
+        ' Armrest posiƟ on (RAISED / LOWERED)\n' +
+        ' Autoshutdown stop motor request status (REQUESTED / NOT_REQUESTED)\n' +
+        ' IgniƟ on key posiƟ on (KEY_OFF / KEY_ON)\n' +
+        ' Motor stop request status (REQUESTED / NOT_REQUESTED)\n' +
+        ' Motor control status (STARTING / STARTED / STOPPING / OTHER)\n' +
+        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '10Hz',
+    Hz: 1,
+    BitResolution: 'Log duraƟ on cell shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)\n' +
+        'Cells accumulaƟ ng number of occurences shall be 32 bits and store an unsigned integer represenƟ ng the total number of occurences of an event (1 bit = 1 occurence)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: '‐ Machine status is WORKING_CONDITIONS\n' +
+        'OR\n' +
+        '‐ Machine status was WORKING_CONDITIONS at previous execuƟ on of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
+        'Cell 2 stores the total number of occurences of event “motor stop requested” (1 bit = 1 occurence).\n' +
+        'Cell 3 stores the total number of occurences of event “motor stopped due to motor protecƟ on status” (1 bit = 1 occurence).\n' +
+        'Cell 4 stores the total number of occurences of event “motor stopped due to inverter protecƟ on status” (1 bit = 1 occurence).\n' +
+        'Cell 5 stores the total number of occurences of event “motor stopped due to tracƟ on baƩ ery protecƟ on status” (1 bit = 1 occurence).\n' +
+        'Cell 6 stores the total number of occurences of event “motor stopped due to oil temperature status” (1 bit = 1 occurence).\n' +
+        'Cell 7 stores the total number of occurences of event “motor stopped due to autoshutdown funcƟ on” (1 bit = 1 occurence).\n' +
+        'Cell 8 stores the total number of occurences of event “motor stopped due to igniƟ on key off” (1 bit = 1 occurence).\n' +
+        'Cell 9 stores the total number of occurences of event “motor stopped due to armrest raised” (1 bit = 1 occurence)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1568',
+    x: 'Motor stop time Range',
+    y: 'Vector of occurences of motor stop time before restart',
+    xKeyArr: [
+      { key: 'bt0n10sec' },
+      { key: 'bt10n20sec' },
+      { key: 'bt20n30sec' },
+      { key: 'bt30n60sec' },
+      { key: 'bt60n90sec' },
+      { key: 'bt90n120sec' },
+      { key: 'bt2n3min' },
+      { key: 'bt3n4min' },
+      { key: 'bt4n5min' },
+      { key: 'bt5n10min' },
+      { key: 'bt10n15min' },
+      { key: 'bt15n20min' },
+      { key: 'bt20n30min' },
+      { key: 'bt30n45min' },
+      { key: 'bt45n60min' },
+      { key: 'bt60n90min' },
+      { key: 'bt90n120min' },
+      { key: 'bt2n3h' },
+      { key: 'bt3n4h' },
+      { key: 'gt4h' },
+    ],
+    yKeyArr: [
+      { key: 'ocr', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect datas regarding how long the motor remains stopped before to be restarted by operator, as long as machine stays in working condiƟ ons',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Duration',
+    InputSignal: 'Motor running status (RUNNING / NOT_RUNNING)\n' +
+        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)\n' +
+        ' Motor first start status (FIRST_START_OCCURED / NOT_YET_STARTED)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '1Hz',
+    Hz: 1,
+    BitResolution: 'For the vector of occurences, each cell shall be 32 bits and store an unsigned integer represenƟ ng how long the motor remained stopped before to be restarted, for each\n' +
+        'Ɵ me range (1 bit = 1 occurence).\n' +
+        'For the log total duraƟ on, the cell shall be 32 bits and store an unsigned integer represenƟ ng a Ɵme (1 bit = 1 sec)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: '‐ Machine status is WORKING_CONDITIONS',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
+        'Cell 2 to 21 is a vector storing the total number of occurences where motor remains stopped for a duraƟ on included in each Ɵme range, before to be restarted (or\n' +
+        'working condiƟ on leaved) (1 bit = 1 occurrence)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1569',
+    x: 'Temperature Ranges defined as :% x (Reference -Offset)+Offset',
+    y: 'Vector of time distribution(s)',
+    xKeyArr: [
+      { key: 'lt80' },
+      { key: 'bt80n81' },
+      { key: 'bt81n82' },
+      { key: 'bt82n83' },
+      { key: 'bt83n84' },
+      { key: 'bt84n85' },
+      { key: 'bt85n86' },
+      { key: 'bt86n87' },
+      { key: 'bt87n88' },
+      { key: 'bt88n89' },
+      { key: 'bt89n90' },
+      { key: 'bt90n91' },
+      { key: 'bt91n92' },
+      { key: 'bt92n93' },
+      { key: 'bt93n94' },
+      { key: 'bt94n95' },
+      { key: 'bt95n96' },
+      { key: 'bt96n97' },
+      { key: 'bt97n98' },
+      { key: 'bt98n99' },
+      { key: 'bt99n100' },
+      { key: 'gt100' },
+    ],
+    yKeyArr: [
+      { key: 'time', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect the distribuƟ on of temperature of the electrical motor of an EMOB Machine, on the high range of temperature.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Duration',
+    InputSignal: ' Motor temperature (°C)\n' +
+        ' Machine Status (WORKING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'Machine is in WORKING State or STANDBY State',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with motor temperature included within each temperature range, covering with high resoluƟ on the high\n' +
+        'range of temperature (from 80% to 100% of reference temperature) (1 bit = 1 s)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1570',
+    x: '',
+    y: '',
+    xKeyArr: [
+      { key: 'lt0' },
+      { key: 'bt0n1' },
+      { key: 'bt1n2' },
+      { key: 'bt2n3' },
+      { key: 'bt3n4' },
+      { key: 'bt4n5' },
+      { key: 'bt5n6' },
+      { key: 'bt6n7' },
+      { key: 'bt7n8' },
+      { key: 'bt8n9' },
+      { key: 'bt9n10' },
+      { key: 'bt10n11' },
+      { key: 'bt11n12' },
+      { key: 'bt12n13' },
+      { key: 'bt13n14' },
+      { key: 'bt14n15' },
+      { key: 'bt15n16' },
+      { key: 'bt16n17' },
+      { key: 'bt17n18' },
+      { key: 'bt18n19' },
+      { key: 'bt19n20' },
+      { key: 'gt20' },
+    ],
+    yKeyArr: [
+      { key: 'time', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect the distribuƟ on of temperature of the electrical motor of an EMOB Machine, on the low range of temperature.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Duration',
+    InputSignal: ' Motor temperature (°C)\n' +
+        ' Machine Status (WORKING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ' +
+        '‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'Machine is in WORKING State or STANDBY State',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with motor temperature included within each temperature range, covering with high resoluƟ on the low range of\n' +
+        'temperature (from 0% to 20% of reference temperature) (1 bit = 1 s)'
+  },
+
+
 }
 
 module.exports = logList
