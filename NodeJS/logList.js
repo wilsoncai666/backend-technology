@@ -263,12 +263,12 @@ const logList = {
     optional: 1,
     optionalUnit: '',
     optionalMsg: "The following events shall trigger the duration log:\n" +
-      " If Particulate Trap Status= PARKED_REGENERATION.\n" +
-      " If Particulate Trap Status= SERVICE_NEEDED.\n" +
+      " If Particulate Trap Status= PARKED_REGENERATION.\n" +
+      " If Particulate Trap Status= SERVICE_NEEDED.\n" +
       "The event which triggered the duration log shall be stored in the optional cell",
     ConditionsForLogging: 'The following events shall trigger the duration log:\n' +
-      ' If Particulate Trap Status= PARKED_REGENERATION.\n' +
-      ' If Particulate Trap Status= SERVICE_NEEDED.\n' +
+      ' If Particulate Trap Status= PARKED_REGENERATION.\n' +
+      ' If Particulate Trap Status= SERVICE_NEEDED.\n' +
       'The event which triggered the duration log shall be stored in the optional cell (Cell #7).',
     OutputDataFormat: 'According to general requirements for duration log.',
     Comment: 'Modifications 2010-07-14, New Issue U02 Viktor Pahv:\n' +
@@ -313,8 +313,8 @@ const logList = {
     optionalMsg: "Key Feed changes to OFF 1\n" +
       "Switch Start/Stop Regeneration = changes to Stop 2",
     ConditionsForLogging: 'The following events shall trigger the log:\n' +
-      ' If Key Feed changes to OFF and Regeneration In Progress = ON.\n' +
-      ' If Switch Start/Stop Regeneration changes to Stop and Regeneration In Progress =\n' +
+      ' If Key Feed changes to OFF and Regeneration In Progress = ON.\n' +
+      ' If Switch Start/Stop Regeneration changes to Stop and Regeneration In Progress =\n' +
       'ON.\n' +
       'The event which triggered the event log shall be stored in the optional cell (Cell #5).',
     OutputDataFormat: 'According to general requirements for event log.',
@@ -351,7 +351,7 @@ const logList = {
     optionalMsg: "No information shall be stored in the additional cell (Cell #7).",
     ConditionsForLogging: 'The following event shall trigger the duration log:\n' +
       '- 68 -\n' +
-      ' Regeneration In Progress = ON.\n' +
+      ' Regeneration In Progress = ON.\n' +
       'No information shall be stored in the additional cell (Cell #7).',
     OutputDataFormat: 'According to general requirements for duration log.',
     Comment: 'None'
@@ -384,7 +384,7 @@ const logList = {
     optionalUnit: '',
     optionalMsg: "No information shall be stored in the additional cell (Cell #7).",
     ConditionsForLogging: 'The following event shall trigger the duration log:\n' +
-      ' Regeneration In Progress = OFF.\n' +
+      ' Regeneration In Progress = OFF.\n' +
       'No information shall be stored in the additional cell (Cell #7).',
     OutputDataFormat: 'According to general requirements for duration log.',
     Comment: 'None'
@@ -1507,11 +1507,11 @@ const logList = {
     BitB: 1,
     BitBUnit: '%???',
     ConditionsForLogging: 'If Engine running state = [ENGINE_RUNNING]\n' +
-      ' Read signal in Cell no (1)\n' +
+      ' Read signal in Cell no (1)\n' +
       'if Travel Speed Selection = [High] and ( PiPrsTL ³ 6 or PiPrsTR ³ 6)\n' +
-      ' Read signal in Cell no (2)\n' +
+      ' Read signal in Cell no (2)\n' +
       'else if Travel Speed Selection = [Low] and ( PiPrsTL ³ 6 or PiPrsTR ³ 6)\n' +
-      ' Read signal in Cell no (3)',
+      ' Read signal in Cell no (3)',
     OutputDataFormat: 'In the first cell (1) of each log ID, information of total log duration shall be stored (1 bit = 1 s).',
     Comment: 'Display the travel speed distribution of the hydraulic travel unit at the specified speed'
   },
@@ -3324,7 +3324,7 @@ const logList = {
       { key: 'bt95n100' },
     ],
     yKeyArr: [{ key: 'soc', ratio: 1, unit: "s" }],
-    Purpose: 'The purpose of this log is to collect the time distribution of SoC of the tracƟ on baƩ ery on its full range (from 0% to 100%) of an EMOB Machine.\n' +
+    Purpose: 'The purpose of this log is to collect the time distribution of SoC of the traction battery on its full range (from 0% to 100%) of an EMOB Machine.\n' +
         'These logged datas will allow a better knowledge of the distribute on of the level of charge of traction battery. This allow us to understand the behavior and the habits of the\n' +
         'user of an EMOB machine. This is also crucial information on for lifetime simulation on of battery.',
     Informant: '',
@@ -3400,8 +3400,8 @@ const logList = {
     yKeyArr: [
       { key: 'chgPwr', ratio: 1, unit: "s" },
     ],
-    Purpose: 'Collect the distribution of electrical power in charge direction exchanged with the tracƟ on baƩ ery of an EMOB Machine',
-    Informant: 'These logged datas will allow a beƩ er knowledge on how the machine is used and how much power is charged in the ESS',
+    Purpose: 'Collect the distribution of electrical power in charge direction exchanged with the traction battery of an EMOB Machine',
+    Informant: 'These logged datas will allow a better knowledge on how the machine is used and how much power is charged in the ESS',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Duration',
     InputSignal: '',
@@ -3474,8 +3474,7 @@ const logList = {
     OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C)' +
         'Cell 3 to 24 is a vector storing the total number of seconds elapsed with motor temperature included within each temperature range, covering with medium resolution the full rang\n' +
-        'of temperature (from 0% to 100% of reference temperature) (1 bit = 1 s).\n' +
-        'Cell 2 is splitted in two, to store both reference temperature value, and offset temperature value in the same cell, as follow :'
+        'of temperature (from 0% to 100% of reference temperature) (1 bit = 1 s).\n'
   },
   '': {
     id: '',
@@ -3490,7 +3489,7 @@ const logList = {
       { key: 'PCC', ratio: 1, unit: "s" },
       { key: 'PCF', ratio: 1, unit: "s" },
     ],
-    Purpose: 'The purpose of this log is to collect information about precharge phase, at tracƟ on battery connection. The log is intended to count how many precharge have failed, and\n' +
+    Purpose: 'The purpose of this log is to collect information about precharge phase, at traction battery connection. The log is intended to count how many precharge have failed, and\n' +
         'how many precharge have completed successfully.\n' +
         'These logged datas could help to diagnose a faultly precharge circuit, or current leakage on DC link leading to a significant number of precharge failed occurrences.',
     Informant: '',
@@ -3532,7 +3531,7 @@ const logList = {
     Informant: 'The time spent either working, idle or excessive idling shall be updated. See Definitions for general guidance on what the different modes are',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: 'It is up to the platform to decide and document what signals that are necessary to determine when the machine is in working, waiƟ ng idle or excessive idle',
+    InputSignal: 'It is up to the platform to decide and document what signals that are necessary to determine when the machine is in working, waiting idle or excessive idle',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '1 Hz',
@@ -3635,30 +3634,30 @@ const logList = {
     yKeyArr: [
       { key: 'discPower', ratio: 1, unit: "s" },
     ],
-    Purpose: 'The purpose of this log is to collect the distribuƟ on of electrical power in discharge direcƟ on exchanged with the tracƟ on baƩ ery of an EMOB Machine.\n' +
-        'These logged datas will allow a beƩ er knowledge on how the machine is used and how much power is supplied by the ESS.',
+    Purpose: 'The purpose of this log is to collect the distribution of electrical power in discharge direction exchanged with the traction battery of an EMOB Machine.\n' +
+        'These logged datas will allow a better knowledge on how the machine is used and how much power is supplied by the ESS.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: ' ESS instantaneous discharging power (W)\n' +
-        ' Reference power (W)\n' +
-        ' ESS connecƟ on status (CONNECTED / NOT_CONNECTED)\n' +
-        'Reference power is a constant, used for the definiƟ on of the discharging power range of this log.\n' +
+    InputSignal: 'ESS instantaneous discharging power (W)\n' +
+        ' Reference power (W)\n' +
+        ' ESS connection status (CONNECTED / NOT_CONNECTED)\n' +
+        'Reference power is a constant, used for the definition of the discharging power range of this log.\n' +
         'Discharging power ranges of this log are defined using a percentage range, percentage that is applied to reference value to determine physical range.\n' +
-        'This allows the same log definiƟ on to cover several discharging power range distribuƟ on only by changing this constant value.',
+        'This allows the same log definition to cover several discharging power range distribution only by changing this constant value.',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '',
     Hz: 1,
-    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'Reference power cell shall be 32 bits and store an unsigned integer represenƟ ng power (1 bit = 1 W)',
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'Reference power cell shall be 32 bits and store an unsigned integer representing power (1 bit = 1 W)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
-    ConditionsForLogging: 'Logging shall only occur when : ‐ ESS connecƟ on status is CONNECTED\n' +
+    ConditionsForLogging: 'Logging shall only occur when : ‐ ESS connection status is CONNECTED\n' +
         '‐ ESS is being discharged, meaning ESS instantaneous discharging power (W) > 0\n' +
-        'The method of measurement is Ɵme in class.',
+        'The method of measurement is time in class.',
     OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 stores a constant, the power reference, expressed in W, used for discharging power range definition (1 bit = 1 W).\n' +
         'Cell 3 to 43 is a vector storing the time distribution of the discharging power exchanged with ESS, with the time elapsed for each power range (1 bit = 1 s).'
@@ -3696,21 +3695,21 @@ const logList = {
     yKeyArr: [
       { key: 'tempRagDef', ratio: 1, unit: "℃" },
     ],
-    Purpose: 'The purpose of this log is to collect the distribuƟ on of temperature of the inverter of an EMOB machine, on the full range of temperature.\n' +
-        'These logged datas will allow a beƩ er knowledge of the level of temperature reached by the inverter. This would allow aŌ erwards an adjustment of the expected lifeƟ me of the\n' +
+    Purpose: 'The purpose of this log is to collect the distribution of temperature of the inverter of an EMOB machine, on the full range of temperature.\n' +
+        'These logged datas will allow a better knowledge of the level of temperature reached by the inverter. This would allow afterwards an adjustment of the expected lifetime of the\n' +
         'inverter depending on its usage and the temperature it reaches.\n' +
-        'For future machine design, reusing same component, these temperature informaƟ on could be usefull to choose the locaƟ on of the mechanical integraƟ on, towards thermal behavi\n' +
+        'For future machine design, reusing same component, these temperature information could be usefull to choose the location of the mechanical integration, towards thermal behavior\n' +
         'of the components.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: ' Inverter temperature (°C)\n' +
-        ' Machine status (WORKING / STANDBY / OTHER)\n' +
-        ' Reference temperature (°C)\n' +
-        ' Offset temperature (°C)\n' +
-        'Reference and offset temperature are constant values, used for the definiƟ on of the temperature ranges of this log. Temperature ranges are defined using a percentage range,\n' +
+    InputSignal: ' Inverter temperature (°C)\n' +
+        ' Machine status (WORKING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)\n' +
+        'Reference and offset temperature are constant values, used for the definition of the temperature ranges of this log. Temperature ranges are defined using a percentage range,\n' +
         'percentage that is applied to reference and offset value to determine physical range.\n' +
-        'This allows the same log definiƟ on to cover several temperature range distribuƟ on only by changing these constant values.',
+        'This allows the same log definition to cover several temperature range distribution only by changing these constant values.',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
@@ -3721,11 +3720,10 @@ const logList = {
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: 'Machine status is in WORKING State or STANDBY State',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1s).\n' +
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1s).\n' +
         'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C)' +
-        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with inverter temperature included within each temperature range, covering with medium resoluƟ on the full ran\n' +
-        'of temperature (from 0% to 100% of reference temperature) (1 bit = 1 s).\n' +
-        'Cell 2 is spliƩ ed in two, to store both reference temperature value, and offset temperature value in the same cell'
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with inverter temperature included within each temperature range, covering with medium resolution the full ran\n' +
+        'of temperature (from 0% to 100% of reference temperature) (1 bit = 1 s).'
   },
   '': {
     id: '',
@@ -3740,31 +3738,31 @@ const logList = {
       { key: 'NbMotorStop', ratio: 1, unit: "s" },
       { key: 'NbMotorStart', ratio: 1, unit: "s" },
     ],
-    Purpose: 'The purpose of this log is to collect informaƟ on about motor start and motor stop event. The log is intended to count how many Ɵmes the motor is started successfully,\n' +
-        'and how many Ɵmes the motor is stopped.\n' +
-        'In case of EMOB machine, we expect to have much more occurrences of motor stop and motor stop. The datas from this log would allow to verify this assumpƟ on by\n' +
-        'comparing it with log datas from convenƟ onal machines.',
+    Purpose: 'The purpose of this log is to collect information about motor start and motor stop event. The log is intended to count how many times the motor is started successfully,\n' +
+        'and how many times the motor is stopped.\n' +
+        'In case of EMOB machine, we expect to have much more occurrences of motor stop and motor stop. The datas from this log would allow to verify this assumption by\n' +
+        'comparing it with log datas from conventional machines.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
     InputSignal: 'Motor running status (RUNNING / NOT_RUNNING)\n' +
-        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)\n' +
-        'Machine status signal allow to know when machine is in working condiƟ ons or not. Working condiƟ ons are defined as a state where motor is started, or motor is stopped\n' +
-        'but ready to be started by operator. When outside of working condiƟ ons (eg : CHARGING), this log could be disabled.',
+        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)\n' +
+        'Machine status signal allow to know when machine is in working conditions or not. Working conditions are defined as a state where motor is started, or motor is stopped\n' +
+        'but ready to be started by operator. When outside of working conditions (eg : CHARGING), this log could be disabled.',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '1Hz',
     Hz: 1,
-    BitResolution: 'Log duraƟ on cell shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'Cells accumulaƟ ng number of occurrences shall be 32 bits and store an unsigned integer represenƟ ng the total number of occurrences of an event (1 bit = 1 occurrence)',
+    BitResolution: 'Log duration cell shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'Cells accumulating number of occurrences shall be 32 bits and store an unsigned integer representing the total number of occurrences of an event (1 bit = 1 occurrence)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: 'Machine status is WORKING_CONDITIONS\n' +
         'OR\n' +
-        '‐ Machine status was WORKING_CONDITIONS at previous execuƟ on of log (*)',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
+        '‐ Machine status was WORKING_CONDITIONS at previous execution of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 sec).\n' +
         'Cell 2 stores the total number of occurrences of event “motor started” (1 bit = 1 occurrence).\n' +
         'Cell 3 stores the total number of occurrences of event “motor stopped” (1 bit = 1 occurrence).'
   },
@@ -3783,31 +3781,31 @@ const logList = {
       { key: 'timeElapsed', ratio: 1, unit: "s" },
       { key: 'energyConsumed', ratio: 1, unit: "Wh" },
     ],
-    Purpose: 'collect the total energy that have been consumed by the inverter, over the life of an EMOB machine. Energy consumpƟ on datas will be sorted\n' +
-        'into differents buckets depending on the selected working mode (ECO, NORMAL, BOOST), since this energy consumpƟ on may vary significantly with working mode.',
+    Purpose: 'collect the total energy that have been consumed by the inverter, over the life of an EMOB machine. Energy consumption datas will be sorted\n' +
+        'into differents buckets depending on the selected working mode (ECO, NORMAL, BOOST), since this energy consumption may vary significantly with working mode.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Duration',
     InputSignal: 'Selected working mode (ECO / BOOST / NORMAL)\n' +
-        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)\n' +
-        ' Counter of the total Ɵme elapsed while energy consumed by the inverter (s)\n' +
-        ' Counter of the total energy consumed by the inverter (Wh)',
+        ' Traction battery connection status (CONNECTED / NOT_CONNECTED)\n' +
+        ' Counter of the total time elapsed while energy consumed by the inverter (s)\n' +
+        ' Counter of the total energy consumed by the inverter (Wh)',
     Filtering: 'None',
     ActionsAtInputSignalError: 'No logging should be performed if any input signal is erroneous',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Energy cells shall be 32 bits and store an unsigned integer represenƟ ng energy (1 bit = 1 Wh)\n' +
-        'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)',
+    BitResolution: 'Energy cells shall be 32 bits and store an unsigned integer representing energy (1 bit = 1 Wh)\n' +
+        'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
-    ConditionsForLogging: 'TracƟ on baƩ ery connecƟ on status is CONNECTED\n' +
+    ConditionsForLogging: 'Traction battery connection status is CONNECTED\n' +
         'OR\n' +
-        '‐  TracƟ on baƩ ery connecƟ on status was CONNECTED at previous execuƟ on of log (*)',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
-        'Cells 2, 3 and 4 store the total Ɵme elapsed where energy is consumed by the inverter, towards the different working condiƟ ons, one cell for each working mode (1 bit = 1 sec).\n' +
-        'Cells 5, 6 and 7 store the total energy consumed by the inverter depending on the working condiƟ ons, one cell for each working mode (1 bit = 1 Wh)'
+        '‐ Traction battery connection status was CONNECTED at previous execution of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
+        'Cells 2, 3 and 4 store the total time elapsed where energy is consumed by the inverter, towards the different working conditions, one cell for each working mode (1 bit = 1 sec).\n' +
+        'Cells 5, 6 and 7 store the total energy consumed by the inverter depending on the working conditions, one cell for each working mode (1 bit = 1 Wh)'
   },
   '': {
     id: '',
@@ -3846,28 +3844,28 @@ const logList = {
     yKeyArr: [
       { key: 'time', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect the distribuƟ on of inverter power consumpƟ on of an EMOB machine',
+    Purpose: 'collect the distribution of inverter power consumption of an EMOB machine',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: 'Inverter power consumpƟ on (W)\n' +
-        ' Reference power (W)\n' +
-        ' Inverter conversion status (CONVERTING / NOT_CONVERTING)',
+    InputSignal: 'Inverter power consumption (W)\n' +
+        ' Reference power (W)\n' +
+        ' Inverter conversion status (CONVERTING / NOT_CONVERTING)',
     Filtering: 'None',
     ActionsAtInputSignalError: 'No logging should be performed if any input signal is erroneous',
     SamplingRate: '1Hz',
     Hz: 1,
-    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'Reference power cell shall be 32 bits and store an unsigned integer represenƟ ng power (1 bit = 1 W)',
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'Reference power cell shall be 32 bits and store an unsigned integer representing power (1 bit = 1 W)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: '‐ Machine conversion status is CONVERTING\n' +
-        '‐ Inverter is consuming power, meaning inverter power consumpƟ on (W) > 0',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
-        'Cell 2 stores a constant, the power reference, expressed in W, used for power consumpƟ on range definiƟ on (1 bit = 1 W).\n' +
-        'Cell 3 to 28 is a vector storing the Ɵme distribuƟ on of inverter power consumed for each power consumpƟ on range (1 bit = 1 s)'
+        '‐ Inverter is consuming power, meaning inverter power consumption (W) > 0',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
+        'Cell 2 stores a constant, the power reference, expressed in W, used for power consumption range definition (1 bit = 1 W).\n' +
+        'Cell 3 to 28 is a vector storing the time distribution of inverter power consumed for each power consumption range (1 bit = 1 s)'
   },
   '': {
     id: '',
@@ -3884,30 +3882,30 @@ const logList = {
       { key: 'runWork', ratio: 1, unit: "s" },
       { key: 'runTravel', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect informaƟ on about machine usage.',
+    Purpose: 'collect information about machine usage.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
     InputSignal: 'Motor running status (RUNNING / NOT_RUNNING)\n' +
-        ' LS pressure status (LOW / NOT_LOW)\n' +
-        ' Travel pressure status (TRAVELLING / NOT_TRAVELLING)\n' +
-        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)',
+        ' LS pressure status (LOW / NOT_LOW)\n' +
+        ' Travel pressure status (TRAVELLING / NOT_TRAVELLING)\n' +
+        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '1Hz',
     Hz: 1,
-    BitResolution: 'Time cell shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)',
+    BitResolution: 'Time cell shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: 'Machine status is WORKING_CONDITIONS',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
-        'Cell 2 stores the total Ɵme elapsed with motor stopped (1 bit = 1 sec).\n' +
-        'Cell 3 stores the total Ɵme elapsed with motor running and idling, meaning LS pressure is low (1 bit = 1 sec).\n' +
-        'Cell 4 stores the total Ɵme elapsed with motor running and working, meaning LS pressure is not low and travel pressure indicates that machine is not travelling (1 bit = 1\n' +
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 sec).\n' +
+        'Cell 2 stores the total time elapsed with motor stopped (1 bit = 1 sec).\n' +
+        'Cell 3 stores the total time elapsed with motor running and idling, meaning LS pressure is low (1 bit = 1 sec).\n' +
+        'Cell 4 stores the total time elapsed with motor running and working, meaning LS pressure is not low and travel pressure indicates that machine is not travelling (1 bit = 1\n' +
         'sec).\n' +
-        'Cell 5 stores the total Ɵme elapsed with motor running and travelling, meaning LS pressure is not low and travel pressure indicates that machine is travelling (1 bit = 1\n' +
+        'Cell 5 stores the total time elapsed with motor running and travelling, meaning LS pressure is not low and travel pressure indicates that machine is travelling (1 bit = 1\n' +
         'sec)'
   },
   '': {
@@ -3943,29 +3941,29 @@ const logList = {
     yKeyArr: [
       { key: 'tempRange', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect the distribuƟ on of temperature of the inverter of an EMOB machine, on the high range of temperature.',
+    Purpose: 'collect the distribution of temperature of the inverter of an EMOB machine, on the high range of temperature.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
     InputSignal: 'Inverter temperature (°C)\n' +
-        ' Machine status (WORKING / STANDBY / OTHER)\n' +
-        ' Reference temperature (°C)\n' +
-        ' Offset temperature (°C)',
+        ' Machine status (WORKING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
-        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, representing temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, representing temperature (1 bit = 0.1°C)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: 'Machine status is in WORKING State or STANDBY State',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1s).\n' +
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1s).\n' +
         'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
-        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with inverter temperature included within each temperature range, covering with high resoluƟ on the high\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with inverter temperature included within each temperature range, covering with high resolution the high\n' +
         'range of temperature (from 80% to 100% of reference temperature) (1 bit = 1 s).'
   },
   '': {
@@ -4001,29 +3999,29 @@ const logList = {
     yKeyArr: [
       { key: 'tempRange', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect the distribuƟ on of temperature of the inverter of an EMOB machine, on the low range of temperature',
+    Purpose: 'collect the distribution of temperature of the inverter of an EMOB machine, on the low range of temperature',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
     InputSignal: 'Inverter temperature (°C)\n' +
-        ' Machine status (WORKING / STANDBY / OTHER)\n' +
-        ' Reference temperature (°C)\n' +
-        ' Offset temperature (°C)',
+        ' Machine status (WORKING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
-        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, representing temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, representing temperature (1 bit = 0.1°C)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: 'Machine status is in WORKING State or STANDBY State',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1s).\n' +
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1s).\n' +
         'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
-        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with inverter temperature included within each temperature range, covering with high resoluƟ on the low range\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with inverter temperature included within each temperature range, covering with high resolution the low range\n' +
         'of temperature (from 0% to 20% of reference temperature) (1 bit = 1 s)'
   },
   '': {
@@ -4043,37 +4041,37 @@ const logList = {
     yKeyArr: [
       { key: 'num', ratio: 1, unit: "occurrence" },
     ],
-    Purpose: 'collect informaƟ on about motor start request event.',
+    Purpose: 'collect information about motor start request event.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Duration',
-    InputSignal: 'TracƟ on baƩ ery protecƟ on status (INHIBIT_START / HEALTHY)\n' +
-        ' Motor protecƟ on status (INHIBIT_START / HEALTHY)\n' +
-        ' Inverter protecƟ on status INHIBIT_START / HEALTHY)\n' +
-        ' DCDC protecƟ on status (INHIBIT_START / HEALTHY)\n' +
-        ' Hydraulic oil temperature status (INHIBIT_START / HEALTHY)\n' +
-        ' Operator hydraulic request status (REQUESTED / NOT_REQUESTED)\n' +
-        ' Motor start request operator (REQUESTED / NOT_REQUESTED)\n' +
-        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)',
+    InputSignal: 'Traction battery protection status (INHIBIT_START / HEALTHY)\n' +
+        ' Motor protection status (INHIBIT_START / HEALTHY)\n' +
+        ' Inverter protection status INHIBIT_START / HEALTHY)\n' +
+        ' DCDC protection status (INHIBIT_START / HEALTHY)\n' +
+        ' Hydraulic oil temperature status (INHIBIT_START / HEALTHY)\n' +
+        ' Operator hydraulic request status (REQUESTED / NOT_REQUESTED)\n' +
+        ' Motor start request operator (REQUESTED / NOT_REQUESTED)\n' +
+        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '10Hz',
     Hz: 1,
-    BitResolution: 'Log duraƟ on cell shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)\n' +
-        'Cells accumulaƟ ng number of occurrences shall be 32 bits and store an unsigned integer represenƟ ng the total number of occurrences of an event (1 bit = 1 occurrence)',
+    BitResolution: 'Log duration cell shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec)\n' +
+        'Cells accumulating number of occurrences shall be 32 bits and store an unsigned integer representing the total number of occurrences of an event (1 bit = 1 occurrence)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: 'Machine status is WORKING_CONDITIONS',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 sec).\n' +
         'Cell 2 stores the total number of occurrences of event “motor start request from operator” (1 bit = 1 occurrence).\n' +
-        'Cell 3 stores the total number of occurrences of event “motor start inhibited due to motor protecƟ on status” (1 bit = 1 occurrence).\n' +
-        'Cell 4 stores the total number of occurrences of event “motor start inhibited due to inverter protecƟ on status” (1 bit = 1 occurrence).\n' +
-        'Cell 5 stores the total number of occurrences of event “motor start inhibited due to tracƟ on baƩ ery protecƟ on status” (1 bit = 1 occurrence).\n' +
+        'Cell 3 stores the total number of occurrences of event “motor start inhibited due to motor protection status” (1 bit = 1 occurrence).\n' +
+        'Cell 4 stores the total number of occurrences of event “motor start inhibited due to inverter protection status” (1 bit = 1 occurrence).\n' +
+        'Cell 5 stores the total number of occurrences of event “motor start inhibited due to traction battery protection status” (1 bit = 1 occurrence).\n' +
         'Cell 6 stores the total number of occurrences of event “motor start inhibited due to oil temperature status” (1 bit = 1 occurrence).\n' +
-        'Cell 7 stores the total number of occurrences of event “motor start inhibited due to DCDC protecƟ on status” (1 bit = 1 occurrence).\n' +
-        'Cell 8 stores the total number of occurrences of event “motor start inhibited due to operator sƟ ll requesƟ ng hydraulic” (1 bit = 1 occurrence)'
+        'Cell 7 stores the total number of occurrences of event “motor start inhibited due to DCDC protection status” (1 bit = 1 occurrence).\n' +
+        'Cell 8 stores the total number of occurrences of event “motor start inhibited due to operator still requesting hydraulic” (1 bit = 1 occurrence)'
   },
   '': {
     id: '',
@@ -4093,41 +4091,41 @@ const logList = {
     yKeyArr: [
       { key: 'num', ratio: 1, unit: "occurrence" },
     ],
-    Purpose: 'collect informaƟ on about motor stop event.',
+    Purpose: 'collect information about motor stop event.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Duration',
-    InputSignal: ' TracƟ on baƩ ery protecƟ on status (STOP_MOTOR / HEALTHY)\n' +
-        ' Motor protecƟ on status (STOP_MOTOR / HEALTHY)\n' +
-        ' Inverter protecƟ on status (STOP_MOTOR / HEALTHY)\n' +
-        ' Hydraulic oil temperature status (STOP_MOTOR / HEALTHY)\n' +
-        ' Armrest posiƟ on (RAISED / LOWERED)\n' +
-        ' Autoshutdown stop motor request status (REQUESTED / NOT_REQUESTED)\n' +
-        ' IgniƟ on key posiƟ on (KEY_OFF / KEY_ON)\n' +
-        ' Motor stop request status (REQUESTED / NOT_REQUESTED)\n' +
-        ' Motor control status (STARTING / STARTED / STOPPING / OTHER)\n' +
-        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)',
+    InputSignal: ' Traction battery protection status (STOP_MOTOR / HEALTHY)\n' +
+        ' Motor protection status (STOP_MOTOR / HEALTHY)\n' +
+        ' Inverter protection status (STOP_MOTOR / HEALTHY)\n' +
+        ' Hydraulic oil temperature status (STOP_MOTOR / HEALTHY)\n' +
+        ' Armrest position (RAISED / LOWERED)\n' +
+        ' Autoshutdown stop motor request status (REQUESTED / NOT_REQUESTED)\n' +
+        ' Ignition key position (KEY_OFF / KEY_ON)\n' +
+        ' Motor stop request status (REQUESTED / NOT_REQUESTED)\n' +
+        ' Motor control status (STARTING / STARTED / STOPPING / OTHER)\n' +
+        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '10Hz',
     Hz: 1,
-    BitResolution: 'Log duraƟ on cell shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)\n' +
-        'Cells accumulaƟ ng number of occurrences shall be 32 bits and store an unsigned integer represenƟ ng the total number of occurrences of an event (1 bit = 1 occurrence)',
+    BitResolution: 'Log duration cell shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec)\n' +
+        'Cells accumulating number of occurrences shall be 32 bits and store an unsigned integer representing the total number of occurrences of an event (1 bit = 1 occurrence)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: '‐ Machine status is WORKING_CONDITIONS\n' +
         'OR\n' +
-        '‐ Machine status was WORKING_CONDITIONS at previous execuƟ on of log (*)',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
+        '‐ Machine status was WORKING_CONDITIONS at previous execution of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 sec).\n' +
         'Cell 2 stores the total number of occurrences of event “motor stop requested” (1 bit = 1 occurrence).\n' +
-        'Cell 3 stores the total number of occurrences of event “motor stopped due to motor protecƟ on status” (1 bit = 1 occurrence).\n' +
-        'Cell 4 stores the total number of occurrences of event “motor stopped due to inverter protecƟ on status” (1 bit = 1 occurrence).\n' +
-        'Cell 5 stores the total number of occurrences of event “motor stopped due to tracƟ on baƩ ery protecƟ on status” (1 bit = 1 occurrence).\n' +
+        'Cell 3 stores the total number of occurrences of event “motor stopped due to motor protection status” (1 bit = 1 occurrence).\n' +
+        'Cell 4 stores the total number of occurrences of event “motor stopped due to inverter protection status” (1 bit = 1 occurrence).\n' +
+        'Cell 5 stores the total number of occurrences of event “motor stopped due to traction battery protection status” (1 bit = 1 occurrence).\n' +
         'Cell 6 stores the total number of occurrences of event “motor stopped due to oil temperature status” (1 bit = 1 occurrence).\n' +
-        'Cell 7 stores the total number of occurrences of event “motor stopped due to autoshutdown funcƟ on” (1 bit = 1 occurrence).\n' +
-        'Cell 8 stores the total number of occurrences of event “motor stopped due to igniƟ on key off” (1 bit = 1 occurrence).\n' +
+        'Cell 7 stores the total number of occurrences of event “motor stopped due to autoshutdown function” (1 bit = 1 occurrence).\n' +
+        'Cell 8 stores the total number of occurrences of event “motor stopped due to ignition key off” (1 bit = 1 occurrence).\n' +
         'Cell 9 stores the total number of occurrences of event “motor stopped due to armrest raised” (1 bit = 1 occurrence)'
   },
   '': {
@@ -4161,28 +4159,28 @@ const logList = {
     yKeyArr: [
       { key: 'ocr', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect datas regarding how long the motor remains stopped before to be restarted by operator, as long as machine stays in working condiƟ ons',
+    Purpose: 'collect datas regarding how long the motor remains stopped before to be restarted by operator, as long as machine stays in working conditions',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Duration',
     InputSignal: 'Motor running status (RUNNING / NOT_RUNNING)\n' +
-        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)\n' +
-        ' Motor first start status (FIRST_START_OCCURED / NOT_YET_STARTED)',
+        ' Machine status (WORKING_CONDITIONS / NOT_WORKING_CONDITIONS)\n' +
+        ' Motor first start status (FIRST_START_OCCURRED / NOT_YET_STARTED)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '1Hz',
     Hz: 1,
-    BitResolution: 'For the vector of occurrences, each cell shall be 32 bits and store an unsigned integer represenƟ ng how long the motor remained stopped before to be restarted, for each\n' +
-        'Ɵ me range (1 bit = 1 occurrence).\n' +
-        'For the log total duraƟ on, the cell shall be 32 bits and store an unsigned integer represenƟ ng a Ɵme (1 bit = 1 sec)',
+    BitResolution: 'For the vector of occurrences, each cell shall be 32 bits and store an unsigned integer representing how long the motor remained stopped before to be restarted, for each\n' +
+        'time range (1 bit = 1 occurrence).\n' +
+        'For the log total duration, the cell shall be 32 bits and store an unsigned integer representing a time (1 bit = 1 sec)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: '‐ Machine status is WORKING_CONDITIONS',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
-        'Cell 2 to 21 is a vector storing the total number of occurrences where motor remains stopped for a duraƟ on included in each Ɵme range, before to be restarted (or\n' +
-        'working condiƟ on leaved) (1 bit = 1 occurrence)'
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 sec).\n' +
+        'Cell 2 to 21 is a vector storing the total number of occurrences where motor remains stopped for a duration included in each time range, before to be restarted (or\n' +
+        'working condition leaved) (1 bit = 1 occurrence)'
   },
   '': {
     id: '',
@@ -4217,29 +4215,29 @@ const logList = {
     yKeyArr: [
       { key: 'time', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect the distribuƟ on of temperature of the electrical motor of an EMOB Machine, on the high range of temperature.',
+    Purpose: 'collect the distribution of temperature of the electrical motor of an EMOB Machine, on the high range of temperature.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Duration',
-    InputSignal: ' Motor temperature (°C)\n' +
-        ' Machine Status (WORKING / STANDBY / OTHER)\n' +
-        ' Reference temperature (°C)\n' +
-        ' Offset temperature (°C)',
+    InputSignal: ' Motor temperature (°C)\n' +
+        ' Machine Status (WORKING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
-        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, representing temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, representing temperature (1 bit = 0.1°C)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: 'Machine is in WORKING State or STANDBY State',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
-        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with motor temperature included within each temperature range, covering with high resoluƟ on the high\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with motor temperature included within each temperature range, covering with high resolution the high\n' +
         'range of temperature (from 80% to 100% of reference temperature) (1 bit = 1 s)'
   },
   '': {
@@ -4275,30 +4273,30 @@ const logList = {
     yKeyArr: [
       { key: 'time', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect the distribuƟ on of temperature of the electrical motor of an EMOB Machine, on the low range of temperature.',
+    Purpose: 'collect the distribution of temperature of the electrical motor of an EMOB Machine, on the low range of temperature.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Duration',
     InputSignal: ' Motor temperature (°C)\n' +
-        ' Machine Status (WORKING / STANDBY / OTHER)\n' +
-        ' Reference temperature (°C)\n' +
-        ' Offset temperature (°C)',
+        ' Machine Status (WORKING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
         'One cell shall be 32 bits and store : ' +
-        '‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
-        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+        '‐ Reference temperature value, as an unsigned integer coded over 16 bits, representing temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, representing temperature (1 bit = 0.1°C)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: 'Machine is in WORKING State or STANDBY State',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
-        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with motor temperature included within each temperature range, covering with high resoluƟ on the low range of\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with motor temperature included within each temperature range, covering with high resolution the low range of\n' +
         'temperature (from 0% to 20% of reference temperature) (1 bit = 1 s)'
   },
   '': {
@@ -4334,29 +4332,29 @@ const logList = {
     yKeyArr: [
       { key: 'time', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect the distribuƟ on of temperature of the DCDC converter of an EMOB machine, on full range of temperature.',
+    Purpose: 'collect the distribution of temperature of the DCDC converter of an EMOB machine, on full range of temperature.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
     InputSignal: 'DCDC temperature (°C)\n' +
-        ' DCDC status (CONVERTING / STANDBY / OTHER)\n' +
-        ' Reference temperature (°C)\n' +
-        ' Offset temperature (°C)',
+        ' DCDC status (CONVERTING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
-        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, representing temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, representing temperature (1 bit = 0.1°C)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: 'DCDC status is CONVERTING or STANDBY',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
-        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with DCDC converter temperature included within each temperature range, covering with medium resoluƟ on th\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with DCDC converter temperature included within each temperature range, covering with medium resolution th\n' +
         'full range of temperature (from 0% to 100% of reference temperature) (1 bit = 1 s)'
   },
   '': {
@@ -4392,24 +4390,24 @@ const logList = {
       { key: 'numChargeStart', ratio: 1, unit: "occurrence" },
       { key: 'numChargeStop', ratio: 1, unit: "occurrence" },
     ],
-    Purpose: 'collect the distribuƟ on of SoC of the tracƟ on baƩ ery of an EMOB Machine, especially at the moment where fast charge is started or stopped\n' +
-        '(including mobile fast charge or plugged fast charge). Each Ɵme a fast charge process is started or stopped, this log should increment by one occurrence the cell\n' +
+    Purpose: 'collect the distribution of SoC of the traction battery of an EMOB Machine, especially at the moment where fast charge is started or stopped\n' +
+        '(including mobile fast charge or plugged fast charge). Each time a fast charge process is started or stopped, this log should increment by one occurrence the cell\n' +
         'corresponding to the actual SoC level.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: ' SoC of the tracƟ on baƩ ery (%)\n' +
+    InputSignal: ' SoC of the traction battery (%)\n' +
         '- 175 -\n' +
-        ' Fast charging status (STANDBY / CHARGING)\n' +
-        ' Machine state (CHARGING / OTHER_STATE)\n' +
-        ' Charging mode detected (FAST / OTHER)',
+        ' Fast charging status (STANDBY / CHARGING)\n' +
+        ' Machine state (CHARGING / OTHER_STATE)\n' +
+        ' Charging mode detected (FAST / OTHER)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '1Hz',
     Hz: 1,
-    BitResolution: 'For the vector of occurrences, each cell shall be 32 bits and store an unsigned integer represenƟ ng how many Ɵme the fast charge has been started or stopped for each\n' +
+    BitResolution: 'For the vector of occurrences, each cell shall be 32 bits and store an unsigned integer representing how many time the fast charge has been started or stopped for each\n' +
         'SoC range (1 bit = 1 occurrence).\n' +
-        'For the log total duraƟ on, the cell shall be 32 bits and store an unsigned integer represenƟ ng a Ɵme (1 bit = 1 sec)',
+        'For the log total duration, the cell shall be 32 bits and store an unsigned integer representing a time (1 bit = 1 sec)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
@@ -4417,8 +4415,8 @@ const logList = {
     ConditionsForLogging: 'Machine state is CHARGING\n' +
         '‐ Charging mode detected is FAST\n' +
         'OR\n' +
-        '‐ Machine state was CHARGING with Charging mode detected FAST at previous execuƟ on of log (*)',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        '‐ Machine state was CHARGING with Charging mode detected FAST at previous execution of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 to 21 is a vector storing the total number of occurrences where fast charging is started for each SoC range (1 bit = 1 occurrence).\n' +
         'Cell 22 to 41 is a vector storing the total number of occurrences where fast charging is stopped for each SoC range (1 bit = 1 occurrence).'
   },
@@ -4455,23 +4453,23 @@ const logList = {
       { key: 'numChargeStart', ratio: 1, unit: "occurrence" },
       { key: 'numChargeStop', ratio: 1, unit: "occurrence" },
     ],
-    Purpose: 'collect the distribuƟ on of SoC of the tracƟ on baƩ ery of an EMOB Machine, especially at the moment where slow charge is started or stopped.\n' +
-        'Each Ɵme a slow charge process is started or stopped, this log should increment by one occurrence the cell corresponding to the actual SoC level.',
+    Purpose: 'collect the distribution of SoC of the traction battery of an EMOB Machine, especially at the moment where slow charge is started or stopped.\n' +
+        'Each time a slow charge process is started or stopped, this log should increment by one occurrence the cell corresponding to the actual SoC level.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: ' SoC of the tracƟ on baƩ ery (%)\n' +
+    InputSignal: ' SoC of the traction battery (%)\n' +
         '- 184 -\n' +
-        ' Slow charging status (STANDBY / CHARGING)\n' +
-        ' Machine state (CHARGING / OTHER_STATE)\n' +
-        ' Charging mode detected (SLOW / OTHER)',
+        ' Slow charging status (STANDBY / CHARGING)\n' +
+        ' Machine state (CHARGING / OTHER_STATE)\n' +
+        ' Charging mode detected (SLOW / OTHER)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '1Hz',
     Hz: 1,
-    BitResolution: 'For the vector of occurrences, each cell shall be 32 bits and store an unsigned integer represenƟ ng how many Ɵme the slow charge has been started or stopped for each SoC\n' +
+    BitResolution: 'For the vector of occurrences, each cell shall be 32 bits and store an unsigned integer representing how many time the slow charge has been started or stopped for each SoC\n' +
         'range (1 bit = 1 occurrence).\n' +
-        'For the log total duraƟ on, the cell shall be 32 bits and store an unsigned integer represenƟ ng a Ɵme (1 bit =1 sec)',
+        'For the log total duration, the cell shall be 32 bits and store an unsigned integer representing a time (1 bit =1 sec)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
@@ -4479,8 +4477,8 @@ const logList = {
     ConditionsForLogging: ' Machine state is CHARGING\n' +
         '‐ Charging mode detected is SLOW\n' +
         'OR\n' +
-        '‐ Machine state was CHARGING with Charging mode detected SLOW at previous execuƟ on of log (*)',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        '‐ Machine state was CHARGING with Charging mode detected SLOW at previous execution of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 to 21 is a vector storing the total number of occurrences where slow charging is started for each SoC range (1 bit = 1 occurrence).\n' +
         'Cell 22 to 41 is a vector storing the total number of occurrences where slow charging is stopped for each SoC range (1 bit = 1 occurrence).'
   },
@@ -4517,29 +4515,29 @@ const logList = {
     yKeyArr: [
       { key: 'TempRng', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect the distribuƟ on of temperature of the OnBC of an EMOB machine, on the full range of temperat',
+    Purpose: 'collect the distribution of temperature of the OnBC of an EMOB machine, on the full range of temperat',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: ' OnBC temperature (°C)\n' +
-        ' OnBC status (CONVERTING / STANDBY / OTHER)\n' +
-        ' Reference temperature (°C)\n' +
-        ' Offset temperature (°C)',
+    InputSignal: ' OnBC temperature (°C)\n' +
+        ' OnBC status (CONVERTING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
-        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, representing temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, representing temperature (1 bit = 0.1°C)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: 'OnBC status is CONVERTING or STANDBY',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
-        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with on board charger temperature included within each temperature range, covering with medium resoluƟ on t\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with on board charger temperature included within each temperature range, covering with medium resolution t\n' +
         'full range of temperature (from 0% to 100% of reference temperature) (1 bit = 1 s).'
   },
   '': {
@@ -4556,32 +4554,32 @@ const logList = {
       { key: 'timeElapsed', ratio: 1, unit: "s" },
       { key: 'energyConsumed', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect the total energy that have been consumed by the DCDC converter, over the life of an EMOB machine. Energy consumpƟ on datas will\n' +
-        'be sorted into differents buckets depending on the igniƟ on key posiƟ on (ON, OFF), since the DCDC converter energy consumpƟ on on the tracƟ on voltage link may vary\n' +
-        'significantly with igniƟ on key posiƟ on, that inhibit or not some electrical funcƟ on supplied with accessory baƩ ery',
+    Purpose: 'collect the total energy that have been consumed by the DCDC converter, over the life of an EMOB machine. Energy consumption datas will\n' +
+        'be sorted into differents buckets depending on the ignition key position (ON, OFF), since the DCDC converter energy consumption on the traction voltage link may vary\n' +
+        'significantly with ignition key position, that inhibit or not some electrical function supplied with accessory battery',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: ' IgniƟ on key posiƟ on (ON / OFF)\n' +
-        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)\n' +
-        ' Counter of the total Ɵme elapsed while energy consumed by the DCDC converter (s)\n' +
-        ' Counter of the total energy consumed by the DCDC converter (W.h)',
+    InputSignal: ' Ignition key position (ON / OFF)\n' +
+        ' Traction battery connection status (CONNECTED / NOT_CONNECTED)\n' +
+        ' Counter of the total time elapsed while energy consumed by the DCDC converter (s)\n' +
+        ' Counter of the total energy consumed by the DCDC converter (W.h)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Energy cells shall be 32 bits and store an unsigned integer represenƟ ng energy (1 bit = 1 Wh)\n' +
-        'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)',
+    BitResolution: 'Energy cells shall be 32 bits and store an unsigned integer representing energy (1 bit = 1 Wh)\n' +
+        'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
-    ConditionsForLogging: 'TracƟ on baƩ ery connecƟ on status is CONNECTED\n' +
+    ConditionsForLogging: 'Traction battery connection status is CONNECTED\n' +
         'OR\n' +
-        '‐  TracƟ on baƩ ery connecƟ on status was CONNECTED at previous execuƟ on of log (*)',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
-        'Cells 2..3 store the total Ɵme elapsed where energy is consumed by the DCDC converter, towards igniƟ on key posiƟ on (1 bit = 1 sec).\n' +
-        'Cells 4..5 store the total energy consumed by the DCDC converter, towards igniƟ on key posiƟ on (1 bit = 1 Wh)'
+        '‐ Traction battery connection status was CONNECTED at previous execution of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
+        'Cells 2..3 store the total time elapsed where energy is consumed by the DCDC converter, towards ignition key position (1 bit = 1 sec).\n' +
+        'Cells 4..5 store the total energy consumed by the DCDC converter, towards ignition key position (1 bit = 1 Wh)'
   },
   '': {
     id: '',
@@ -4616,29 +4614,29 @@ const logList = {
     yKeyArr: [
       { key: 'tempRange', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect the distribuƟ on of temperature of the OnBC of an EMOB machine, on the high range of temperature',
+    Purpose: 'collect the distribution of temperature of the OnBC of an EMOB machine, on the high range of temperature',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: ' OnBC temperature (°C)\n' +
-        ' OnBC status (CONVERTING / STANDBY / OTHER)\n' +
-        ' Reference temperature (°C)\n' +
-        ' Offset temperature (°C)',
+    InputSignal: ' OnBC temperature (°C)\n' +
+        ' OnBC status (CONVERTING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
-        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, representing temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, representing temperature (1 bit = 0.1°C)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: 'OnBC status is CONVERTING or STANDBY',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
-        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with on board charger temperature included within each temperature range, covering with high resoluƟ on the\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with on board charger temperature included within each temperature range, covering with high resolution the\n' +
         'high range of temperature (from 80% to 100% of reference temperature) (1 bit = 1 s)'
   },
   '': {
@@ -4674,29 +4672,29 @@ const logList = {
     yKeyArr: [
       { key: 'tempRange', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect the distribuƟ on of temperature of the OnBC of an EMOB machine, on the low range of temperature.',
+    Purpose: 'collect the distribution of temperature of the OnBC of an EMOB machine, on the low range of temperature.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: ' OnBC temperature (°C)\n' +
-        ' OnBC status (CONVERTING / STANDBY / OTHER)\n' +
-        ' Reference temperature (°C)\n' +
-        ' Offset temperature (°C)',
+    InputSignal: ' OnBC temperature (°C)\n' +
+        ' OnBC status (CONVERTING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
-        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, representing temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, representing temperature (1 bit = 0.1°C)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: 'OnBC status is CONVERTING or STANDBY',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
-        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with on board charger temperature included within each temperature range, covering with high resoluƟ on\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with on board charger temperature included within each temperature range, covering with high resolution\n' +
         'the low range of temperature (from 0% to 20% of reference temperature) (1 bit = 1 s).'
   },
   '': {
@@ -4712,39 +4710,39 @@ const logList = {
       { key: 'event', ratio: 1, unit: "s" },
     ],
     Purpose: 'collect events where DC link voltage is anormally high. The type of data stored in this log is the level of DC link voltage (V) reached and the\n' +
-        'Ɵ mestamp of : ‐ the 19 last events that occurred\n' +
-        '‐ the most criƟ cal event that occurred in machine life (= the event where DC link voltage is the highest ever recorded)',
+        'timestamp of : ‐ the 19 last events that occurred\n' +
+        '‐ the most critical event that occurred in machine life (= the event where DC link voltage is the highest ever recorded)',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Event',
     events: 20,
     optional: 0,
-    InputSignal: ' DC Link voltage (V)\n' +
-        ' Logging trigger level (V)\n' +
-        ' Logging cooldown period (s)',
+    InputSignal: ' DC Link voltage (V)\n' +
+        ' Logging trigger level (V)\n' +
+        ' Logging cooldown period (s)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '10Hz',
     Hz: 1,
-    BitResolution: 'Log duraƟ on should be coded over 32 bits as an unsigned integer, represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'Number of logging occurrence should be coded over 16 bits as an unsigned integer, represenƟ ng total number of event logged (1 bit = 1 occurence).\n' +
-        'Trigger level should be coded over 16 bits as an unsigned integer, represenƟ ng the trigger level used by the log funcƟ on to evaluate triggering condiƟ ons (1 bit = 0.1V).',
+    BitResolution: 'Log duration should be coded over 32 bits as an unsigned integer, representing time (1 bit = 1 sec).\n' +
+        'Number of logging occurrence should be coded over 16 bits as an unsigned integer, representing total number of event logged (1 bit = 1 occurrence).\n' +
+        'Trigger level should be coded over 16 bits as an unsigned integer, representing the trigger level used by the log function to evaluate triggering conditions (1 bit = 0.1V).',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: 'DC link is charged, meaning DC link voltage (V) > 5V',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
-        'Cell 2 is spliƩ ed in two 16 bits words storing : ‐ the total number of events that have occured, meaning the total number of event that have fulfilled triggering condiƟ ons (1 bit = 1 occurrence).\n' +
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 sec).\n' +
+        'Cell 2 is splitted in two 16 bits words storing : ‐ the total number of events that have occurred, meaning the total number of event that have fulfilled triggering conditions (1 bit = 1 occurrence).\n' +
         '‐ Private area, not available for logging purpose\n' +
         'Then, for each logged event :\n' +
-        'The two first cells store the Ɵmestamp when the event occurred, meaning when triggering condiƟ ons (or re‐triggering condiƟ ons) have been fulfilled.\n' +
-        'Another cell stores the value of the DC link voltage when the event occurred, meaning when trigerring condiƟ ons (or re‐triggering condiƟ ons) have been fulfilled (1 bit =\n' +
+        'The two first cells store the timestamp when the event occurred, meaning when triggering conditions (or re‐triggering conditions) have been fulfilled.\n' +
+        'Another cell stores the value of the DC link voltage when the event occurred, meaning when trigerring conditions (or re‐triggering conditions) have been fulfilled (1 bit =\n' +
         '0.1V).\n' +
-        'The last cell is spliƩ ed in two 16 bits words storing : ‐ The logging trigger level used (1 bit = 0.1V).\n' +
+        'The last cell is splitted in two 16 bits words storing : ‐ The logging trigger level used (1 bit = 0.1V).\n' +
         '‐ The logging cooldown period (1 bit = 0.1 sec).\n' +
-        'Note : This last cell of each logged event should have been stored only one Ɵme as a common value for all logged events, but due to some restricƟ ons from CEA2+\n' +
-        'Plaƞ orm API, it has to be stored mulƟ ple Ɵme, in an addiƟ onal cell in each logged event.'
+        'Note : This last cell of each logged event should have been stored only one time as a common value for all logged events, but due to some restrictions from CEA2+\n' +
+        'Plaƞ orm API, it has to be stored multiple time, in an additional cell in each logged event.'
   },
   '': {
     id: '',
@@ -4759,40 +4757,40 @@ const logList = {
       { key: 'event', ratio: 1, unit: "s" },
     ],
     Purpose: 'collect events where DC link voltage is anormally low. The type of data stored in this log is the level of DC link voltage (V) reached and the\n' +
-        'Ɵ mestamp of : ‐ the 19 last events that occurred\n' +
-        '‐ the most criƟ cal event that occurred in machine life (= the event where DC link voltage is the lowest ever recorded).',
+        'timestamp of : ‐ the 19 last events that occurred\n' +
+        '‐ the most critical event that occurred in machine life (= the event where DC link voltage is the lowest ever recorded).',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Event',
     events: 20,
     optional: 0,
-    InputSignal: ' DC Link voltage (V)\n' +
-        ' Logging trigger level (V)\n' +
-        ' Logging cooldown period (s)\n' +
-        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)',
+    InputSignal: ' DC Link voltage (V)\n' +
+        ' Logging trigger level (V)\n' +
+        ' Logging cooldown period (s)\n' +
+        ' Traction battery connection status (CONNECTED / NOT_CONNECTED)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '10Hz',
     Hz: 1,
-    BitResolution: 'Log duraƟ on should be coded over 32 bits as an unsigned integer, represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'Number of logging occurrence should be coded over 16 bits as an unsigned integer, represenƟ ng total number of event logged (1 bit = 1 occurence).\n' +
-        'Trigger level should be coded over 16 bits as an unsigned integer, represenƟ ng the trigger level used by the log funcƟ on to evaluate triggering condiƟ ons (1 bit = 0.1V)',
+    BitResolution: 'Log duration should be coded over 32 bits as an unsigned integer, representing time (1 bit = 1 sec).\n' +
+        'Number of logging occurrence should be coded over 16 bits as an unsigned integer, representing total number of event logged (1 bit = 1 occurrence).\n' +
+        'Trigger level should be coded over 16 bits as an unsigned integer, representing the trigger level used by the log function to evaluate triggering conditions (1 bit = 0.1V)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: ' DC link is charged, meaning instantaneous DC link voltage (V) > 0V\n' +
-        '‐ TracƟ on baƩ ery connecƟ on status is CONNECTED\n' +
+        '‐ Traction battery connection status is CONNECTED\n' +
         'Or\n' +
-        '‐ TracƟ on baƩ ery connecƟ on status was CONNECTED at previous execuƟ on of log (*)',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
-        'Cell 2 is spliƩ ed in two 16 bits words storing : ‐ the total number of events that have occured, meaning the total number of event that have fulfilled triggering condiƟ ons (1 bit = 1 occurrence).\n' +
+        '‐ Traction battery connection status was CONNECTED at previous execution of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 sec).\n' +
+        'Cell 2 is splitted in two 16 bits words storing : ‐ the total number of events that have occurred, meaning the total number of event that have fulfilled triggering conditions (1 bit = 1 occurrence).\n' +
         '‐ Private area, not available for logging purpose\n' +
         'Then, for each logged event :\n' +
-        'The two first cells store the Ɵmestamp when the event occurred, meaning when triggering condiƟ ons (or re‐triggering condiƟ ons) have been fulfilled.\n' +
-        'Another cell stores the value of the DC link voltage when the event occurred, meaning when trigerring condiƟ ons (or re‐triggering condiƟ ons) have been fulfilled (1 bit =\n' +
+        'The two first cells store the timestamp when the event occurred, meaning when triggering conditions (or re‐triggering conditions) have been fulfilled.\n' +
+        'Another cell stores the value of the DC link voltage when the event occurred, meaning when trigerring conditions (or re‐triggering conditions) have been fulfilled (1 bit =\n' +
         '0.1V).\n' +
-        'The last cell is spliƩ ed in two 16 bits words storing : ‐ The logging trigger level used (1 bit = 0.1V).\n' +
+        'The last cell is splitted in two 16 bits words storing : ‐ The logging trigger level used (1 bit = 0.1V).\n' +
         '‐ The logging cooldown period (1 bit = 0.1 sec)'
   },
   '': {
@@ -4828,31 +4826,31 @@ const logList = {
     yKeyArr: [
       { key: 'TempRng', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect the distribuƟ on of average temperature of the mulƟ ples lithium ions cells of the tracƟ on baƩ ery of an EMOB Machine, on the full range of\n' +
+    Purpose: 'collect the distribution of average temperature of the multiples lithium ions cells of the traction battery of an EMOB Machine, on the full range of\n' +
         'temperature.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: ' TracƟ on baƩ ery average cell temperature (°C)\n' +
-        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)\n' +
-        ' Reference temperature (°C)\n' +
-        ' Offset temperature (°C)',
+    InputSignal: ' Traction battery average cell temperature (°C)\n' +
+        ' Traction battery connection status (CONNECTED / NOT_CONNECTED)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
-        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, representing temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, representing temperature (1 bit = 0.1°C)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
-    ConditionsForLogging: 'TracƟ on baƩ ery connecƟ on status is CONNECTED',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+    ConditionsForLogging: 'Traction battery connection status is CONNECTED',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
-        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with tracƟ on baƩ ery cell average temperature included within each temperature range, covering with medium\n' +
-        'resoluƟ on the full range of temperature (from 0% to 100% of reference temperature) (1 bit = 1 s)'
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with traction battery cell average temperature included within each temperature range, covering with medium\n' +
+        'resolution the full range of temperature (from 0% to 100% of reference temperature) (1 bit = 1 s)'
   },
   '': {
     id: '',
@@ -4866,16 +4864,16 @@ const logList = {
     yKeyArr: [
       { key: 'event', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect informaƟ ons about tracƟ on baƩ ery disconnected unexpectedly event that could occur in EMOB machines.',
+    Purpose: 'collect informations about traction battery disconnected unexpectedly event that could occur in EMOB machines.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Event',
     events: 20,
     optional: 0,
-    InputSignal: ' TracƟ on baƩ ery unexpected disconnecƟ on alarm status (ACTIVE / INACTIVE)\n' +
-        ' TracƟ on baƩ ery current (A) with following convenƟ on : o Charging current > 0A\n' +
+    InputSignal: ' Traction battery unexpected disconnection alarm status (ACTIVE / INACTIVE)\n' +
+        ' Traction battery current (A) with following convention : o Charging current > 0A\n' +
         'o Discharging current < 0A\n' +
-        ' Machine status (SLEEP / NOT_SLEEP)',
+        ' Machine status (SLEEP / NOT_SLEEP)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '10Hz',
@@ -4886,8 +4884,8 @@ const logList = {
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: '‐ Machine status is NOT_SLEEP',
-    OutputDataFormat: 'Log duraƟ on shall be coded over 32 bits as an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'Number of occurences shall be coded over 32 bits as an unsigned integer represenƟ ng the total number of occurences of an event (1 bit = 1 occurence).'
+    OutputDataFormat: 'Log duration shall be coded over 32 bits as an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'Number of occurrences shall be coded over 32 bits as an unsigned integer representing the total number of occurrences of an event (1 bit = 1 occurrence).'
   },
   '': {
     id: '',
@@ -4921,24 +4919,24 @@ const logList = {
     yKeyArr: [
       { key: 'soc', ratio: 1, unit: "%" },
     ],
-    Purpose: 'collect the Ɵme distribuƟ on of SoC of the tracƟ on baƩ ery on an EMOB machine, especially on its high range (from 80% to 100%)',
+    Purpose: 'collect the time distribution of SoC of the traction battery on an EMOB machine, especially on its high range (from 80% to 100%)',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: ' SoC of the tracƟ on baƩ ery (%)\n' +
-        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)',
+    InputSignal: ' SoC of the traction battery (%)\n' +
+        ' Traction battery connection status (CONNECTED / NOT_CONNECTED)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)',
+    BitResolution: 'Cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
-    ConditionsForLogging: '‐ TracƟ on baƩ ery connecƟ on status is CONNECTED\n' +
-        '‐ SoC of the tracƟ on baƩ ery is between 80% and 100% (included)',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+    ConditionsForLogging: '‐ Traction battery connection status is CONNECTED\n' +
+        '‐ SoC of the traction battery is between 80% and 100% (included)',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 to 21 is a vector storing the total number of seconds ellapsed for each SoC range (1 bit = 1 s).'
   },
   '': {
@@ -4973,24 +4971,24 @@ const logList = {
     yKeyArr: [
       { key: 'soc', ratio: 1, unit: "%" },
     ],
-    Purpose: 'collect the Ɵme distribuƟ on of SoC of the tracƟ on baƩ ery of an EMOB machine, especially on its low range (from 0% to 20%).',
+    Purpose: 'collect the time distribution of SoC of the traction battery of an EMOB machine, especially on its low range (from 0% to 20%).',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: ' SoC of the tracƟ on baƩ ery (%)\n' +
-        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)',
+    InputSignal: ' SoC of the traction battery (%)\n' +
+        ' Traction battery connection status (CONNECTED / NOT_CONNECTED)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)',
+    BitResolution: 'Cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
-    ConditionsForLogging: '‐ TracƟ on baƩ ery connecƟ on status is CONNECTED\n' +
-        '‐ SoC of the tracƟ on baƩ ery is between 0% and 20% (included)',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+    ConditionsForLogging: '‐ Traction battery connection status is CONNECTED\n' +
+        '‐ SoC of the traction battery is between 0% and 20% (included)',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 to 21 is a vector storing the total number of seconds ellapsed for each SoC range (1 bit = 1 s).'
   },
   '': {
@@ -5005,35 +5003,35 @@ const logList = {
     yKeyArr: [
       { key: 'event', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect events where tracƟ on baƩ ery charging current is anormally high. The type of data stored in this log is the level of baƩ ery current (in A)\n' +
-        'and DC link voltage (V) reached and the Ɵmestamp of : ‐ the 19 last events that occurred\n' +
-        '‐ the most criƟ cal event that occurred in machine life (= the event where tracƟ on baƩ ery charging current is the highest ever recorded)',
+    Purpose: 'collect events where traction battery charging current is anormally high. The type of data stored in this log is the level of battery current (in A)\n' +
+        'and DC link voltage (V) reached and the timestamp of : ‐ the 19 last events that occurred\n' +
+        '‐ the most critical event that occurred in machine life (= the event where traction battery charging current is the highest ever recorded)',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Event',
     events: 20,
     optional: 0,
-    InputSignal: ' Instantaneous current charged into tracƟ on baƩ ery (A)\n' +
-        ' Logging trigger level (A)\n' +
-        ' Logging cooldown period (s)\n' +
-        ' DC Link voltage (V)\n' +
-        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)',
+    InputSignal: ' Instantaneous current charged into traction battery (A)\n' +
+        ' Logging trigger level (A)\n' +
+        ' Logging cooldown period (s)\n' +
+        ' DC Link voltage (V)\n' +
+        ' Traction battery connection status (CONNECTED / NOT_CONNECTED)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '10Hz',
     Hz: 1,
-    BitResolution: 'Log duraƟ on should be coded over 32 bits as an unsigned integer, represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'Number of logging occurrence should be coded over 16 bits as an unsigned integer, represenƟ ng total number of event logged (1 bit = 1 occurence).\n' +
-        'Trigger level should be coded over 16 bits as an unsigned integer, represenƟ ng the trigger level used by the log funcƟ on to evaluate triggering condiƟ ons (1 bit = 0.1A)',
+    BitResolution: 'Log duration should be coded over 32 bits as an unsigned integer, representing time (1 bit = 1 sec).\n' +
+        'Number of logging occurrence should be coded over 16 bits as an unsigned integer, representing total number of event logged (1 bit = 1 occurrence).\n' +
+        'Trigger level should be coded over 16 bits as an unsigned integer, representing the trigger level used by the log function to evaluate triggering conditions (1 bit = 0.1A)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
-    ConditionsForLogging: '‐ TracƟ on baƩ ery connecƟ on status is CONNECTED\n' +
+    ConditionsForLogging: '‐ Traction battery connection status is CONNECTED\n' +
         'OR\n' +
-        '‐ TracƟ on baƩ ery connecƟ on status was CONNECTED within the last “2 * Logging cooldown period (s)” (*)',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
-        'Cell 2 is spliƩ ed in two 16 bits words storing : ‐ the total number of events that have occured, meaning the total number of event that have fulfilled triggering condiƟ ons (1 bit = 1 occurrence).\n' +
+        '‐ Traction battery connection status was CONNECTED within the last “2 * Logging cooldown period (s)” (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 sec).\n' +
+        'Cell 2 is splitted in two 16 bits words storing : ‐ the total number of events that have occurred, meaning the total number of event that have fulfilled triggering conditions (1 bit = 1 occurrence).\n' +
         '‐ Private area, not available for logging purpose'
   },
   '': {
@@ -5048,35 +5046,35 @@ const logList = {
     yKeyArr: [
       { key: 'event', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect events where tracƟ on baƩ ery discharging current is anormally high. The type of data stored in this log is the level of baƩ ery current (in\n' +
-        'A) and DC link voltage (V) reached and the Ɵmestamp of : ‐ the 19 last events that occurred\n' +
-        '‐ the most criƟ cal event that occurred in machine life (= the event where tracƟ on baƩ ery discharging current is the highest ever recorded)',
+    Purpose: 'collect events where traction battery discharging current is anormally high. The type of data stored in this log is the level of battery current (in\n' +
+        'A) and DC link voltage (V) reached and the timestamp of : ‐ the 19 last events that occurred\n' +
+        '‐ the most critical event that occurred in machine life (= the event where traction battery discharging current is the highest ever recorded)',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Event',
     events: 20,
     optional: 0,
-    InputSignal: ' Instantaneous current discharged from tracƟ on baƩ ery (A)\n' +
-        ' Logging trigger level (A)\n' +
-        ' Logging cooldown period (s)\n' +
-        ' DC Link voltage (V)\n' +
-        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)',
+    InputSignal: ' Instantaneous current discharged from traction battery (A)\n' +
+        ' Logging trigger level (A)\n' +
+        ' Logging cooldown period (s)\n' +
+        ' DC Link voltage (V)\n' +
+        ' Traction battery connection status (CONNECTED / NOT_CONNECTED)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '10Hz',
     Hz: 1,
-    BitResolution: 'Log duraƟ on should be coded over 32 bits as an unsigned integer, represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'Number of logging occurrence should be coded over 16 bits as an unsigned integer, represenƟ ng total number of event logged (1 bit = 1 occurence).\n' +
-        'Trigger level should be coded over 16 bits as an unsigned integer, represenƟ ng the trigger level used by the log funcƟ on to evaluate triggering condiƟ ons (1 bit = 0.1A)',
+    BitResolution: 'Log duration should be coded over 32 bits as an unsigned integer, representing time (1 bit = 1 sec).\n' +
+        'Number of logging occurrence should be coded over 16 bits as an unsigned integer, representing total number of event logged (1 bit = 1 occurrence).\n' +
+        'Trigger level should be coded over 16 bits as an unsigned integer, representing the trigger level used by the log function to evaluate triggering conditions (1 bit = 0.1A)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
-    ConditionsForLogging: 'Logging shall only occur when : ‐ TracƟ on baƩ ery connecƟ on status is CONNECTED\n' +
+    ConditionsForLogging: 'Logging shall only occur when : ‐ Traction battery connection status is CONNECTED\n' +
         'OR\n' +
-        '‐ TracƟ on baƩ ery connecƟ on status was CONNECTED within the last “2 * Logging cooldown period (s)” (*)',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
-        'Cell 2 is spliƩ ed in two 16 bits words storing : ‐ the total number of events that have occured, meaning the total number of event that have fulfilled triggering condiƟ ons (1 bit = 1 occurrence).\n' +
+        '‐ Traction battery connection status was CONNECTED within the last “2 * Logging cooldown period (s)” (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 sec).\n' +
+        'Cell 2 is splitted in two 16 bits words storing : ‐ the total number of events that have occurred, meaning the total number of event that have fulfilled triggering conditions (1 bit = 1 occurrence).\n' +
         '‐ Private area, not available for logging purpose'
   },
   '': {
@@ -5112,31 +5110,31 @@ const logList = {
     yKeyArr: [
       { key: 'tempRange', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect the distribuƟ on of average temperature of the mulƟ ples lithium ions cells of the tracƟ on baƩ ery of an EMOB Machine, on the high range of\n' +
+    Purpose: 'collect the distribution of average temperature of the multiples lithium ions cells of the traction battery of an EMOB Machine, on the high range of\n' +
         'temperature.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: ' TracƟ on baƩ ery average cell temperature (°C)\n' +
-        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)\n' +
-        ' Reference temperature (°C)\n' +
-        ' Offset temperature (°C)',
+    InputSignal: ' Traction battery average cell temperature (°C)\n' +
+        ' Traction battery connection status (CONNECTED / NOT_CONNECTED)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
-        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, representing temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, representing temperature (1 bit = 0.1°C)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
-    ConditionsForLogging: 'TracƟ on baƩ ery connecƟ on status is CONNECTED',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+    ConditionsForLogging: 'Traction battery connection status is CONNECTED',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
-        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with tracƟ on baƩ ery cell average temperature included within each temperature range, covering with high\n' +
-        'resoluƟ on the high range of temperature (from 80% to 100% of reference temperature) (1 bit = 1 s)'
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with traction battery cell average temperature included within each temperature range, covering with high\n' +
+        'resolution the high range of temperature (from 80% to 100% of reference temperature) (1 bit = 1 s)'
   },
   '': {
     id: '',
@@ -5171,31 +5169,31 @@ const logList = {
     yKeyArr: [
       { key: 'tempRange', ratio: 1, unit: "s" },
     ],
-    Purpose: 'collect the distribuƟ on of average temperature of the mulƟ ples lithium ions cells of the tracƟ on baƩ ery of an EMOB Machine, on the low range of\n' +
+    Purpose: 'collect the distribution of average temperature of the multiples lithium ions cells of the traction battery of an EMOB Machine, on the low range of\n' +
         'temperature.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Incremental',
-    InputSignal: ' TracƟ on baƩ ery average cell temperature (°C)\n' +
-        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)\n' +
-        ' Reference temperature (°C)\n' +
-        ' Offset temperature (°C)',
+    InputSignal: ' Traction battery average cell temperature (°C)\n' +
+        ' Traction battery connection status (CONNECTED / NOT_CONNECTED)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
     Filtering: 'None',
     ActionsAtInputSignalError: '',
     SamplingRate: '0.1Hz',
     Hz: 1,
-    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
-        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, representing temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, representing temperature (1 bit = 0.1°C)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
-    ConditionsForLogging: 'TracƟ on baƩ ery connecƟ on status is CONNECTED',
-    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+    ConditionsForLogging: 'Traction battery connection status is CONNECTED',
+    OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 s).\n' +
         'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
-        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with tracƟ on baƩ ery cell average temperature included within each temperature range, covering with high\n' +
-        'resoluƟ on the low range of temperature (from 0% to 20% of reference temperature) (1 bit = 1 s).'
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with traction battery cell average temperature included within each temperature range, covering with high\n' +
+        'resolution the low range of temperature (from 0% to 20% of reference temperature) (1 bit = 1 s).'
   },
 
 
