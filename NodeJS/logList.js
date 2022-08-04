@@ -3492,7 +3492,7 @@ const logList = {
     ],
     Purpose: 'The purpose of this log is to collect information about precharge phase, at tracƟ on battery connection. The log is intended to count how many precharge have failed, and\n' +
         'how many precharge have completed successfully.\n' +
-        'These logged datas could help to diagnose a faultly precharge circuit, or current leakage on DC link leading to a significant number of precharge failed occurences.',
+        'These logged datas could help to diagnose a faultly precharge circuit, or current leakage on DC link leading to a significant number of precharge failed occurrences.',
     Informant: '',
     SYSDATALevel: '6',
     MethodOfMeasurement: 'Duration',
@@ -3502,7 +3502,7 @@ const logList = {
     SamplingRate: '10Hz',
     Hz: 1,
     BitResolution: 'Log duration cell shall be 32 bits and store an unsigned integer representing time (1 bit = 1 sec)\n' +
-        'Cells accumulating number of occurences shall be 32 bits and store an unsigned integer representing the total number of occurences of an event (1 bit = 1 occurence).',
+        'Cells accumulating number of occurrences shall be 32 bits and store an unsigned integer representing the total number of occurrences of an event (1 bit = 1 occurrence).',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
@@ -3511,8 +3511,8 @@ const logList = {
         'OR\n' +
         '‐ Machine status was INIT at previous execution of log (*)',
     OutputDataFormat: 'Cell 1 stores the total log duration (1 bit = 1 sec).\n' +
-        'Cell 2 stores the total number of occurences of event “precharge completed” (1 bit = 1 occurence).\n' +
-        'Cell 3 stores the total number of occurences of event “precharge failed” (1 bit = 1 occurence)'
+        'Cell 2 stores the total number of occurrences of event “precharge completed” (1 bit = 1 occurrence).\n' +
+        'Cell 3 stores the total number of occurrences of event “precharge failed” (1 bit = 1 occurrence)'
   },
   '': {
     id: '',
@@ -3742,7 +3742,7 @@ const logList = {
     ],
     Purpose: 'The purpose of this log is to collect informaƟ on about motor start and motor stop event. The log is intended to count how many Ɵmes the motor is started successfully,\n' +
         'and how many Ɵmes the motor is stopped.\n' +
-        'In case of EMOB machine, we expect to have much more occurences of motor stop and motor stop. The datas from this log would allow to verify this assumpƟ on by\n' +
+        'In case of EMOB machine, we expect to have much more occurrences of motor stop and motor stop. The datas from this log would allow to verify this assumpƟ on by\n' +
         'comparing it with log datas from convenƟ onal machines.',
     Informant: '',
     SYSDATALevel: '6',
@@ -3756,7 +3756,7 @@ const logList = {
     SamplingRate: '1Hz',
     Hz: 1,
     BitResolution: 'Log duraƟ on cell shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
-        'Cells accumulaƟ ng number of occurences shall be 32 bits and store an unsigned integer represenƟ ng the total number of occurences of an event (1 bit = 1 occurence)',
+        'Cells accumulaƟ ng number of occurrences shall be 32 bits and store an unsigned integer represenƟ ng the total number of occurrences of an event (1 bit = 1 occurrence)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
@@ -3765,8 +3765,8 @@ const logList = {
         'OR\n' +
         '‐ Machine status was WORKING_CONDITIONS at previous execuƟ on of log (*)',
     OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
-        'Cell 2 stores the total number of occurences of event “motor started” (1 bit = 1 occurence).\n' +
-        'Cell 3 stores the total number of occurences of event “motor stopped” (1 bit = 1 occurence).'
+        'Cell 2 stores the total number of occurrences of event “motor started” (1 bit = 1 occurrence).\n' +
+        'Cell 3 stores the total number of occurrences of event “motor stopped” (1 bit = 1 occurrence).'
   },
   '': {
     id: '',
@@ -3972,8 +3972,8 @@ const logList = {
     id: '',
     demo: null,
     logID: 'LogID1564',
-    x: '',
-    y: '',
+    x: 'Temperature Ranges defined as:%x(Reference-Offset)+Offset',
+    y: 'Vector of time distribution(s)',
     xKeyArr: [
       { key: 'lt0' },
       { key: 'bt0n1' },
@@ -4041,7 +4041,7 @@ const logList = {
       { key: 'osrh' },
     ],
     yKeyArr: [
-      { key: 'num', ratio: 1, unit: "occurence" },
+      { key: 'num', ratio: 1, unit: "occurrence" },
     ],
     Purpose: 'collect informaƟ on about motor start request event.',
     Informant: '',
@@ -4060,20 +4060,20 @@ const logList = {
     SamplingRate: '10Hz',
     Hz: 1,
     BitResolution: 'Log duraƟ on cell shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)\n' +
-        'Cells accumulaƟ ng number of occurences shall be 32 bits and store an unsigned integer represenƟ ng the total number of occurences of an event (1 bit = 1 occurence)',
+        'Cells accumulaƟ ng number of occurrences shall be 32 bits and store an unsigned integer represenƟ ng the total number of occurrences of an event (1 bit = 1 occurrence)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
     BitBUnit: 's',
     ConditionsForLogging: 'Machine status is WORKING_CONDITIONS',
     OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
-        'Cell 2 stores the total number of occurences of event “motor start request from operator” (1 bit = 1 occurence).\n' +
-        'Cell 3 stores the total number of occurences of event “motor start inhibited due to motor protecƟ on status” (1 bit = 1 occurence).\n' +
-        'Cell 4 stores the total number of occurences of event “motor start inhibited due to inverter protecƟ on status” (1 bit = 1 occurence).\n' +
-        'Cell 5 stores the total number of occurences of event “motor start inhibited due to tracƟ on baƩ ery protecƟ on status” (1 bit = 1 occurence).\n' +
-        'Cell 6 stores the total number of occurences of event “motor start inhibited due to oil temperature status” (1 bit = 1 occurence).\n' +
-        'Cell 7 stores the total number of occurences of event “motor start inhibited due to DCDC protecƟ on status” (1 bit = 1 occurence).\n' +
-        'Cell 8 stores the total number of occurences of event “motor start inhibited due to operator sƟ ll requesƟ ng hydraulic” (1 bit = 1 occurence)'
+        'Cell 2 stores the total number of occurrences of event “motor start request from operator” (1 bit = 1 occurrence).\n' +
+        'Cell 3 stores the total number of occurrences of event “motor start inhibited due to motor protecƟ on status” (1 bit = 1 occurrence).\n' +
+        'Cell 4 stores the total number of occurrences of event “motor start inhibited due to inverter protecƟ on status” (1 bit = 1 occurrence).\n' +
+        'Cell 5 stores the total number of occurrences of event “motor start inhibited due to tracƟ on baƩ ery protecƟ on status” (1 bit = 1 occurrence).\n' +
+        'Cell 6 stores the total number of occurrences of event “motor start inhibited due to oil temperature status” (1 bit = 1 occurrence).\n' +
+        'Cell 7 stores the total number of occurrences of event “motor start inhibited due to DCDC protecƟ on status” (1 bit = 1 occurrence).\n' +
+        'Cell 8 stores the total number of occurrences of event “motor start inhibited due to operator sƟ ll requesƟ ng hydraulic” (1 bit = 1 occurrence)'
   },
   '': {
     id: '',
@@ -4091,7 +4091,7 @@ const logList = {
       { key: 'ar' },
     ],
     yKeyArr: [
-      { key: 'num', ratio: 1, unit: "occurence" },
+      { key: 'num', ratio: 1, unit: "occurrence" },
     ],
     Purpose: 'collect informaƟ on about motor stop event.',
     Informant: '',
@@ -4112,7 +4112,7 @@ const logList = {
     SamplingRate: '10Hz',
     Hz: 1,
     BitResolution: 'Log duraƟ on cell shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)\n' +
-        'Cells accumulaƟ ng number of occurences shall be 32 bits and store an unsigned integer represenƟ ng the total number of occurences of an event (1 bit = 1 occurence)',
+        'Cells accumulaƟ ng number of occurrences shall be 32 bits and store an unsigned integer represenƟ ng the total number of occurrences of an event (1 bit = 1 occurrence)',
     BitA: 1,
     BitAUnit: 's',
     BitB: '10',
@@ -4121,21 +4121,21 @@ const logList = {
         'OR\n' +
         '‐ Machine status was WORKING_CONDITIONS at previous execuƟ on of log (*)',
     OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
-        'Cell 2 stores the total number of occurences of event “motor stop requested” (1 bit = 1 occurence).\n' +
-        'Cell 3 stores the total number of occurences of event “motor stopped due to motor protecƟ on status” (1 bit = 1 occurence).\n' +
-        'Cell 4 stores the total number of occurences of event “motor stopped due to inverter protecƟ on status” (1 bit = 1 occurence).\n' +
-        'Cell 5 stores the total number of occurences of event “motor stopped due to tracƟ on baƩ ery protecƟ on status” (1 bit = 1 occurence).\n' +
-        'Cell 6 stores the total number of occurences of event “motor stopped due to oil temperature status” (1 bit = 1 occurence).\n' +
-        'Cell 7 stores the total number of occurences of event “motor stopped due to autoshutdown funcƟ on” (1 bit = 1 occurence).\n' +
-        'Cell 8 stores the total number of occurences of event “motor stopped due to igniƟ on key off” (1 bit = 1 occurence).\n' +
-        'Cell 9 stores the total number of occurences of event “motor stopped due to armrest raised” (1 bit = 1 occurence)'
+        'Cell 2 stores the total number of occurrences of event “motor stop requested” (1 bit = 1 occurrence).\n' +
+        'Cell 3 stores the total number of occurrences of event “motor stopped due to motor protecƟ on status” (1 bit = 1 occurrence).\n' +
+        'Cell 4 stores the total number of occurrences of event “motor stopped due to inverter protecƟ on status” (1 bit = 1 occurrence).\n' +
+        'Cell 5 stores the total number of occurrences of event “motor stopped due to tracƟ on baƩ ery protecƟ on status” (1 bit = 1 occurrence).\n' +
+        'Cell 6 stores the total number of occurrences of event “motor stopped due to oil temperature status” (1 bit = 1 occurrence).\n' +
+        'Cell 7 stores the total number of occurrences of event “motor stopped due to autoshutdown funcƟ on” (1 bit = 1 occurrence).\n' +
+        'Cell 8 stores the total number of occurrences of event “motor stopped due to igniƟ on key off” (1 bit = 1 occurrence).\n' +
+        'Cell 9 stores the total number of occurrences of event “motor stopped due to armrest raised” (1 bit = 1 occurrence)'
   },
   '': {
     id: '',
     demo: null,
     logID: 'LogID1568',
     x: 'Motor stop time Range',
-    y: 'Vector of occurences of motor stop time before restart',
+    y: 'Vector of occurrences of motor stop time before restart',
     xKeyArr: [
       { key: 'bt0n10sec' },
       { key: 'bt10n20sec' },
@@ -4172,8 +4172,8 @@ const logList = {
     ActionsAtInputSignalError: '',
     SamplingRate: '1Hz',
     Hz: 1,
-    BitResolution: 'For the vector of occurences, each cell shall be 32 bits and store an unsigned integer represenƟ ng how long the motor remained stopped before to be restarted, for each\n' +
-        'Ɵ me range (1 bit = 1 occurence).\n' +
+    BitResolution: 'For the vector of occurrences, each cell shall be 32 bits and store an unsigned integer represenƟ ng how long the motor remained stopped before to be restarted, for each\n' +
+        'Ɵ me range (1 bit = 1 occurrence).\n' +
         'For the log total duraƟ on, the cell shall be 32 bits and store an unsigned integer represenƟ ng a Ɵme (1 bit = 1 sec)',
     BitA: 1,
     BitAUnit: 's',
@@ -4181,7 +4181,7 @@ const logList = {
     BitBUnit: 's',
     ConditionsForLogging: '‐ Machine status is WORKING_CONDITIONS',
     OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
-        'Cell 2 to 21 is a vector storing the total number of occurences where motor remains stopped for a duraƟ on included in each Ɵme range, before to be restarted (or\n' +
+        'Cell 2 to 21 is a vector storing the total number of occurrences where motor remains stopped for a duraƟ on included in each Ɵme range, before to be restarted (or\n' +
         'working condiƟ on leaved) (1 bit = 1 occurrence)'
   },
   '': {
@@ -4246,8 +4246,8 @@ const logList = {
     id: '',
     demo: null,
     logID: 'LogID1570',
-    x: '',
-    y: '',
+    x: 'Temperature Ranges defined as :% x (Reference -Offset)+Offset',
+    y: 'Vector of time distribution(s)',
     xKeyArr: [
       { key: 'lt0' },
       { key: 'bt0n1' },
@@ -4300,6 +4300,902 @@ const logList = {
         'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
         'Cell 3 to 24 is a vector storing the total number of seconds elapsed with motor temperature included within each temperature range, covering with high resoluƟ on the low range of\n' +
         'temperature (from 0% to 20% of reference temperature) (1 bit = 1 s)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1560',
+    x: 'Temperature Ranges defined as :% x (Reference -Offset)+Offset',
+    y: 'Vector of time distribution(s)',
+    xKeyArr: [
+      { key: 'lt0' },
+      { key: 'bt0n5' },
+      { key: 'bt5n10' },
+      { key: 'bt10n15' },
+      { key: 'bt15n20' },
+      { key: 'bt20n25' },
+      { key: 'bt25n30' },
+      { key: 'bt30n35' },
+      { key: 'bt35n40' },
+      { key: 'bt40n45' },
+      { key: 'bt45n50' },
+      { key: 'bt50n55' },
+      { key: 'bt55n60' },
+      { key: 'bt60n65' },
+      { key: 'bt65n70' },
+      { key: 'bt70n75' },
+      { key: 'bt75n80' },
+      { key: 'bt80n85' },
+      { key: 'bt85n90' },
+      { key: 'bt90n95' },
+      { key: 'bt95n100' },
+      { key: 'gt100' },
+    ],
+    yKeyArr: [
+      { key: 'time', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect the distribuƟ on of temperature of the DCDC converter of an EMOB machine, on full range of temperature.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: 'DCDC temperature (°C)\n' +
+        ' DCDC status (CONVERTING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'DCDC status is CONVERTING or STANDBY',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with DCDC converter temperature included within each temperature range, covering with medium resoluƟ on th\n' +
+        'full range of temperature (from 0% to 100% of reference temperature) (1 bit = 1 s)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1558',
+    x: 'SoC(%)',
+    y: 'Vector of occurrences when charge is started' +
+        'Vector of occurrences when charge is stopped',
+    xKeyArr: [
+      { key: 'bt0n5' },
+      { key: 'bt5n10' },
+      { key: 'bt10n15' },
+      { key: 'bt15n20' },
+      { key: 'bt20n25' },
+      { key: 'bt25n30' },
+      { key: 'bt30n35' },
+      { key: 'bt35n40' },
+      { key: 'bt40n45' },
+      { key: 'bt45n50' },
+      { key: 'bt50n55' },
+      { key: 'bt55n60' },
+      { key: 'bt60n65' },
+      { key: 'bt65n70' },
+      { key: 'bt70n75' },
+      { key: 'bt75n80' },
+      { key: 'bt80n85' },
+      { key: 'bt85n90' },
+      { key: 'bt90n95' },
+      { key: 'bt95n100' },
+    ],
+    yKeyArr: [
+      { key: 'numChargeStart', ratio: 1, unit: "occurrence" },
+      { key: 'numChargeStop', ratio: 1, unit: "occurrence" },
+    ],
+    Purpose: 'collect the distribuƟ on of SoC of the tracƟ on baƩ ery of an EMOB Machine, especially at the moment where fast charge is started or stopped\n' +
+        '(including mobile fast charge or plugged fast charge). Each Ɵme a fast charge process is started or stopped, this log should increment by one occurrence the cell\n' +
+        'corresponding to the actual SoC level.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: ' SoC of the tracƟ on baƩ ery (%)\n' +
+        '- 175 -\n' +
+        ' Fast charging status (STANDBY / CHARGING)\n' +
+        ' Machine state (CHARGING / OTHER_STATE)\n' +
+        ' Charging mode detected (FAST / OTHER)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '1Hz',
+    Hz: 1,
+    BitResolution: 'For the vector of occurrences, each cell shall be 32 bits and store an unsigned integer represenƟ ng how many Ɵme the fast charge has been started or stopped for each\n' +
+        'SoC range (1 bit = 1 occurrence).\n' +
+        'For the log total duraƟ on, the cell shall be 32 bits and store an unsigned integer represenƟ ng a Ɵme (1 bit = 1 sec)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'Machine state is CHARGING\n' +
+        '‐ Charging mode detected is FAST\n' +
+        'OR\n' +
+        '‐ Machine state was CHARGING with Charging mode detected FAST at previous execuƟ on of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cell 2 to 21 is a vector storing the total number of occurrences where fast charging is started for each SoC range (1 bit = 1 occurrence).\n' +
+        'Cell 22 to 41 is a vector storing the total number of occurrences where fast charging is stopped for each SoC range (1 bit = 1 occurrence).'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1559',
+    x: 'SoC(%)',
+    y: 'Vector of occurrences when charge is started' +
+        'Vector of occurrences when charge is stopped',
+    xKeyArr: [
+      { key: 'bt0n5' },
+      { key: 'bt5n10' },
+      { key: 'bt10n15' },
+      { key: 'bt15n20' },
+      { key: 'bt20n25' },
+      { key: 'bt25n30' },
+      { key: 'bt30n35' },
+      { key: 'bt35n40' },
+      { key: 'bt40n45' },
+      { key: 'bt45n50' },
+      { key: 'bt50n55' },
+      { key: 'bt55n60' },
+      { key: 'bt60n65' },
+      { key: 'bt65n70' },
+      { key: 'bt70n75' },
+      { key: 'bt75n80' },
+      { key: 'bt80n85' },
+      { key: 'bt85n90' },
+      { key: 'bt90n95' },
+      { key: 'bt95n100' },
+    ],
+    yKeyArr: [
+      { key: 'numChargeStart', ratio: 1, unit: "occurrence" },
+      { key: 'numChargeStop', ratio: 1, unit: "occurrence" },
+    ],
+    Purpose: 'collect the distribuƟ on of SoC of the tracƟ on baƩ ery of an EMOB Machine, especially at the moment where slow charge is started or stopped.\n' +
+        'Each Ɵme a slow charge process is started or stopped, this log should increment by one occurrence the cell corresponding to the actual SoC level.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: ' SoC of the tracƟ on baƩ ery (%)\n' +
+        '- 184 -\n' +
+        ' Slow charging status (STANDBY / CHARGING)\n' +
+        ' Machine state (CHARGING / OTHER_STATE)\n' +
+        ' Charging mode detected (SLOW / OTHER)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '1Hz',
+    Hz: 1,
+    BitResolution: 'For the vector of occurrences, each cell shall be 32 bits and store an unsigned integer represenƟ ng how many Ɵme the slow charge has been started or stopped for each SoC\n' +
+        'range (1 bit = 1 occurrence).\n' +
+        'For the log total duraƟ on, the cell shall be 32 bits and store an unsigned integer represenƟ ng a Ɵme (1 bit =1 sec)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: ' Machine state is CHARGING\n' +
+        '‐ Charging mode detected is SLOW\n' +
+        'OR\n' +
+        '‐ Machine state was CHARGING with Charging mode detected SLOW at previous execuƟ on of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cell 2 to 21 is a vector storing the total number of occurrences where slow charging is started for each SoC range (1 bit = 1 occurrence).\n' +
+        'Cell 22 to 41 is a vector storing the total number of occurrences where slow charging is stopped for each SoC range (1 bit = 1 occurrence).'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1571',
+    x: 'Temperature Ranges defined as: %x(Reference - Offset)+Offset',
+    y: 'Vector of time distribute(s)',
+    xKeyArr: [
+      { key: 'lt0' },
+      { key: 'bt0n5' },
+      { key: 'bt5n10' },
+      { key: 'bt10n15' },
+      { key: 'bt15n20' },
+      { key: 'bt20n25' },
+      { key: 'bt25n30' },
+      { key: 'bt30n35' },
+      { key: 'bt35n40' },
+      { key: 'bt40n45' },
+      { key: 'bt45n50' },
+      { key: 'bt50n55' },
+      { key: 'bt55n60' },
+      { key: 'bt60n65' },
+      { key: 'bt65n70' },
+      { key: 'bt70n75' },
+      { key: 'bt75n80' },
+      { key: 'bt80n85' },
+      { key: 'bt85n90' },
+      { key: 'bt90n95' },
+      { key: 'bt95n100' },
+      { key: 'gt100' },
+    ],
+    yKeyArr: [
+      { key: 'TempRng', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect the distribuƟ on of temperature of the OnBC of an EMOB machine, on the full range of temperat',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: ' OnBC temperature (°C)\n' +
+        ' OnBC status (CONVERTING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'OnBC status is CONVERTING or STANDBY',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with on board charger temperature included within each temperature range, covering with medium resoluƟ on t\n' +
+        'full range of temperature (from 0% to 100% of reference temperature) (1 bit = 1 s).'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1525',
+    x: '',
+    y: '',
+    xKeyArr: [
+      { key: 'off' },
+      { key: 'on' },
+    ],
+    yKeyArr: [
+      { key: 'timeElapsed', ratio: 1, unit: "s" },
+      { key: 'energyConsumed', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect the total energy that have been consumed by the DCDC converter, over the life of an EMOB machine. Energy consumpƟ on datas will\n' +
+        'be sorted into differents buckets depending on the igniƟ on key posiƟ on (ON, OFF), since the DCDC converter energy consumpƟ on on the tracƟ on voltage link may vary\n' +
+        'significantly with igniƟ on key posiƟ on, that inhibit or not some electrical funcƟ on supplied with accessory baƩ ery',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: ' IgniƟ on key posiƟ on (ON / OFF)\n' +
+        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)\n' +
+        ' Counter of the total Ɵme elapsed while energy consumed by the DCDC converter (s)\n' +
+        ' Counter of the total energy consumed by the DCDC converter (W.h)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Energy cells shall be 32 bits and store an unsigned integer represenƟ ng energy (1 bit = 1 Wh)\n' +
+        'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'TracƟ on baƩ ery connecƟ on status is CONNECTED\n' +
+        'OR\n' +
+        '‐  TracƟ on baƩ ery connecƟ on status was CONNECTED at previous execuƟ on of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cells 2..3 store the total Ɵme elapsed where energy is consumed by the DCDC converter, towards igniƟ on key posiƟ on (1 bit = 1 sec).\n' +
+        'Cells 4..5 store the total energy consumed by the DCDC converter, towards igniƟ on key posiƟ on (1 bit = 1 Wh)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1572',
+    x: 'Temperature Ranges defined as :% x(Reference-Offset)+Offset',
+    y: 'Vector of time distribution(s)',
+    xKeyArr: [
+      { key: 'lt80' },
+      { key: 'bt80n81' },
+      { key: 'bt81n82' },
+      { key: 'bt82n83' },
+      { key: 'bt83n84' },
+      { key: 'bt84n85' },
+      { key: 'bt85n86' },
+      { key: 'bt86n87' },
+      { key: 'bt87n88' },
+      { key: 'bt88n89' },
+      { key: 'bt89n90' },
+      { key: 'bt90n91' },
+      { key: 'bt91n92' },
+      { key: 'bt92n93' },
+      { key: 'bt93n94' },
+      { key: 'bt94n95' },
+      { key: 'bt95n96' },
+      { key: 'bt96n97' },
+      { key: 'bt97n98' },
+      { key: 'bt98n99' },
+      { key: 'bt99n100' },
+      { key: 'gt100' },
+    ],
+    yKeyArr: [
+      { key: 'tempRange', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect the distribuƟ on of temperature of the OnBC of an EMOB machine, on the high range of temperature',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: ' OnBC temperature (°C)\n' +
+        ' OnBC status (CONVERTING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'OnBC status is CONVERTING or STANDBY',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with on board charger temperature included within each temperature range, covering with high resoluƟ on the\n' +
+        'high range of temperature (from 80% to 100% of reference temperature) (1 bit = 1 s)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1573',
+    x: 'Temperature Ranges defined as:%x(Reference-Offset)+Offset',
+    y: 'Vector of time distribution(s)',
+    xKeyArr: [
+      { key: 'lt0' },
+      { key: 'bt0n1' },
+      { key: 'bt1n2' },
+      { key: 'bt2n3' },
+      { key: 'bt3n4' },
+      { key: 'bt4n5' },
+      { key: 'bt5n6' },
+      { key: 'bt6n7' },
+      { key: 'bt7n8' },
+      { key: 'bt8n9' },
+      { key: 'bt9n10' },
+      { key: 'bt10n11' },
+      { key: 'bt11n12' },
+      { key: 'bt12n13' },
+      { key: 'bt13n14' },
+      { key: 'bt14n15' },
+      { key: 'bt15n16' },
+      { key: 'bt16n17' },
+      { key: 'bt17n18' },
+      { key: 'bt18n19' },
+      { key: 'bt19n20' },
+      { key: 'gt20' },
+    ],
+    yKeyArr: [
+      { key: 'tempRange', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect the distribuƟ on of temperature of the OnBC of an EMOB machine, on the low range of temperature.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: ' OnBC temperature (°C)\n' +
+        ' OnBC status (CONVERTING / STANDBY / OTHER)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'OnBC status is CONVERTING or STANDBY',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with on board charger temperature included within each temperature range, covering with high resoluƟ on\n' +
+        'the low range of temperature (from 0% to 20% of reference temperature) (1 bit = 1 s).'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1539',
+    x: '',
+    y: '',
+    xKeyArr: [
+      { key: 'cell' },
+    ],
+    yKeyArr: [
+      { key: 'event', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect events where DC link voltage is anormally high. The type of data stored in this log is the level of DC link voltage (V) reached and the\n' +
+        'Ɵ mestamp of : ‐ the 19 last events that occurred\n' +
+        '‐ the most criƟ cal event that occurred in machine life (= the event where DC link voltage is the highest ever recorded)',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Event',
+    events: 20,
+    optional: 0,
+    InputSignal: ' DC Link voltage (V)\n' +
+        ' Logging trigger level (V)\n' +
+        ' Logging cooldown period (s)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '10Hz',
+    Hz: 1,
+    BitResolution: 'Log duraƟ on should be coded over 32 bits as an unsigned integer, represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'Number of logging occurrence should be coded over 16 bits as an unsigned integer, represenƟ ng total number of event logged (1 bit = 1 occurence).\n' +
+        'Trigger level should be coded over 16 bits as an unsigned integer, represenƟ ng the trigger level used by the log funcƟ on to evaluate triggering condiƟ ons (1 bit = 0.1V).',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'DC link is charged, meaning DC link voltage (V) > 5V',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
+        'Cell 2 is spliƩ ed in two 16 bits words storing : ‐ the total number of events that have occured, meaning the total number of event that have fulfilled triggering condiƟ ons (1 bit = 1 occurrence).\n' +
+        '‐ Private area, not available for logging purpose\n' +
+        'Then, for each logged event :\n' +
+        'The two first cells store the Ɵmestamp when the event occurred, meaning when triggering condiƟ ons (or re‐triggering condiƟ ons) have been fulfilled.\n' +
+        'Another cell stores the value of the DC link voltage when the event occurred, meaning when trigerring condiƟ ons (or re‐triggering condiƟ ons) have been fulfilled (1 bit =\n' +
+        '0.1V).\n' +
+        'The last cell is spliƩ ed in two 16 bits words storing : ‐ The logging trigger level used (1 bit = 0.1V).\n' +
+        '‐ The logging cooldown period (1 bit = 0.1 sec).\n' +
+        'Note : This last cell of each logged event should have been stored only one Ɵme as a common value for all logged events, but due to some restricƟ ons from CEA2+\n' +
+        'Plaƞ orm API, it has to be stored mulƟ ple Ɵme, in an addiƟ onal cell in each logged event.'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1540',
+    x: '',
+    y: '',
+    xKeyArr: [
+      { key: 'cell' },
+    ],
+    yKeyArr: [
+      { key: 'event', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect events where DC link voltage is anormally low. The type of data stored in this log is the level of DC link voltage (V) reached and the\n' +
+        'Ɵ mestamp of : ‐ the 19 last events that occurred\n' +
+        '‐ the most criƟ cal event that occurred in machine life (= the event where DC link voltage is the lowest ever recorded).',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Event',
+    events: 20,
+    optional: 0,
+    InputSignal: ' DC Link voltage (V)\n' +
+        ' Logging trigger level (V)\n' +
+        ' Logging cooldown period (s)\n' +
+        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '10Hz',
+    Hz: 1,
+    BitResolution: 'Log duraƟ on should be coded over 32 bits as an unsigned integer, represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'Number of logging occurrence should be coded over 16 bits as an unsigned integer, represenƟ ng total number of event logged (1 bit = 1 occurence).\n' +
+        'Trigger level should be coded over 16 bits as an unsigned integer, represenƟ ng the trigger level used by the log funcƟ on to evaluate triggering condiƟ ons (1 bit = 0.1V)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: ' DC link is charged, meaning instantaneous DC link voltage (V) > 0V\n' +
+        '‐ TracƟ on baƩ ery connecƟ on status is CONNECTED\n' +
+        'Or\n' +
+        '‐ TracƟ on baƩ ery connecƟ on status was CONNECTED at previous execuƟ on of log (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
+        'Cell 2 is spliƩ ed in two 16 bits words storing : ‐ the total number of events that have occured, meaning the total number of event that have fulfilled triggering condiƟ ons (1 bit = 1 occurrence).\n' +
+        '‐ Private area, not available for logging purpose\n' +
+        'Then, for each logged event :\n' +
+        'The two first cells store the Ɵmestamp when the event occurred, meaning when triggering condiƟ ons (or re‐triggering condiƟ ons) have been fulfilled.\n' +
+        'Another cell stores the value of the DC link voltage when the event occurred, meaning when trigerring condiƟ ons (or re‐triggering condiƟ ons) have been fulfilled (1 bit =\n' +
+        '0.1V).\n' +
+        'The last cell is spliƩ ed in two 16 bits words storing : ‐ The logging trigger level used (1 bit = 0.1V).\n' +
+        '‐ The logging cooldown period (1 bit = 0.1 sec)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1543',
+    x: 'Temperature Ranges defined as: %x(Reference - Offset)+Offset',
+    y: 'Vector of time distribute(s)',
+    xKeyArr: [
+      { key: 'lt0' },
+      { key: 'bt0n5' },
+      { key: 'bt5n10' },
+      { key: 'bt10n15' },
+      { key: 'bt15n20' },
+      { key: 'bt20n25' },
+      { key: 'bt25n30' },
+      { key: 'bt30n35' },
+      { key: 'bt35n40' },
+      { key: 'bt40n45' },
+      { key: 'bt45n50' },
+      { key: 'bt50n55' },
+      { key: 'bt55n60' },
+      { key: 'bt60n65' },
+      { key: 'bt65n70' },
+      { key: 'bt70n75' },
+      { key: 'bt75n80' },
+      { key: 'bt80n85' },
+      { key: 'bt85n90' },
+      { key: 'bt90n95' },
+      { key: 'bt95n100' },
+      { key: 'gt100' },
+    ],
+    yKeyArr: [
+      { key: 'TempRng', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect the distribuƟ on of average temperature of the mulƟ ples lithium ions cells of the tracƟ on baƩ ery of an EMOB Machine, on the full range of\n' +
+        'temperature.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: ' TracƟ on baƩ ery average cell temperature (°C)\n' +
+        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'TracƟ on baƩ ery connecƟ on status is CONNECTED',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with tracƟ on baƩ ery cell average temperature included within each temperature range, covering with medium\n' +
+        'resoluƟ on the full range of temperature (from 0% to 100% of reference temperature) (1 bit = 1 s)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1546',
+    x: '',
+    y: '',
+    xKeyArr: [
+      { key: 'cell' },
+    ],
+    yKeyArr: [
+      { key: 'event', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect informaƟ ons about tracƟ on baƩ ery disconnected unexpectedly event that could occur in EMOB machines.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Event',
+    events: 20,
+    optional: 0,
+    InputSignal: ' TracƟ on baƩ ery unexpected disconnecƟ on alarm status (ACTIVE / INACTIVE)\n' +
+        ' TracƟ on baƩ ery current (A) with following convenƟ on : o Charging current > 0A\n' +
+        'o Discharging current < 0A\n' +
+        ' Machine status (SLEEP / NOT_SLEEP)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '10Hz',
+    Hz: 1,
+    BitResolution: '',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: '‐ Machine status is NOT_SLEEP',
+    OutputDataFormat: 'Log duraƟ on shall be coded over 32 bits as an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'Number of occurences shall be coded over 32 bits as an unsigned integer represenƟ ng the total number of occurences of an event (1 bit = 1 occurence).'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1547',
+    x: 'SoC(%)',
+    y: 'Vector of time distribution(s)',
+    xKeyArr: [
+      { key: 'lt80' },
+      { key: 'bt80n81' },
+      { key: 'bt81n82' },
+      { key: 'bt82n83' },
+      { key: 'bt83n84' },
+      { key: 'bt84n85' },
+      { key: 'bt85n86' },
+      { key: 'bt86n87' },
+      { key: 'bt87n88' },
+      { key: 'bt88n89' },
+      { key: 'bt89n90' },
+      { key: 'bt90n91' },
+      { key: 'bt91n92' },
+      { key: 'bt92n93' },
+      { key: 'bt93n94' },
+      { key: 'bt94n95' },
+      { key: 'bt95n96' },
+      { key: 'bt96n97' },
+      { key: 'bt97n98' },
+      { key: 'bt98n99' },
+      { key: 'bt99n100' }
+    ],
+    yKeyArr: [
+      { key: 'soc', ratio: 1, unit: "%" },
+    ],
+    Purpose: 'collect the Ɵme distribuƟ on of SoC of the tracƟ on baƩ ery on an EMOB machine, especially on its high range (from 80% to 100%)',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: ' SoC of the tracƟ on baƩ ery (%)\n' +
+        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: '‐ TracƟ on baƩ ery connecƟ on status is CONNECTED\n' +
+        '‐ SoC of the tracƟ on baƩ ery is between 80% and 100% (included)',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cell 2 to 21 is a vector storing the total number of seconds ellapsed for each SoC range (1 bit = 1 s).'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1548',
+    x: 'SoC(%)',
+    y: 'Vector of time distribution(s)',
+    xKeyArr: [
+      { key: 'lt0' },
+      { key: 'bt0n1' },
+      { key: 'bt1n2' },
+      { key: 'bt2n3' },
+      { key: 'bt3n4' },
+      { key: 'bt4n5' },
+      { key: 'bt5n6' },
+      { key: 'bt6n7' },
+      { key: 'bt7n8' },
+      { key: 'bt8n9' },
+      { key: 'bt9n10' },
+      { key: 'bt10n11' },
+      { key: 'bt11n12' },
+      { key: 'bt12n13' },
+      { key: 'bt13n14' },
+      { key: 'bt14n15' },
+      { key: 'bt15n16' },
+      { key: 'bt16n17' },
+      { key: 'bt17n18' },
+      { key: 'bt18n19' },
+      { key: 'bt19n20' },
+    ],
+    yKeyArr: [
+      { key: 'soc', ratio: 1, unit: "%" },
+    ],
+    Purpose: 'collect the Ɵme distribuƟ on of SoC of the tracƟ on baƩ ery of an EMOB machine, especially on its low range (from 0% to 20%).',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: ' SoC of the tracƟ on baƩ ery (%)\n' +
+        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: '‐ TracƟ on baƩ ery connecƟ on status is CONNECTED\n' +
+        '‐ SoC of the tracƟ on baƩ ery is between 0% and 20% (included)',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cell 2 to 21 is a vector storing the total number of seconds ellapsed for each SoC range (1 bit = 1 s).'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1554',
+    x: '',
+    y: '',
+    xKeyArr: [
+      { key: 'cell' },
+    ],
+    yKeyArr: [
+      { key: 'event', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect events where tracƟ on baƩ ery charging current is anormally high. The type of data stored in this log is the level of baƩ ery current (in A)\n' +
+        'and DC link voltage (V) reached and the Ɵmestamp of : ‐ the 19 last events that occurred\n' +
+        '‐ the most criƟ cal event that occurred in machine life (= the event where tracƟ on baƩ ery charging current is the highest ever recorded)',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Event',
+    events: 20,
+    optional: 0,
+    InputSignal: ' Instantaneous current charged into tracƟ on baƩ ery (A)\n' +
+        ' Logging trigger level (A)\n' +
+        ' Logging cooldown period (s)\n' +
+        ' DC Link voltage (V)\n' +
+        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '10Hz',
+    Hz: 1,
+    BitResolution: 'Log duraƟ on should be coded over 32 bits as an unsigned integer, represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'Number of logging occurrence should be coded over 16 bits as an unsigned integer, represenƟ ng total number of event logged (1 bit = 1 occurence).\n' +
+        'Trigger level should be coded over 16 bits as an unsigned integer, represenƟ ng the trigger level used by the log funcƟ on to evaluate triggering condiƟ ons (1 bit = 0.1A)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: '‐ TracƟ on baƩ ery connecƟ on status is CONNECTED\n' +
+        'OR\n' +
+        '‐ TracƟ on baƩ ery connecƟ on status was CONNECTED within the last “2 * Logging cooldown period (s)” (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
+        'Cell 2 is spliƩ ed in two 16 bits words storing : ‐ the total number of events that have occured, meaning the total number of event that have fulfilled triggering condiƟ ons (1 bit = 1 occurrence).\n' +
+        '‐ Private area, not available for logging purpose'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1555',
+    x: '',
+    y: '',
+    xKeyArr: [
+      { key: 'cell' },
+    ],
+    yKeyArr: [
+      { key: 'event', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect events where tracƟ on baƩ ery discharging current is anormally high. The type of data stored in this log is the level of baƩ ery current (in\n' +
+        'A) and DC link voltage (V) reached and the Ɵmestamp of : ‐ the 19 last events that occurred\n' +
+        '‐ the most criƟ cal event that occurred in machine life (= the event where tracƟ on baƩ ery discharging current is the highest ever recorded)',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Event',
+    events: 20,
+    optional: 0,
+    InputSignal: ' Instantaneous current discharged from tracƟ on baƩ ery (A)\n' +
+        ' Logging trigger level (A)\n' +
+        ' Logging cooldown period (s)\n' +
+        ' DC Link voltage (V)\n' +
+        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '10Hz',
+    Hz: 1,
+    BitResolution: 'Log duraƟ on should be coded over 32 bits as an unsigned integer, represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'Number of logging occurrence should be coded over 16 bits as an unsigned integer, represenƟ ng total number of event logged (1 bit = 1 occurence).\n' +
+        'Trigger level should be coded over 16 bits as an unsigned integer, represenƟ ng the trigger level used by the log funcƟ on to evaluate triggering condiƟ ons (1 bit = 0.1A)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'Logging shall only occur when : ‐ TracƟ on baƩ ery connecƟ on status is CONNECTED\n' +
+        'OR\n' +
+        '‐ TracƟ on baƩ ery connecƟ on status was CONNECTED within the last “2 * Logging cooldown period (s)” (*)',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 sec).\n' +
+        'Cell 2 is spliƩ ed in two 16 bits words storing : ‐ the total number of events that have occured, meaning the total number of event that have fulfilled triggering condiƟ ons (1 bit = 1 occurrence).\n' +
+        '‐ Private area, not available for logging purpose'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1574',
+    x: 'Temperature Ranges defined as :% x(Reference-Offset)+Offset',
+    y: 'Vector of time distribution(s)',
+    xKeyArr: [
+      { key: 'lt80' },
+      { key: 'bt80n81' },
+      { key: 'bt81n82' },
+      { key: 'bt82n83' },
+      { key: 'bt83n84' },
+      { key: 'bt84n85' },
+      { key: 'bt85n86' },
+      { key: 'bt86n87' },
+      { key: 'bt87n88' },
+      { key: 'bt88n89' },
+      { key: 'bt89n90' },
+      { key: 'bt90n91' },
+      { key: 'bt91n92' },
+      { key: 'bt92n93' },
+      { key: 'bt93n94' },
+      { key: 'bt94n95' },
+      { key: 'bt95n96' },
+      { key: 'bt96n97' },
+      { key: 'bt97n98' },
+      { key: 'bt98n99' },
+      { key: 'bt99n100' },
+      { key: 'gt100' },
+    ],
+    yKeyArr: [
+      { key: 'tempRange', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect the distribuƟ on of average temperature of the mulƟ ples lithium ions cells of the tracƟ on baƩ ery of an EMOB Machine, on the high range of\n' +
+        'temperature.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: ' TracƟ on baƩ ery average cell temperature (°C)\n' +
+        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'TracƟ on baƩ ery connecƟ on status is CONNECTED',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with tracƟ on baƩ ery cell average temperature included within each temperature range, covering with high\n' +
+        'resoluƟ on the high range of temperature (from 80% to 100% of reference temperature) (1 bit = 1 s)'
+  },
+  '': {
+    id: '',
+    demo: null,
+    logID: 'LogID1575',
+    x: 'Temperature Ranges defined as:%x(Reference-Offset)+Offset',
+    y: 'Vector of time distribution(s)',
+    xKeyArr: [
+      { key: 'lt0' },
+      { key: 'bt0n1' },
+      { key: 'bt1n2' },
+      { key: 'bt2n3' },
+      { key: 'bt3n4' },
+      { key: 'bt4n5' },
+      { key: 'bt5n6' },
+      { key: 'bt6n7' },
+      { key: 'bt7n8' },
+      { key: 'bt8n9' },
+      { key: 'bt9n10' },
+      { key: 'bt10n11' },
+      { key: 'bt11n12' },
+      { key: 'bt12n13' },
+      { key: 'bt13n14' },
+      { key: 'bt14n15' },
+      { key: 'bt15n16' },
+      { key: 'bt16n17' },
+      { key: 'bt17n18' },
+      { key: 'bt18n19' },
+      { key: 'bt19n20' },
+      { key: 'gt20' },
+    ],
+    yKeyArr: [
+      { key: 'tempRange', ratio: 1, unit: "s" },
+    ],
+    Purpose: 'collect the distribuƟ on of average temperature of the mulƟ ples lithium ions cells of the tracƟ on baƩ ery of an EMOB Machine, on the low range of\n' +
+        'temperature.',
+    Informant: '',
+    SYSDATALevel: '6',
+    MethodOfMeasurement: 'Incremental',
+    InputSignal: ' TracƟ on baƩ ery average cell temperature (°C)\n' +
+        ' TracƟ on baƩ ery connecƟ on status (CONNECTED / NOT_CONNECTED)\n' +
+        ' Reference temperature (°C)\n' +
+        ' Offset temperature (°C)',
+    Filtering: 'None',
+    ActionsAtInputSignalError: '',
+    SamplingRate: '0.1Hz',
+    Hz: 1,
+    BitResolution: 'Time cells shall be 32 bits and store an unsigned integer represenƟ ng Ɵme (1 bit = 1 sec).\n' +
+        'One cell shall be 32 bits and store : ‐ Reference temperature value, as an unsigned integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)\n' +
+        '‐ Offset temperature value, as a signed integer coded over 16 bits, represenƟ ng temperature (1 bit = 0.1°C)',
+    BitA: 1,
+    BitAUnit: 's',
+    BitB: '10',
+    BitBUnit: 's',
+    ConditionsForLogging: 'TracƟ on baƩ ery connecƟ on status is CONNECTED',
+    OutputDataFormat: 'Cell 1 stores the total log duraƟ on (1 bit = 1 s).\n' +
+        'Cell 2 stores reference and offset temperature value (1 bit = 0.1°C).\n' +
+        'Cell 3 to 24 is a vector storing the total number of seconds elapsed with tracƟ on baƩ ery cell average temperature included within each temperature range, covering with high\n' +
+        'resoluƟ on the low range of temperature (from 0% to 20% of reference temperature) (1 bit = 1 s).'
   },
 
 
