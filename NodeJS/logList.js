@@ -3323,7 +3323,7 @@ const logList = {
       { key: 'bt90n95' },
       { key: 'bt95n100' },
     ],
-    yKeyArr: [{ key: 'soc', ratio: 1, unit: "s" }],
+    yKeyArr: [{ key: 'time', ratio: 1, unit: "s" }],
     Purpose: 'The purpose of this log is to collect the time distribution of SoC of the traction battery on its full range (from 0% to 100%) of an EMOB Machine.\n' +
         'These logged datas will allow a better knowledge of the distribute on of the level of charge of traction battery. This allow us to understand the behavior and the habits of the\n' +
         'user of an EMOB machine. This is also crucial information on for lifetime simulation on of battery.',
@@ -3398,7 +3398,7 @@ const logList = {
       { key: 'gt100' },
     ],
     yKeyArr: [
-      { key: 'chgPwr', ratio: 1, unit: "s" },
+      { key: 'time', ratio: 1, unit: "s" },
     ],
     Purpose: 'Collect the distribution of electrical power in charge direction exchanged with the traction battery of an EMOB Machine',
     Informant: 'These logged datas will allow a better knowledge on how the machine is used and how much power is charged in the ESS',
@@ -3451,7 +3451,7 @@ const logList = {
       { key: 'gt100' },
     ],
     yKeyArr: [
-      { key: 'TempRng', ratio: 1, unit: "s" },
+      { key: 'time', ratio: 1, unit: "s" },
     ],
     Purpose: 'The purpose of this log is to collect the distribution of temperature of the electrical motor of an EMOB Machine, on the full range of temperature.',
     Informant: '',
@@ -3632,7 +3632,7 @@ const logList = {
       { key: 'gt100' },
     ],
     yKeyArr: [
-      { key: 'discPower', ratio: 1, unit: "s" },
+      { key: 'time', ratio: 1, unit: "s" },
     ],
     Purpose: 'The purpose of this log is to collect the distribution of electrical power in discharge direction exchanged with the traction battery of an EMOB Machine.\n' +
         'These logged datas will allow a better knowledge on how the machine is used and how much power is supplied by the ESS.',
@@ -3693,7 +3693,7 @@ const logList = {
       { key: 'gt100' },
     ],
     yKeyArr: [
-      { key: 'tempRagDef', ratio: 1, unit: "℃" },
+      { key: 'time', ratio: 1, unit: "℃" },
     ],
     Purpose: 'The purpose of this log is to collect the distribution of temperature of the inverter of an EMOB machine, on the full range of temperature.\n' +
         'These logged datas will allow a better knowledge of the level of temperature reached by the inverter. This would allow afterwards an adjustment of the expected lifetime of the\n' +
@@ -3735,8 +3735,8 @@ const logList = {
       { key: 'ocr' },
     ],
     yKeyArr: [
-      { key: 'NbMotorStop', ratio: 1, unit: "s" },
       { key: 'NbMotorStart', ratio: 1, unit: "s" },
+      { key: 'NbMotorStop', ratio: 1, unit: "s" },
     ],
     Purpose: 'The purpose of this log is to collect information about motor start and motor stop event. The log is intended to count how many times the motor is started successfully,\n' +
         'and how many times the motor is stopped.\n' +
@@ -3939,7 +3939,7 @@ const logList = {
       { key: 'gt100' },
     ],
     yKeyArr: [
-      { key: 'tempRange', ratio: 1, unit: "s" },
+      { key: 'time', ratio: 1, unit: "s" },
     ],
     Purpose: 'collect the distribution of temperature of the inverter of an EMOB machine, on the high range of temperature.',
     Informant: '',
@@ -3997,7 +3997,7 @@ const logList = {
       { key: 'gt20' },
     ],
     yKeyArr: [
-      { key: 'tempRange', ratio: 1, unit: "s" },
+      { key: 'time', ratio: 1, unit: "s" },
     ],
     Purpose: 'collect the distribution of temperature of the inverter of an EMOB machine, on the low range of temperature',
     Informant: '',
@@ -4031,6 +4031,7 @@ const logList = {
     x: '',
     y: '',
     xKeyArr: [
+      { key: 'startReq' },
       { key: 'mps' },
       { key: 'ips' },
       { key: 'tbps' },
@@ -4080,6 +4081,7 @@ const logList = {
     x: '',
     y: '',
     xKeyArr: [
+      { key: 'stopReq' },
       { key: 'mps' },
       { key: 'ips' },
       { key: 'tbps' },
@@ -4387,8 +4389,8 @@ const logList = {
       { key: 'bt95n100' },
     ],
     yKeyArr: [
-      { key: 'numChargeStart', ratio: 1, unit: "occurrence" },
-      { key: 'numChargeStop', ratio: 1, unit: "occurrence" },
+      { key: 'ocrChargeStart', ratio: 1, unit: "occurrence" },
+      { key: 'ocrChargeStop', ratio: 1, unit: "occurrence" },
     ],
     Purpose: 'collect the distribution of SoC of the traction battery of an EMOB Machine, especially at the moment where fast charge is started or stopped\n' +
         '(including mobile fast charge or plugged fast charge). Each time a fast charge process is started or stopped, this log should increment by one occurrence the cell\n' +
@@ -4513,7 +4515,7 @@ const logList = {
       { key: 'gt100' },
     ],
     yKeyArr: [
-      { key: 'TempRng', ratio: 1, unit: "s" },
+      { key: 'time', ratio: 1, unit: "s" },
     ],
     Purpose: 'collect the distribution of temperature of the OnBC of an EMOB machine, on the full range of temperat',
     Informant: '',
@@ -4551,8 +4553,8 @@ const logList = {
       { key: 'on' },
     ],
     yKeyArr: [
-      { key: 'timeElapsed', ratio: 1, unit: "s" },
-      { key: 'energyConsumed', ratio: 1, unit: "s" },
+      { key: 'totalTimeElapsed', ratio: 1, unit: "s" },
+      { key: 'totalEnergyConsumed', ratio: 1, unit: "s" },
     ],
     Purpose: 'collect the total energy that have been consumed by the DCDC converter, over the life of an EMOB machine. Energy consumption datas will\n' +
         'be sorted into differents buckets depending on the ignition key position (ON, OFF), since the DCDC converter energy consumption on the traction voltage link may vary\n' +
@@ -4612,7 +4614,7 @@ const logList = {
       { key: 'gt100' },
     ],
     yKeyArr: [
-      { key: 'tempRange', ratio: 1, unit: "s" },
+      { key: 'time', ratio: 1, unit: "s" },
     ],
     Purpose: 'collect the distribution of temperature of the OnBC of an EMOB machine, on the high range of temperature',
     Informant: '',
@@ -4670,7 +4672,7 @@ const logList = {
       { key: 'gt20' },
     ],
     yKeyArr: [
-      { key: 'tempRange', ratio: 1, unit: "s" },
+      { key: 'time', ratio: 1, unit: "s" },
     ],
     Purpose: 'collect the distribution of temperature of the OnBC of an EMOB machine, on the low range of temperature.',
     Informant: '',
@@ -4824,7 +4826,7 @@ const logList = {
       { key: 'gt100' },
     ],
     yKeyArr: [
-      { key: 'TempRng', ratio: 1, unit: "s" },
+      { key: 'time', ratio: 1, unit: "s" },
     ],
     Purpose: 'collect the distribution of average temperature of the multiples lithium ions cells of the traction battery of an EMOB Machine, on the full range of\n' +
         'temperature.',
@@ -4914,10 +4916,10 @@ const logList = {
       { key: 'bt96n97' },
       { key: 'bt97n98' },
       { key: 'bt98n99' },
-      { key: 'bt99n100' }
+      { key: 'bt99n100' },
     ],
     yKeyArr: [
-      { key: 'soc', ratio: 1, unit: "%" },
+      { key: 'time', ratio: 1, unit: "%" },
     ],
     Purpose: 'collect the time distribution of SoC of the traction battery on an EMOB machine, especially on its high range (from 80% to 100%)',
     Informant: '',
@@ -4969,7 +4971,7 @@ const logList = {
       { key: 'bt19n20' },
     ],
     yKeyArr: [
-      { key: 'soc', ratio: 1, unit: "%" },
+      { key: 'time', ratio: 1, unit: "%" },
     ],
     Purpose: 'collect the time distribution of SoC of the traction battery of an EMOB machine, especially on its low range (from 0% to 20%).',
     Informant: '',
@@ -5108,7 +5110,7 @@ const logList = {
       { key: 'gt100' },
     ],
     yKeyArr: [
-      { key: 'tempRange', ratio: 1, unit: "s" },
+      { key: 'time', ratio: 1, unit: "s" },
     ],
     Purpose: 'collect the distribution of average temperature of the multiples lithium ions cells of the traction battery of an EMOB Machine, on the high range of\n' +
         'temperature.',
@@ -5167,7 +5169,7 @@ const logList = {
       { key: 'gt20' },
     ],
     yKeyArr: [
-      { key: 'tempRange', ratio: 1, unit: "s" },
+      { key: 'time', ratio: 1, unit: "s" },
     ],
     Purpose: 'collect the distribution of average temperature of the multiples lithium ions cells of the traction battery of an EMOB Machine, on the low range of\n' +
         'temperature.',
