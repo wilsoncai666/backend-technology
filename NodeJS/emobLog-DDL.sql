@@ -137,7 +137,7 @@ CREATE TABLE ld1556
     "time_gt100"      INTEGER
 );
 COMMENT
-ON TABLE ld1556 IS ' Motor temperature distribution (full range)';
+ON TABLE ld1556 IS 'Motor temperature distribution (full range)';
 
 DROP TABLE IF EXISTS ld1542 CASCADE;
 CREATE TABLE ld1542
@@ -587,7 +587,7 @@ CREATE TABLE ld1566
 
 );
 COMMENT
-ON TABLE ld1566 IS ' Electric Motor, Stop Request Event, Counter';
+ON TABLE ld1566 IS 'Electric Motor, Stop Request Event, Counter';
 COMMENT
 ON COLUMN ld1566."num_stopReq" IS 'motor stop requested';
 COMMENT
@@ -730,7 +730,7 @@ CREATE TABLE ld1570
 
 );
 COMMENT
-ON TABLE ld1570 IS ' Electrical Motor Temperature, Low Range, Time Distribution';
+ON TABLE ld1570 IS 'Electrical Motor Temperature, Low Range, Time Distribution';
 
 DROP TABLE IF EXISTS ld1560 CASCADE;
 CREATE TABLE ld1560
@@ -774,7 +774,7 @@ CREATE TABLE ld1560
 
 );
 COMMENT
-ON TABLE ld1560 IS ' DCDC Converter temperature distribution (full range)';
+ON TABLE ld1560 IS 'DCDC Converter temperature distribution (full range)';
 
 DROP TABLE IF EXISTS ld1558 CASCADE;
 CREATE TABLE ld1558
@@ -894,7 +894,7 @@ CREATE TABLE ld1559
 
 );
 COMMENT
-ON TABLE ld1559 IS ' Traction battery SoC distribution slow charge started or stopped ';
+ON TABLE ld1559 IS 'Traction battery SoC distribution slow charge started or stopped';
 
 DROP TABLE IF EXISTS ld1571 CASCADE;
 CREATE TABLE ld1571
@@ -938,7 +938,7 @@ CREATE TABLE ld1571
 
 );
 COMMENT
-ON TABLE ld1571 IS ' On Board Charger temperature distribution (full range)';
+ON TABLE ld1571 IS 'On Board Charger temperature distribution (full range)';
 
 DROP TABLE IF EXISTS ld1525 CASCADE;
 CREATE TABLE ld1525
@@ -962,7 +962,7 @@ CREATE TABLE ld1525
 
 );
 COMMENT
-ON TABLE ld1525 IS 'Total energy consumed DCDC VS key position ';
+ON TABLE ld1525 IS 'Total energy consumed DCDC VS key position';
 
 DROP TABLE IF EXISTS ld1572 CASCADE;
 CREATE TABLE ld1572
@@ -1006,7 +1006,7 @@ CREATE TABLE ld1572
 
 );
 COMMENT
-ON TABLE ld1572 IS ' On Board Charger temperature distribution (high range)';
+ON TABLE ld1572 IS 'On Board Charger temperature distribution (high range)';
 
 DROP TABLE IF EXISTS ld1573 CASCADE;
 CREATE TABLE ld1573
@@ -1049,7 +1049,7 @@ CREATE TABLE ld1573
     "time_gt20"       INTEGER
 );
 COMMENT
-ON TABLE ld1573 IS ' On Board Charger temperature distribution (low range)';
+ON TABLE ld1573 IS 'On Board Charger temperature distribution (low range)';
 
 DROP TABLE IF EXISTS ld1539 CASCADE;
 CREATE TABLE ld1539
@@ -1473,7 +1473,7 @@ CREATE TABLE ld1548
     "time_bt19n20"    INTEGER
 );
 COMMENT
-ON TABLE ld1548 IS ' Traction battery SoC distribution (low range)';
+ON TABLE ld1548 IS 'Traction battery SoC distribution (low range)';
 
 DROP TABLE IF EXISTS ld1554 CASCADE;
 CREATE TABLE ld1554
