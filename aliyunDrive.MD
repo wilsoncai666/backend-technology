@@ -15,12 +15,19 @@ Github 项目地址为https://github.com/zxbu/webdav-aliyundriver
 ### 容器运行
 
 ```
-docker run -d --name=webdav-aliyundriver --restart=always -p 8980:8080  -v /etc/localtime:/etc/localtime -v /etc/aliyun-driver/:/etc/aliyun-driver/ -e TZ="Asia/Shanghai" -e ALIYUNDRIVE_REFRESH_TOKEN="youRefreshToken" -e ALIYUNDRIVE_AUTH_PASSWORD="Cai930521" -e JAVA_OPTS="-Xmx1g" zx5253/webdav-aliyundriver
+docker run -d --name=aliyundrive-webdav \
+--restart=unless-stopped \
+-p 18080:8080 \
+-v /etc/aliyundrive-webdav/:/etc/aliyundrive-webdav/ \
+-e REFRESH_TOKEN='c5500a2829184050877eb4e5cf92749e' \
+-e WEBDAV_AUTH_USER=admin \
+-e WEBDAV_AUTH_PASSWORD=admin \
+messense/aliyundrive-webdav
 ```
 
 ## 挂载到本地
 
-我的电脑-》右键-》映射网络驱动器-》输入http://127.0.0.1:8980
+我的电脑-》右键-》映射网络驱动器-》输入http://127.0.0.1:18080
 ![图片](./pics/mapNetworkDrive.png)
 
 大功告成！！！

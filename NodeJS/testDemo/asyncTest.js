@@ -25,7 +25,7 @@ function getNav() {
 }
 
 function getList(pageNum, statues, nickname, mobile) {
-    return http('http://127.0.0.1api/user?page=${pageNum}&limit=10&status=${statues}&nickname=${nickname}&mobile=${mobile}&', 'get');
+    return http('http://127.0.0.1:api/user?page=${pageNum}&limit=10&status=${statues}&nickname=${nickname}&mobile=${mobile}&', 'get');
 }
 // 调用
 async function List(n, status, nickname, mobel) {
