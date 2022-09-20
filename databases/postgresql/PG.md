@@ -215,3 +215,44 @@ drop DATABASE mydb;
 pg_terminate_backend：用来终止与数据库的连接的进程id的函数。
 pg_stat_activity：是一个系统表，用于存储服务进程的属性和状态。
 pg_backend_pid()：是一个系统函数，获取附加到当前会话的服务器进程的ID。
+
+### JSON和JSONB的操作符
+
+| 操作符	 | 右操作数类型	 | 描述	                  | 示例	                                                        | 结果           |
+|------|---------|----------------------|------------------------------------------------------------|--------------|
+| ->   | 	int	   | 获取JSON数组元素（索引从0开始）   | 	select '[{"a":"foo"},{"b":"bar"},{"c":"baz"}]'::json->2;	 | {"c":"baz"}  |
+| ->   | 	text   | 	通过键获取值	             | select '{"a": {"b":"foo"}}'::json->'a';	                   | {"b":"foo"}  |
+| ->>  | 	int    | 获取JSON数组元素为 text     | select '[1,2,3]'::json->>2;                                | 	3           |
+| ->>  | 	text   | 	通过键获取值为text	        | select '{"a":1,"b":2}'::json->>'b';	                       | 2            |
+| #>	  | text[]  | 在指定的路径获取JSON对象       | select '{"a": {"b":{"c": "foo"}}}'::json#>'{a,b}';	        | {"c": "foo"} |
+| #>>  | 	text[] | 在指定的路径获取JSON对象为 text | select '{"a":[1,2,3],"b":[4,5,6]}'::json#>>'{a,2}';	       | 3            |
+
+### JSONB额外操作符
+
+| 操作符	          | 右操作数类型	  | 描述	                                                        | 示例	                                                                                                          | 结果                   |
+|---------------|----------|------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------|
+| @>            | 	jsonb   | 	左侧json最上层的值是否包含右边json对象                                   | select '{"a":{"b":2}}'::jsonb @> '{"b":2}'::jsonb;  <br/>select '{"a":1, "b":2}'::jsonb @> '{"b":2}'::jsonb; | f  <br/>t            |
+| <@	           | jsonb	   | 左侧json对象是否包含于右侧json最上层的值内                                  | 	select '{"b":2}'::jsonb <@ '{"a":1, "b":2}'::jsonb;	                                                        | t                    |
+| ?	            | text	    | text是否作为左侧Json对象最上层的键	                                     | select '{"a":1, "b":2}'::jsonb ? 'b';	                                                                       | t                    |
+| ?&#124;       | 	text[]	 | text[]中的任一元素是否作为左侧Json对象最上层的键	                             | select '{"a":1, "b":2, "c":3}'::jsonb ?&#124; array['b', 'c'];	                                              | t                    |
+| ?&            | 	text[]	 | text[]中的所有元素是否作为左侧Json对象最上层的键	                             | select '["a", "b"]'::jsonb ?& array['a', 'b'];	                                                              | t                    |
+| &#124; &#124; | 	jsonb	  | 连接两个json对象，组成一个新的json对象	                                   | select '["a", "b"]'::jsonb &#124;&#124;     '["c", "d"]'::jsonb;	                                            | ["a", "b", "c", "d"] |
+| -	            | text	    | 删除左侧json对象中键为text的键值对	                                     | select '{"a": "b"}'::jsonb - 'a';                                                                            | 	{}                  |
+| -	            | integer  | 删除数组指定索引处的元素，如果索引值为负数，则从右边计算索引值。  <br/>如果最上层容器内不是数组，则抛出错误。 | select '["a", "b"]'::jsonb - 1;                                                                              | 	["a"]               |
+| #-            | 	text[]  | 删除指定路径下的域或元素（如果是json数组，且整数值是负的，则索引值从右边算起）                  | select '["a", {"b":1}]'::jsonb #- '{1,b}';	                                                                  | ["a", {}]            |
+
+### JSON创建函数
+
+| 函数                                                                                     | 描述                                                                                      | 示例                                                                                                         | 结果                                    |
+|----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|---------------------------------------|
+| to_json(anyelement)  <br/>to_jsonb(anyelement)                                         | 返回json或jsonb类型的值。数组和复合被转换（递归）成数组和对象。另外除数字、布尔、NULL值（直接使用NULL抛出错误）外，其他标量必须有类型转换。（此处请参考原文） | select to_json('3'::int);	                                                                                 | 3                                     |
+| array_to_json(anyarray[, pretty_bool])                                                 | 以JSON数组返回该数组。PostgreSQL多维数组变成JSON数组中的数组。如果pretty_bool 为真，则在维度1元素之间添加换行。                 | select array_to_json('{{1,5},{99,100}}'::int[],true);                                                      | [[1,5], +[99,100]]                    |
+| row_to_json(record [, pretty_bool])	                                                   | 以JSON对象返回行。如果pretty_bool 为真，则在级别1元素之间添加换行。	                                             | select row_to_json(row(1,'foo'),true);                                                                     | {"f1":1, +"f2":"foo"}                 |
+| json_build_array(VARIADIC "any")  <br/>jsonb_build_array(VARIADIC "any")               | 建立一个由可变参数列表组成的不同类型的JSON数组	                                                              | select json_build_array(1,2,'3',4,5);                                                                      | 	[1, 2, "3", 4, 5]                    |
+| json_build_object(VARIADIC "any")  <br/>jsonb_build_object(VARIADIC "any")             | 建立一个由可变参数列表组成的JSON对象。参数列表参数交替转换为键和值。	                                                   | select json_build_object('foo',1,'bar',2);                                                                 | 	{"foo" : 1, "bar" : 2}               |
+| json_object(text[])  <br/>jsonb_object(text[])                                         | 根据text[]数组建立一个json对象，如果是一维数组，则必须有偶数个元素，元素交替组成键和值。如果是二维数组，则每个元素必须有2个元素，可以组成键值对。          | select json_object('{a, 1, b, "def", c, 3.5}');   <br/>select json_object('{{a, 1},{b, "def"},{c, 3.5}}'); | {"a" : "1", "b" : "def", "c" : "3.5"} |
+| json_object(keys text[], values text[])  <br/>jsonb_object(keys text[], values text[]) | 分别从两组text[]中获取键和值，与一维数组类似。	                                                             | select json_object('{a, b}', '{1,2}');	                                                                    | {"a" : "1", "b" : "2"}                |
+
+### JSON处理函数
+
+此处不再赘述,详情在链接[PostgreSQL JSON Functions and Operators](https://www.postgresql.org/docs/14/functions-json.html)
