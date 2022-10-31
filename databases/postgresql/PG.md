@@ -142,6 +142,13 @@ order by
 	cls.relname;
 
 ```
+### PG杀死锁表进程
+
+```sql
+select * from pg_stat_activity;
+select pg_cancel_backend(28683);
+select pg_terminate_backend(28683);
+```
 
 1.  新建存储过程自动建表
 

@@ -19,7 +19,7 @@ docker run -d --name=aliyundrive-webdav \
 --restart=unless-stopped \
 -p 18080:8080 \
 -v /etc/aliyundrive-webdav/:/etc/aliyundrive-webdav/ \
--e REFRESH_TOKEN='c5500a2829184050877eb4e5cf92749e' \
+-e REFRESH_TOKEN='abe8c19b19be4c99b0a8aa05466708f0' \
 -e WEBDAV_AUTH_USER=admin \
 -e WEBDAV_AUTH_PASSWORD=admin \
 messense/aliyundrive-webdav
