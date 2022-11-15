@@ -1,276 +1,3 @@
-DROP TABLE IF EXISTS ld1557 CASCADE;
-CREATE TABLE ld1557
-(
-    id                SERIAL       NOT NULL,
-    "chassisId"       VARCHAR(255) NOT NULL,
-    created_by        INTEGER,
-    created_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_by        INTEGER,
-    updated_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    day_zone          DATE         NOT NULL,
-    "timeStampAtZone" VARCHAR(255),
-    "timeZone"        VARCHAR(255),
-    "timeStamp"       VARCHAR(255),
-    "processedAt"     VARCHAR(255),
-    "totalLoggedTime" INTEGER,
-    time_bt0n5        INTEGER,
-    time_bt5n10       INTEGER,
-    time_bt10n15      INTEGER,
-    time_bt15n20      INTEGER,
-    time_bt20n25      INTEGER,
-    time_bt25n30      INTEGER,
-    time_bt30n35      INTEGER,
-    time_bt35n40      INTEGER,
-    time_bt40n45      INTEGER,
-    time_bt45n50      INTEGER,
-    time_bt50n55      INTEGER,
-    time_bt55n60      INTEGER,
-    time_bt60n65      INTEGER,
-    time_bt65n70      INTEGER,
-    time_bt70n75      INTEGER,
-    time_bt75n80      INTEGER,
-    time_bt80n85      INTEGER,
-    time_bt85n90      INTEGER,
-    time_bt90n95      INTEGER,
-    time_bt95n100     INTEGER
-);
-COMMENT
-ON TABLE ld1557 IS 'Traction battery SoC distribution (full range)';
-
-DROP TABLE IF EXISTS ld1544 CASCADE;
-CREATE TABLE ld1544
-(
-    id                SERIAL       NOT NULL,
-    "chassisId"       VARCHAR(255) NOT NULL,
-    created_by        INTEGER,
-    created_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_by        INTEGER,
-    updated_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    day_zone          DATE         NOT NULL,
-    "timeStampAtZone" VARCHAR(255),
-    "timeZone"        VARCHAR(255),
-    "timeStamp"       VARCHAR(255),
-    "processedAt"     VARCHAR(255),
-    "totalLoggedTime" INTEGER,
-    "powerRef"        INTEGER,
-    "time_bt0n0p5"    INTEGER,
-    "time_bt0p5n1"    INTEGER,
-    "time_bt1n2"      INTEGER,
-    "time_bt2n3"      INTEGER,
-    "time_bt3n4"      INTEGER,
-    "time_bt4n5"      INTEGER,
-    "time_bt5n6"      INTEGER,
-    "time_bt6n7"      INTEGER,
-    "time_bt7n8"      INTEGER,
-    "time_bt8n9"      INTEGER,
-    "time_bt9n10"     INTEGER,
-    "time_bt10n11"    INTEGER,
-    "time_bt11n12"    INTEGER,
-    "time_bt12n13"    INTEGER,
-    "time_bt13n14"    INTEGER,
-    "time_bt14n15"    INTEGER,
-    "time_bt15n17p5"  INTEGER,
-    "time_bt17p5n20"  INTEGER,
-    "time_bt20n22p5"  INTEGER,
-    "time_bt22p5n25"  INTEGER,
-    "time_bt25n27p5"  INTEGER,
-    "time_bt27p5n30"  INTEGER,
-    "time_bt30n32p5"  INTEGER,
-    "time_bt32p5n35"  INTEGER,
-    "time_bt35n37p5"  INTEGER,
-    "time_bt37p5n40"  INTEGER,
-    "time_bt40n42p5"  INTEGER,
-    "time_bt42p5n45"  INTEGER,
-    "time_bt45n47p5"  INTEGER,
-    "time_bt47p5n50"  INTEGER,
-    "time_bt50n55"    INTEGER,
-    "time_bt55n60"    INTEGER,
-    "time_bt60n65"    INTEGER,
-    "time_bt65n70"    INTEGER,
-    "time_bt70n75"    INTEGER,
-    "time_bt75n80"    INTEGER,
-    "time_bt80n85"    INTEGER,
-    "time_bt85n90"    INTEGER,
-    "time_bt90n95"    INTEGER,
-    "time_bt95n100"   INTEGER,
-    "time_gt100"      INTEGER
-);
-COMMENT
-ON TABLE ld1544 IS 'Traction battery charging power distribution';
-
-DROP TABLE IF EXISTS ld1556 CASCADE;
-CREATE TABLE ld1556
-(
-    id                SERIAL       NOT NULL,
-    "chassisId"       VARCHAR(255) NOT NULL,
-    created_by        INTEGER,
-    created_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_by        INTEGER,
-    updated_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    day_zone          DATE         NOT NULL,
-    "timeStampAtZone" VARCHAR(255),
-    "timeZone"        VARCHAR(255),
-    "timeStamp"       VARCHAR(255),
-    "processedAt"     VARCHAR(255),
-    "totalLoggedTime" INTEGER,
-    "time_lt0"        INTEGER,
-    "time_bt0n5"      INTEGER,
-    "time_bt5n10"     INTEGER,
-    "time_bt10n15"    INTEGER,
-    "time_bt15n20"    INTEGER,
-    "time_bt20n25"    INTEGER,
-    "time_bt25n30"    INTEGER,
-    "time_bt30n35"    INTEGER,
-    "time_bt35n40"    INTEGER,
-    "time_bt40n45"    INTEGER,
-    "time_bt45n50"    INTEGER,
-    "time_bt50n55"    INTEGER,
-    "time_bt55n60"    INTEGER,
-    "time_bt60n65"    INTEGER,
-    "time_bt65n70"    INTEGER,
-    "time_bt70n75"    INTEGER,
-    "time_bt75n80"    INTEGER,
-    "time_bt80n85"    INTEGER,
-    "time_bt85n90"    INTEGER,
-    "time_bt90n95"    INTEGER,
-    "time_bt95n100"   INTEGER,
-    "time_gt100"      INTEGER
-);
-COMMENT
-ON TABLE ld1556 IS 'Motor temperature distribution (full range)';
-
-DROP TABLE IF EXISTS ld1542 CASCADE;
-CREATE TABLE ld1542
-(
-    id                SERIAL       NOT NULL,
-    "chassisId"       VARCHAR(255) NOT NULL,
-    created_by        INTEGER,
-    created_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_by        INTEGER,
-    updated_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    day_zone          DATE         NOT NULL,
-    "timeStampAtZone" VARCHAR(255),
-    "timeZone"        VARCHAR(255),
-    "timeStamp"       VARCHAR(255),
-    "processedAt"     VARCHAR(255),
-    "totalLoggedTime" INTEGER,
-    "PCC_num"         INTEGER,
-    "PCF_num"         INTEGER
-);
-COMMENT
-ON TABLE ld1542 IS 'Precharge events occurences';
-COMMENT
-ON COLUMN ld1542."PCC_num" IS 'total number of occurences of event “precharge completed”';
-COMMENT
-ON COLUMN ld1542."PCF_num" IS 'total number of occurences of event “precharge failed”';
-
-DROP TABLE IF EXISTS ld1479 CASCADE;
-CREATE TABLE ld1479
-(
-    id                   SERIAL       NOT NULL,
-    "chassisId"          VARCHAR(255) NOT NULL,
-    created_by           INTEGER,
-    created_at           TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_by           INTEGER,
-    updated_at           TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    day_zone             DATE         NOT NULL,
-    "timeStampAtZone"    VARCHAR(255),
-    "timeZone"           VARCHAR(255),
-    "timeStamp"          VARCHAR(255),
-    "processedAt"        VARCHAR(255),
-    "totalLoggedTime"    INTEGER,
-    "work_time"          INTEGER,
-    "idle_time"          INTEGER,
-    "excessiveIdle_time" INTEGER
-);
-COMMENT
-ON TABLE ld1479 IS 'Machine utilization';
-
-DROP TABLE IF EXISTS ld1579 CASCADE;
-CREATE TABLE ld1579
-(
-    id                  SERIAL       NOT NULL,
-    "chassisId"         VARCHAR(255) NOT NULL,
-    created_by          INTEGER,
-    created_at          TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_by          INTEGER,
-    updated_at          TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    day_zone            DATE         NOT NULL,
-    "timeStampAtZone"   VARCHAR(255),
-    "timeZone"          VARCHAR(255),
-    "timeStamp"         VARCHAR(255),
-    "processedAt"       VARCHAR(255),
-    "totalLoggedTime"   INTEGER,
-    "time_ecoNotForced" INTEGER,
-    "time_ecoForced"    INTEGER,
-    "time_normal"       INTEGER,
-    "time_boost"        INTEGER
-);
-COMMENT
-ON TABLE ld1579 IS 'Machine work mode distribution';
-
-DROP TABLE IF EXISTS ld1545 CASCADE;
-CREATE TABLE ld1545
-(
-    id                SERIAL       NOT NULL,
-    "chassisId"       VARCHAR(255) NOT NULL,
-    created_by        INTEGER,
-    created_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_by        INTEGER,
-    updated_at        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    day_zone          DATE         NOT NULL,
-    "timeStampAtZone" VARCHAR(255),
-    "timeZone"        VARCHAR(255),
-    "timeStamp"       VARCHAR(255),
-    "processedAt"     VARCHAR(255),
-    "totalLoggedTime" INTEGER,
-    "powerRef"        INTEGER,
-    "time_bt0n0p5"    INTEGER,
-    "time_bt0p5n1"    INTEGER,
-    "time_bt1n2"      INTEGER,
-    "time_bt2n3"      INTEGER,
-    "time_bt3n4"      INTEGER,
-    "time_bt4n5"      INTEGER,
-    "time_bt5n6"      INTEGER,
-    "time_bt6n7"      INTEGER,
-    "time_bt7n8"      INTEGER,
-    "time_bt8n9"      INTEGER,
-    "time_bt9n10"     INTEGER,
-    "time_bt10n11"    INTEGER,
-    "time_bt11n12"    INTEGER,
-    "time_bt12n13"    INTEGER,
-    "time_bt13n14"    INTEGER,
-    "time_bt14n15"    INTEGER,
-    "time_bt15n17p5"  INTEGER,
-    "time_bt17p5n20"  INTEGER,
-    "time_bt20n22p5"  INTEGER,
-    "time_bt22p5n25"  INTEGER,
-    "time_bt25n27p5"  INTEGER,
-    "time_bt27p5n30"  INTEGER,
-    "time_bt30n32p5"  INTEGER,
-    "time_bt32p5n35"  INTEGER,
-    "time_bt35n37p5"  INTEGER,
-    "time_bt37p5n40"  INTEGER,
-    "time_bt40n42p5"  INTEGER,
-    "time_bt42p5n45"  INTEGER,
-    "time_bt45n47p5"  INTEGER,
-    "time_bt47p5n50"  INTEGER,
-    "time_bt50n55"    INTEGER,
-    "time_bt55n60"    INTEGER,
-    "time_bt60n65"    INTEGER,
-    "time_bt65n70"    INTEGER,
-    "time_bt70n75"    INTEGER,
-    "time_bt75n80"    INTEGER,
-    "time_bt80n85"    INTEGER,
-    "time_bt85n90"    INTEGER,
-    "time_bt90n95"    INTEGER,
-    "time_bt95n100"   INTEGER,
-    "time_gt100"      INTEGER
-
-);
-COMMENT
-ON TABLE ld1545 IS 'Traction battery discharging power distribution';
-
 DROP TABLE IF EXISTS ld1552 CASCADE;
 CREATE TABLE ld1552
 (
@@ -309,7 +36,7 @@ CREATE TABLE ld1552
     "time_bt95n100"   INTEGER,
     "time_gt100"      INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1552 IS 'Inverter temperature distribution (full range)';
 
@@ -331,7 +58,7 @@ CREATE TABLE ld1541
     "NbMotorStart_ocr" INTEGER,
     "NbMotorStop_ocr"  INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1541 IS 'Motor start and stop occurences';
 
@@ -357,7 +84,7 @@ CREATE TABLE ld1526
     "energyConsumed_normal" INTEGER,
     "energyConsumed_boost"  INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1526 IS 'Inverter Total Energy Consumed , Working Modes';
 
@@ -404,7 +131,7 @@ CREATE TABLE ld1551
     "time_bt96n100"   INTEGER,
     "time_gt100"      INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1551 IS 'Inverter Power Consumption, Distribution';
 
@@ -428,7 +155,7 @@ CREATE TABLE ld1553
     "runWork_time"    INTEGER,
     "runTravel_time"  INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1553 IS 'Electrical Motor Usage Information';
 
@@ -472,7 +199,7 @@ CREATE TABLE ld1563
     "time_bt99n100"   INTEGER,
     "time_gt100"      INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1563 IS 'Inverter Temperature, High Range, Time Distribution';
 
@@ -516,7 +243,7 @@ CREATE TABLE ld1564
     "time_bt19n20"    INTEGER,
     "time_gt20"       INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1564 IS 'Inverter Temperature, Low Range, Time Distribution';
 
@@ -543,7 +270,7 @@ CREATE TABLE ld1565
     "num_DCDCps"      INTEGER,
     "num_osrh"        INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1565 IS 'Electric Motor, Start Request Event, Counter';
 COMMENT
@@ -585,7 +312,7 @@ CREATE TABLE ld1566
     "num_iko"         INTEGER,
     "num_ar"          INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1566 IS 'Electric Motor, Stop Request Event, Counter';
 COMMENT
@@ -640,7 +367,7 @@ CREATE TABLE ld1568
     "ocr_bt2n3h"      INTEGER,
     "ocr_bt3n4h"      INTEGER,
     "ocr_gt4h"        INTEGER
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1568 IS 'Electric Motor Restart, Counter, Time Distribution';
 
@@ -684,7 +411,7 @@ CREATE TABLE ld1569
     "time_bt99n100"   INTEGER,
     "time_gt100"      INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1569 IS 'Electrical Motor Temperature, High range, Time Distribution';
 
@@ -728,7 +455,7 @@ CREATE TABLE ld1570
     "time_bt19n20"    INTEGER,
     "time_gt20"       INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1570 IS 'Electrical Motor Temperature, Low Range, Time Distribution';
 
@@ -772,7 +499,7 @@ CREATE TABLE ld1560
     "time_bt95n100"   INTEGER,
     "time_gt100"      INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1560 IS 'DCDC Converter temperature distribution (full range)';
 
@@ -832,7 +559,7 @@ CREATE TABLE ld1558
     "ocrChargeStop_bt90n95"   INTEGER,
     "ocrChargeStop_bt95n100"  INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1558 IS 'Traction battery SoC distribution fast charge started or stopped';
 
@@ -892,7 +619,7 @@ CREATE TABLE ld1559
     "ocrChargeStop_bt90n95"   INTEGER,
     "ocrChargeStop_bt95n100"  INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1559 IS 'Traction battery SoC distribution slow charge started or stopped';
 
@@ -936,7 +663,7 @@ CREATE TABLE ld1571
     "time_bt95n100"   INTEGER,
     "time_gt100"      INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1571 IS 'On Board Charger temperature distribution (full range)';
 
@@ -960,7 +687,7 @@ CREATE TABLE ld1525
     "totalEnergyConsumed_off" INTEGER,
     "totalEnergyConsumed_on"  INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1525 IS 'Total energy consumed DCDC VS key position';
 
@@ -1004,7 +731,7 @@ CREATE TABLE ld1572
     "time_bt99n100"   INTEGER,
     "time_gt100"      INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1572 IS 'On Board Charger temperature distribution (high range)';
 
@@ -1047,7 +774,7 @@ CREATE TABLE ld1573
     "time_bt18n19"    INTEGER,
     "time_bt19n20"    INTEGER,
     "time_gt20"       INTEGER
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1573 IS 'On Board Charger temperature distribution (low range)';
 
@@ -1147,7 +874,7 @@ CREATE TABLE ld1539
     "no18_od"         NUMERIC(24, 2),
     "no19_od"         NUMERIC(24, 2)
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1539 IS 'Maximum voltage on DC link';
 
@@ -1247,7 +974,7 @@ CREATE TABLE ld1540
     "no18_od"         NUMERIC(24, 2),
     "no19_od"         NUMERIC(24, 2)
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1540 IS 'Minimum voltage on DC link';
 
@@ -1291,7 +1018,7 @@ CREATE TABLE ld1543
     "time_bt95n100"   INTEGER,
     "time_gt100"      INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1543 IS 'Traction battery cell average temperature distribution (full range)';
 
@@ -1390,7 +1117,7 @@ CREATE TABLE ld1546
     "no17_od"         NUMERIC(24, 2),
     "no18_od"         NUMERIC(24, 2),
     "no19_od"         NUMERIC(24, 2)
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1546 IS 'Traction battery disconnected unexpectedly event occurences';
 
@@ -1431,7 +1158,7 @@ CREATE TABLE ld1547
     "time_bt98n99"    INTEGER,
     "time_bt99n100"   INTEGER
 
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1547 IS 'Traction battery SoC distribution (high range)';
 
@@ -1471,7 +1198,7 @@ CREATE TABLE ld1548
     "time_bt17n18"    INTEGER,
     "time_bt18n19"    INTEGER,
     "time_bt19n20"    INTEGER
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1548 IS 'Traction battery SoC distribution (low range)';
 
@@ -1570,7 +1297,7 @@ CREATE TABLE ld1554
     "no17_od"         NUMERIC(24, 2),
     "no18_od"         NUMERIC(24, 2),
     "no19_od"         NUMERIC(24, 2)
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1554 IS 'Maximum charging current from traction battery';
 
@@ -1669,7 +1396,7 @@ CREATE TABLE ld1555
     "no17_od"         NUMERIC(24, 2),
     "no18_od"         NUMERIC(24, 2),
     "no19_od"         NUMERIC(24, 2)
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1555 IS 'Maximum discharging current from traction battery';
 
@@ -1712,7 +1439,7 @@ CREATE TABLE ld1574
     "time_bt98n99"    INTEGER,
     "time_bt99n100"   INTEGER,
     "time_gt100"      INTEGER
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1574 IS 'Traction battery cell average temperature distribution (high range)';
 
@@ -1755,8 +1482,44 @@ CREATE TABLE ld1575
     "time_bt18n19"    INTEGER,
     "time_bt19n20"    INTEGER,
     "time_gt20"       INTEGER
-);
+)PARTITION BY RANGE ("day_zone");
 COMMENT
 ON TABLE ld1575 IS 'Traction battery cell average temperature distribution (low range)';
+
+
+
+------------- create index start-------------------------------
+
+CREATE UNIQUE INDEX ld1552_uk_chassisId_dayZone ON ld1552 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1541_uk_chassisId_dayZone ON ld1541 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1526_uk_chassisId_dayZone ON ld1526 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1551_uk_chassisId_dayZone ON ld1551 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1553_uk_chassisId_dayZone ON ld1553 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1563_uk_chassisId_dayZone ON ld1563 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1564_uk_chassisId_dayZone ON ld1564 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1565_uk_chassisId_dayZone ON ld1565 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1566_uk_chassisId_dayZone ON ld1566 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1568_uk_chassisId_dayZone ON ld1568 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1569_uk_chassisId_dayZone ON ld1569 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1570_uk_chassisId_dayZone ON ld1570 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1560_uk_chassisId_dayZone ON ld1560 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1558_uk_chassisId_dayZone ON ld1558 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1559_uk_chassisId_dayZone ON ld1559 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1571_uk_chassisId_dayZone ON ld1571 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1525_uk_chassisId_dayZone ON ld1525 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1572_uk_chassisId_dayZone ON ld1572 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1573_uk_chassisId_dayZone ON ld1573 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1539_uk_chassisId_dayZone ON ld1539 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1540_uk_chassisId_dayZone ON ld1540 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1543_uk_chassisId_dayZone ON ld1543 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1546_uk_chassisId_dayZone ON ld1546 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1547_uk_chassisId_dayZone ON ld1547 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1548_uk_chassisId_dayZone ON ld1548 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1554_uk_chassisId_dayZone ON ld1554 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1555_uk_chassisId_dayZone ON ld1555 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1574_uk_chassisId_dayZone ON ld1574 ("chassisId", "day_zone");
+CREATE UNIQUE INDEX ld1575_uk_chassisId_dayZone ON ld1575 ("chassisId", "day_zone");
+
+------------- create index end  -------------------------------
 
     
