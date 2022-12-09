@@ -41,7 +41,7 @@
 
 ## Docker安装mysql,并配置忽略大小写
 
-` docker run --name mysql8 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d --network my-net -v /c/Users/WilsonCai/WilsonPrivate/docker-mysql/:/var/lib/mysql mysql --lower_case_table_names=1`
+` docker run --name mysql8 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d  -v /c/Users/WilsonCai/WilsonPrivate/docker-mysql/:/var/lib/mysql mysql --lower_case_table_names=1`
 
 * -e MYSQL_ROOT_PASSWORD        :设置mysql密码
 * -v /c/Users/WilsonCai/WilsonPrivate/docker-mysql/:/var/lib/mysql:挂载磁盘实现数据持久化,docker-mysql文件夹如果已有文件需要被清空,Linux系统使用/home/mysql

@@ -114,3 +114,6 @@ classes
 database.js
 target
 *.class
+data
+cert
+auth

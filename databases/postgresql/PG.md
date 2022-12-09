@@ -149,6 +149,33 @@ select * from pg_stat_activity;
 select pg_cancel_backend(28683);
 select pg_terminate_backend(28683);
 ```
+### GROUP BY 如果为空值显示为0
+```sql
+SELECT PROVINCE, count(id) 
+FROM GUTAN_POLICY 
+Where 
+(GAS_SOURCE = '稻田甲烷' or GAS_SOURCE LIKE '%,稻田甲烷' or GAS_SOURCE LIKE '%稻田甲烷,%' or GAS_SOURCE LIKE '%稻田甲烷,%') 
+GROUP BY PROVINCE
+
+```
+![图片](../../pics/pg_groupby1.png)
+
+修改后
+```sql
+select A.PROVINCE,COALESCE(num,0)
+from (
+SELECT DISTINCT PROVINCE  FROM GUTAN_POLICY
+)A
+LEFT JOIN 
+(
+select PROVINCE ,count(ID) as num from GUTAN_POLICY
+	where  (GAS_SOURCE = '稻田甲烷' or GAS_SOURCE LIKE '%,稻田甲烷' or GAS_SOURCE LIKE '%稻田甲烷,%' or GAS_SOURCE LIKE '%稻田甲烷,%')
+	group by PROVINCE
+) B
+on A.PROVINCE=B.PROVINCE
+
+```
+![图片](../../pics/pg_groupby2.png)
 
 1.  新建存储过程自动建表
 
