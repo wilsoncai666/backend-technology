@@ -290,3 +290,17 @@ pg_backend_pid()：是一个系统函数，获取附加到当前会话的服务�
 ### JSON处理函数
 
 此处不再赘述,详情在链接[PostgreSQL JSON Functions and Operators](https://www.postgresql.org/docs/14/functions-json.html)
+
+
+### 日期函数
+
+```sql
+SELECT
+	date_trunc('hour',t."created_at")+'8 hour' ,count(*)
+FROM
+	ld495_lowcoolleveldurs t
+WHERE
+	t.day_zone >= '2022-11-15'
+GROUP by 
+ date_trunc('hour',t."created_at") ;
+```
