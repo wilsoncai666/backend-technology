@@ -157,7 +157,7 @@ services:
 ----
 
 ### Docker安装PostgreSQL
-`docker run -d --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=123456 -e PGDATA=/var/lib/postgresql/data/pgdata -e POSTGRES_DB=psrapi -v /c/Users/WilsonCai/WilsonPrivate/dockerData/pgdata:/var/lib/postgresql/data postgres`
+`docker run -d --name some-postgres -p 25432:5432 -e POSTGRES_PASSWORD=123456 -e PGDATA=/var/lib/postgresql/data/pgdata -e POSTGRES_DB=psrapi -v /c/Users/WilsonCai/WilsonPrivate/dockerData/pgdata:/var/lib/postgresql/data postgres`
 
 #### Docker Compose安装PostgreSQL
 

@@ -9,9 +9,9 @@ const kafka = new Kafka({
         /* 'host.docker.internal:9092', 
         'host.docker.internal:9093',
         'host.docker.internal:9094' */
-        '10.104.165.61:9092',
-        '10.99.224.18:9092',
-        '10.105.10.229:9092'
+        '10.102.107.223:31788',
+        '10.99.49.172:31770',
+        '10.109.92.163:32280'
     ],
     retry: {
         retries: 8
