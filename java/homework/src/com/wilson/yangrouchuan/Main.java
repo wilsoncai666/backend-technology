@@ -1,5 +1,27 @@
-package com.etoak.book.admin.bean;
-public class YangRouChuan{
+package com.wilson.yangrouchuan;
+public class Main {
+    public static void main(String[] args) {
+       YangRouChuan[] chuanArr = new YangRouChuan[10];
+        String taste = "不辣";
+
+        //创建10串羊肉串，口味均为不辣
+        for(int i=0; i<10; i++){
+            chuanArr[i] = new YangRouChuan(taste);
+        }
+
+        //烤10串不辣的羊肉串
+        for(int i=1; i<=3; i++){ //烤3次
+            System.out.println("====================烤制第" + i + "次====================");
+            for(int j=0; j<10; j++){ //每次烤10串
+                chuanArr[j].roasted(4, 1); //每串烤4分钟
+                System.out.println("第" + (j+1) + "串：" + chuanArr[j].toString());
+            }
+        }
+    }
+}
+
+
+class YangRouChuan{
     private int time;//被烤时间
     private String state;//熟生状态：熟、生、糊了
     private String taste;//口味要求：不辣、微辣、特辣
@@ -60,22 +82,5 @@ public class YangRouChuan{
     public String toString(){
         return "口味：" + this.taste + "，烤制时间：" + this.time + "分钟，状态：" + this.state + "，调料 ：" + this.seasoning;
     }
-    public static void main(String[] args) {
-        YangRouChuan[] chuanArr = new YangRouChuan[10];
-        String taste = "不辣";
-
-        //创建10串羊肉串，口味均为不辣
-        for(int i=0; i<10; i++){
-            chuanArr[i] = new YangRouChuan(taste);
-        }
-
-        //烤10串不辣的羊肉串
-        for(int i=1; i<=3; i++){ //烤3次
-            System.out.println("====================烤制第" + i + "次====================");
-            for(int j=0; j<10; j++){ //每次烤10串
-                chuanArr[j].roasted(3, 1); //每串烤3分钟
-                System.out.println("第" + (j+1) + "串：" + chuanArr[j].toString());
-            }
-        }
-    }
+   
 }
