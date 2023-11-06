@@ -29,7 +29,6 @@
     CACHE 2;
 
   ALTER SEQUENCE public.tbl_user_seq OWNER TO postgres;
-
 ```
 
 4. 为主键设置sequence
