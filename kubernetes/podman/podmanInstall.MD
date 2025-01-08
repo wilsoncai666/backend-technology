@@ -38,10 +38,17 @@
     `podman inspect container_name`
 
 ---
+# podman本机开发环境配置
 
 ## podman安装mysql,并配置忽略大小写
-
-` podman run --name mysql8 -p 13306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d  -v /c/Users/WilsonCai/WilsonPrivate/podman-mysql/:/var/lib/mysql mysql --lower_case_table_names=1`
+`podman pull easypullimages.azurecr.cn/bitnami/mysql:8.0.40`
+```
+podman run -d \
+  --name mysql8 \
+  -p 13306:3306 \
+  -e MYSQL_ROOT_PASSWORD=123456 \
+  easypullimages.azurecr.cn/bitnami/mysql:8.0.40
+```
 
 * -e MYSQL_ROOT_PASSWORD        :设置mysql密码
 * -v /c/Users/WilsonCai/WilsonPrivate/podman-mysql/:/var/lib/mysql:挂载磁盘实现数据持久化,podman-mysql文件夹如果已有文件需要被清空,Linux系统使用/home/mysql
@@ -60,109 +67,64 @@ mysql修改权限密码方式
 
 ---
 
-## podman 安装kafka
-kafka是podman-compose的组合并需要持久化
+
+## podman安装Kafka3.9
+### 下载kafka镜像
+`podman pull easypullimages.azurecr.cn/bitnami/kafka:3.9.0-debian-12-r4`
+### 启动Kafka容器,使用 host 网络
 ```
-version: "3"
-
-services:
-  zookeeper:
-    image: zookeeper
-    build:
-      context: ./
-    container_name: zookeeper
-    ports:
-      - 2181:2181
-    volumes:
-      - ./data/zookeeper/data:/data
-      - ./data/zookeeper/datalog:/datalog
-      - ./data/zookeeper/logs:/logs
-    restart: always
-
-  kafka_node_0:
-    depends_on:
-      - zookeeper
-    build:
-      context: ./
-    container_name: kafka-node-0
-    image: wurstmeister/kafka
-    environment:
-      KAFKA_BROKER_ID: 0
-      KAFKA_ZOOKEEPER_CONNECT: host.podman.internal:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://host.podman.internal:9092
-      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
-      KAFKA_NUM_PARTITIONS: 3
-      KAFKA_DEFAULT_REPLICATION_FACTOR: 2
-    ports:
-      - 9092:9092
-    volumes:
-      - ./data/kafka/node_0:/kafka
-    restart: unless-stopped
-
-  kafka_node_1:
-    depends_on:
-      - kafka_node_0
-    build:
-      context: ./
-    container_name: kafka-node-1
-    image: wurstmeister/kafka
-    environment:
-      KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: host.podman.internal:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://host.podman.internal:9093
-      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9093
-      KAFKA_NUM_PARTITIONS: 3
-      KAFKA_DEFAULT_REPLICATION_FACTOR: 2
-    ports:
-      - 9093:9093
-    volumes:
-      - ./data/kafka/node_1:/kafka
-    restart: unless-stopped
-
-  kafka_node_2:
-    depends_on:
-      - kafka_node_1
-    build:
-      context: ./
-    container_name: kafka-node-2
-    image: wurstmeister/kafka
-    environment:
-      KAFKA_BROKER_ID: 2
-      KAFKA_ZOOKEEPER_CONNECT: host.podman.internal:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://host.podman.internal:9094
-      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9094
-      KAFKA_NUM_PARTITIONS: 3
-      KAFKA_DEFAULT_REPLICATION_FACTOR: 2
-    ports:
-      - 9094:9094
-    volumes:
-      - ./data/kafka/node_2:/kafka
-    restart: unless-stopped
+podman run -d \
+  --name kafka-server \
+  --hostname kafka-server \
+  -e KAFKA_CFG_NODE_ID=0 \
+  -e KAFKA_CFG_PROCESS_ROLES=controller,broker \
+  -e KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093 \
+  -e KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT \
+  -e KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka-server:9093 \
+  -e KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER \
+  -e KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://127.0.0.1:9092 \
+  -p 9092:9092 \
+  easypullimages.azurecr.cn/bitnami/kafka:3.9.0-debian-12-r4
 ```
-
-`podman-compose up -d` 此命令可以将上述组合上线
-
----
-
-## podman 安装redis
-` podman run -v /c/Users/WilsonCai/WilsonPrivate/podman-redis:/usr/local/etc/redis --name myredis -p 6379:6379 -d redis`
-
+* -e KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://127.0.0.1:9092  :设置kafka的地址，用于其他服务访问
+* -p 9092:9092  :设置kafka的端口，用于其他服务访问
+* --hostname kafka-server  :设置kafka的hostname，用于其他服务访问
 ---
 
 ## podman 安装kowl
-` podman run --name mykowl -p 8888:8080  -e KAFKA_BROKERS=host.podman.internal:9092 -d quay.io/cloudhut/kowl:master`
+### 下载kowl镜像
+`podman pull easypullimages.azurecr.cn/rsmnarts/kowl:latest`
+### 启动 Kowl 容器，使用 host 网络
+`podman run -d --name mykowl --network host -e KAFKA_BROKERS=127.0.0.1:9092 easypullimages.azurecr.cn/rsmnarts/kowl:latest`
 
-*注:前提是本机安装了kafka,可以通过host.podman.internal进行访问*
+*注:前提是本机安装了kafka,可以通过127.0.0.1:9092进行访问*
 
 ----
+## podman 安装redis
+`podman pull easypullimages.azurecr.cn/library/redis:7`
 
+```
+podman run -d \
+  --name myredis \
+  -p 6379:6379 \
+  easypullimages.azurecr.cn/library/redis:7
+```
+* -p 6379:6379  :设置redis的端口，用于其他服务访问
+---
 ### podman安装PostgreSQL
 `podman pull easypullimages.azurecr.cn/bitnami/postgresql:17.2.0-debian-12-r5`
 
-`podman run -d --name postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=123456 -e POSTGRES_DB=psrapi -p 25432:5432 easypullimages.azurecr.cn/bitnami/postgresql:17.2.0-debian-12-r5`
-
+```
+podman run -d \
+  --name postgres \
+  -e POSTGRES_USER=postgres \
+  -e POSTGRES_PASSWORD=123456 \
+  -e POSTGRES_DB=psrapi \
+  -p 25432:5432 \
+  easypullimages.azurecr.cn/bitnami/postgresql:17.2.0-debian-12-r5
+```
+* -e POSTGRES_USER=postgres  :设置postgres的用户名
+* -e POSTGRES_PASSWORD=123456  :设置postgres的密码
+* -e POSTGRES_DB=psrapi  :设置postgres的数据库名
+* -p 25432:5432  :设置postgres的端口，用于其他服务访问
 ---
-
-### podman 安装wordpress
-
-`podman run -d --name mywp -p 1080:80 -e WORDPRESS_DB_HOST=host.podman.internal -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_PASSWORD=123456 -e WORDPRESS_DB_NAME=wordpress wordpress`
