@@ -39,7 +39,7 @@
 
 ---
 # podman本机开发环境配置
-
+1. 打开gitbash,运行以下命令，powershell以及wsl运行带换行符的命令会有问题
 ## podman安装mysql,并配置忽略大小写
 `podman pull easypullimages.azurecr.cn/bitnami/mysql:8.0.40`
 ```
