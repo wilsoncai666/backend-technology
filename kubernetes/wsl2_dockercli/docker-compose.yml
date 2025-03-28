@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  zookeeper:
+    image: ducopubimages.azurecr.cn/zookeeper:3.9.3
+    container_name: zookeeper
+    restart: always
+    ports:
+      - "2181:2181"
+
+  clickhouse-1:
+    image: ducopubimages.azurecr.cn/clickhouse:25.2.2.39
+    container_name: clickhouse-1
+    restart: always
+    volumes:
+      - ./config/config.xml:/etc/clickhouse-server/config.xml
+      - ./data/clickhouse-1:/var/lib/clickhouse
+      - ./logs/clickhouse-1:/var/log/clickhouse-server
+    environment:
+      - CLICKHOUSE_USER=default
+      - CLICKHOUSE_PASSWORD=123456
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    depends_on:
+      - zookeeper
+
+  clickhouse-2:
+    image: ducopubimages.azurecr.cn/clickhouse:25.2.2.39
+    container_name: clickhouse-2
+    restart: always
+    volumes:
+      - ./config/config.xml:/etc/clickhouse-server/config.xml
+      - ./data/clickhouse-2:/var/lib/clickhouse
+      - ./logs/clickhouse-2:/var/log/clickhouse-server
+    environment:
+      - CLICKHOUSE_USER=default
+      - CLICKHOUSE_PASSWORD=123456
+    ports:
+      - "8124:8123"
+      - "9001:9000"
+    depends_on:
+      - zookeeper
